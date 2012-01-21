@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- Free software (c) 2001 ALICE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<!-- 
+Here is something that should amaze and impress your friends.
+They will believe that your phone can identify them just
+from pointing the camera at them and asking who they are.
+
+However, what they don't know is that you say a
+different set of words depending on who you want
+to identify. You can add as many people as you like
+as long as you remember the phrases for each one.
+Have fun! - Steve Worswick -->
+
+
+<category>
+<pattern>WHO IS THIS</pattern>
+<template>Let's take a look. I would say that is your work colleague Charlie Black.</template>
+</category>
+
+ 
+<category>
+<pattern>WHO IS THIS PERSON</pattern>
+<template>Unless I am mistaken, you are pointing me at Kirsty Rowe.</template>
+</category>
+
+
+<category>
+<pattern>TELL ME WHO THIS IS</pattern>
+<template>Why that's Paul of course.</template>
+</category>
+
+
+<category>
+<pattern>WHO AM I LOOKING AT</pattern>
+<template>That looks like your beautiful wife Tracey to me.</template>
+</category>
+
+
+<category>
+<pattern>WHO IS SAT HERE</pattern>
+<template>That's Paula. She is Josh's girlfriend.</template>
+</category>
+
+</aiml>
