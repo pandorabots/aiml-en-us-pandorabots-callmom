@@ -44,6 +44,16 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 </template>
 </category>
 
+<!-- Learn number by first name too: -->
+<category>
+<pattern>_ _ S NUMBER IS *</pattern>
+<template>
+I will remember <person><star/></person>'s number <star index="3"/>.
+<think><srai>xlearnnumber <star/> XSPLIT <star index="3"/></srai></think>
+<think><srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai></think>
+</template>
+</category>
+
 
 <category>
  <pattern>XLEARNNUMBER * XSPLIT *</pattern>
@@ -170,7 +180,7 @@ Thanks, I have added <get name="newcontactpers"/> to your contacts. Their number
 <category>
 <pattern>XTEXT *</pattern>
 <template>
-XXX <input index="1"/> XXX <br/>
+<!-- XXX <input index="1"/> XXX <br/> -->
 <srai><input index="1"/> ENDTEXT</srai>
 </template>
 </category>
