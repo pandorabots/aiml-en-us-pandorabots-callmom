@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml>
-<!-- Free software (c) 2001 ALICE A.I. Foundation.   -->
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
 <!-- This program is open source code released under -->
-<!-- the terms of the GNU General Public License     -->
+<!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Complies with AIML 1.0 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: Steve Worswick squarebear@square-bear.co.uk -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
 
-
-<!-- 
 Here is something that should amaze and impress your friends.
 They will believe that your phone can identify them just
 from pointing the camera at them and asking who they are.
