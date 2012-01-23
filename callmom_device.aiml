@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0">
+
+<category>
+<pattern>BATTERY LEVEL</pattern>
+<template>
+<oob><battery></battery></oob>
+Checking...
+</template>
+</category>
+
+<category>
+<pattern>OOB BATTERY LEVEL IS *</pattern>
+<template>Battery level is <set name="batterylevel"><star/></set> percent.
+</template>
+</category>
+
+<category>
+<pattern>STORED BATTERY LEVEL</pattern>
+<template>Last battery level check was <get name="batterylevel"/> percent.</template>
+</category>
+
+
+</aiml>
