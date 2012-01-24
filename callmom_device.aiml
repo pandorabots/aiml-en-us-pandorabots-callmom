@@ -3,6 +3,22 @@
 <aiml version="1.0">
 
 <category>
+<pattern>VERSION</pattern>
+<template>
+<oob><version></version></oob>
+Checking app version...
+</template>
+</category>
+
+<category>
+<pattern>OOB CALLMOM VERSION IS *</pattern>
+<template>This is version <set name="version"><star/></set>.
+</template>
+</category>
+
+
+
+<category>
 <pattern>BATTERY LEVEL</pattern>
 <template>
 <oob><battery></battery></oob>
