@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+
+
+<category>
+<pattern>PHONE</pattern>
+<template><oob><dial></dial></oob></template>
+</category>
+
+
+<category>
+<pattern>CALL 911</pattern>
+<template>Responding to 911 with your location.
+<oob><dial>911</dial></oob>
+</template>
+</category>
+
+<category>
+<pattern>CALL 411</pattern>
+<template>Calling directory assistance with your location: <get name="location"/>.
+<oob><dial>411</dial></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>CALL *</pattern>
+<template>
+<think><set name="phonenumber"><srai>XPHONE <star/> NUMBER</srai></set></think>
+<condition name="phonenumber">
+<li value="unknown">I don't know <star/>'s number.</li>
+<li><oob><dial><get name="phonenumber"/></dial></oob>
+Calling <star/>...</li>
+</condition>
+</template>
+</category>
+
+
+</aiml>
