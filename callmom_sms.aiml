@@ -180,7 +180,6 @@ Thanks, I have added <get name="newcontactpers"/> to your contacts. Their number
 <category>
 <pattern>XTEXT *</pattern>
 <template>
-<!-- XXX <input index="1"/> XXX <br/> -->
 <srai><input index="1"/> ENDTEXT</srai>
 </template>
 </category>
