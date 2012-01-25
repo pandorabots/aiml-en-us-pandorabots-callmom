@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+
+<category>
+<pattern>WHERE IS THE NEAREST *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+
+
+<category>
+<pattern>LOOK FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>LOOK UP *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+
+<category><pattern>XFIND *</pattern>
+<template>
+ <random>
+ <li>Let me think about it.</li>
+ <li>Have you tried a web search?</li>
+ <li>I haven't heard of <person/> .</li>
+ <li>There might be more than one.</li>
+ <li>I need time to formulate the reply.</li>
+ <li>I would look into the web for that knowledge.</li>
+ <li>Does it have anything to do with <get name="topic"/> ?</li>
+ <li>Interesting question.</li>
+ <li>That's a good question.</li>
+ <li>That's not something I get asked all the time.</li>
+ <li>I don't know anything about <set name="it"><person/></set> .</li>
+ <li>Are you testing me?</li>
+ <li>I will search for it.</li>
+ <li>I will try to find out.</li>
+ <li>I can ask someone about it.</li>
+ <li>I would do a search for it.</li>
+ <li>Would you like to know more?</li>
+ <li>Have you tried searching the web?</li>
+ <li>Do a web search for it.</li>
+ <li>Try searching the web.</li>
+ <li>I have never been asked that before.</li>
+ <li>I think you already know the answer.</li>
+ <li>Searching...Searching...Please stand by.</li>
+ <li>Have you tried a web search?</li>
+ <li>I haven't heard of <person/> .</li>
+ <li>I would look into the web for that knowledge.</li>
+ <li>Does it have anything to do with <get name="topic"/>?</li>
+ <li>Interesting question.</li>
+ <li>That's a good question.</li>
+ <li>Would you like to know more?</li>
+ <li>What is your purpose in asking?</li>
+ <li>I have never been asked that before.</li>
+</random> 
+<think>
+<set name="it"><srai>PUSH <set name="topic"><person/></set></srai></set>
+</think>
+<srai>XSEARCH <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>XSEARCH *</pattern>
+<template><oob><search><star/></search></oob></template>
+</category>
+
+
+
+</aiml>
