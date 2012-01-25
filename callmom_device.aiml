@@ -3,6 +3,21 @@
 <aiml version="1.0">
 
 <category>
+<pattern>WHAT VERSION ARE YOU</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
+<pattern>WHICH VERSION ARE YOU</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
+<pattern>CALL MOM VERSION</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
 <pattern>VERSION</pattern>
 <template>
 <oob><version></version></oob>
