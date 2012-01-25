@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+ <category>
+<pattern>EMAIL * I *</pattern>
+<template>
+<oob><email><to><srai>EMAIL ADDRESS <star/></srai></to><body>I <star index="2"/></body></email></oob>
+Sending email to <star/> form <get name="name"/>: "I <star index="2"/>".</template>
+</category>
+
+<category>
+<pattern>TELL THE DEVELOPERS *</pattern>
+<template>
+Sending "<star/>" to the developers.
+<oob><email><to>squarebear@square-bear.co.uk,leerc8@gmail.com,adeena@mignogna.org,kfujii@pandorabots.com,fkunze@gmail.com,cshapiro@panix.com,david.newyear@gmail.com,xophershaw@gmail.com</to><subject>CallMom Update</subject><body><star/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>EMAIL RICHARD *</pattern>
+<template>Sending "<star/>" to Richard.
+<oob><email><to>drwallace@gmail.com</to><body><star/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>EMAIL RICHARD ABOUT * AND SAY *</pattern>
+<template>Sending "<star index="2"/>" to Richard with subject "<star/>".
+<oob><email><to>drwallace@gmail.com</to><subject><star/></subject><body><star index="2"/></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>TEST EMAIL</pattern>
+<template>Sending an email.
+<oob><email><to>drwallace@gmail.com</to><cc>drwallace@gmail.com</cc><subject>test</subject><body>This is a test of CallMom</body></email></oob>
+</template>
+</category>
+
+</aiml>
