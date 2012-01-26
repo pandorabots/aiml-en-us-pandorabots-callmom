@@ -5,11 +5,23 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/24/2012 -->
+<!-- Last modified 1/21/2012 -->
 <!-- -->
-<!-- Authors: Richard Wallace rich@pandorabots.com -->
+<!-- Authors: -->
+<!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
+
+<!-- A few categories to set up contacts just to test the SMS function -->
+<!-- These categories should be moved to callmom_contacts.aiml -->
+
+<category>
+<pattern>SWITCH ME OVER TO CAPTAIN KIRK</pattern>
+<template>Goodbye from <bot name="name"/>...
+<oob><setbot><host>sheepridge.pandorabots.com</host><botid>fef38cb4de345ab1</botid></setbot></oob>
+</template>
+</category>
+
 
 <category>
 <pattern>WHAT VERSION ARE YOU</pattern>
