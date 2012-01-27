@@ -15,6 +15,12 @@
 
 
 <category>
+<pattern>WIKIPEDIA</pattern>
+<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
+</category>
+
+
+<category>
 <pattern>WHERE IS THE NEAREST *</pattern>
 <template><srai>GOOGLEMAP <star/></srai>
 </template>
