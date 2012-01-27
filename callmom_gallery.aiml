@@ -43,7 +43,7 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <pattern>SHOW ME *</pattern>
 <template>
 <srai>pictureblab</srai>
-<gallery><star/>.jpg.to</gallery>
+<oob><url>http://<star/>.jpg.to</url></oob>
 </template>
 </category>
 
