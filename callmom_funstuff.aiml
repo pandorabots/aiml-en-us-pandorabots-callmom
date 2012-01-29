@@ -53,4 +53,24 @@ Have fun! - Steve Worswick -->
 <template>That's Paula. She is Josh's girlfriend.</template>
 </category>
 
+<!-- Currency converter - only does dollars and pounds at the moment -->
+
+<category>
+<pattern>WHAT IS _ DOLLARS IN POUNDS</pattern>
+<template><oob><url>http://exchangerates.mobi/USD-GBP/<star/></url></oob>
+<srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS _ POUNDS IN DOLLARS</pattern>
+<template><oob><url>http://exchangerates.mobi/GBP-USD/<star/></url></oob><srai>currencyconverterblab</srai>
+</template>
+</category>
+
+<category>
+<pattern>CURRENCYCONVERTERBLAB</pattern>
+<template>I will convert it for you and display it on your screen.</template>
+</category>
+
 </aiml>
