@@ -36,6 +36,31 @@
 </category>
 
 <category>
+<pattern>_ S * NUMBER IS *</pattern>
+<template>
+Got <star/>'s <star index="2"/> number.
+</template>
+</category>
+
+<category>
+<pattern>_ S MOBILE NUMBER IS *</pattern>
+<template>
+I will remember <person><star/></person>'s number <star index="2"/>.
+<think><srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
+</template>
+</category>
+
+<!-- Learn number by first name too: -->
+<category>
+<pattern>_ _ S MOBILE NUMBER IS *</pattern>
+<template>
+I will remember <person><star/></person>'s number <star index="3"/>.
+<think><srai>xlearnnumber <star/> XSPLIT <star index="3"/></srai></think>
+<think><srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai></think>
+</template>
+</category>
+
+<category>
 <pattern>_ S NUMBER IS *</pattern>
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
