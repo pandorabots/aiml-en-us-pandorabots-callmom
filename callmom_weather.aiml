@@ -14,7 +14,16 @@
 
 <category>
 <pattern>SEARCH WEATHER *</pattern>
-<template><weather><star/></weather>. I hope it's sunny in <star/> today.</template>
+<template><oob><url>http://news.bbc.co.uk/weather/mobile/searchresults?&amp;search=<star/></url></oob>
+<random>
+<li>I hope it's sunny in <star/> today.</li>
+<li>Let's take a look at the forecast for <star/>.</li>
+<li>I will display the weather for <star/> so you can check it out.</li>
+<li>Here is the weather forecast for <star/>.</li>
+<li>I will show you the forecast for <star/>.</li>
+</random>
+Click on the most suitable placename from the top of the list.
+</template>
 </category>
 
 <category>
@@ -78,23 +87,25 @@
 <category><pattern>I _ TO KNOW THE WEATHER FORECAST</pattern><template><srai>what is the weather going to be like</srai></template></category>
 <category><pattern>I _ TO SEE THE WEATHER FORECAST</pattern><template><srai>what is the weather going to be like</srai></template></category>
 <category><pattern>I WANT THE WEATHER FORECAST IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>IS IT RAINING</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
 <category><pattern>IS IT RAINING *</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
-<category><pattern>IS LEEDS SUNNY</pattern><template><srai>what is the weather like in Leeds</srai></template></category>
+<category><pattern>IS _ SUNNY</pattern><template><srai>what is the weather like in <star/></srai></template></category>
 <category><pattern>IS THE WEATHER *</pattern><template><srai>what is the weather</srai></template></category>
 <category><pattern>MY WEATHER *</pattern><template>Your weather?! How come you have your own weather system?<br/> Are you as large as a planet?</template></category>
 <category><pattern>NICE WEATHER</pattern><template><srai>what is the weather going to be like</srai></template></category>
-<category><pattern>SEARCH WEATHER LEEDS</pattern><template>xlink.http://news.bbc.co.uk/weather/forecast/18xlink. Here is the weather for Leeds over the next 5 days. I hope it's going to be sunny.</template></category>
-<category><pattern>SEARCH WEATHER YOUR *</pattern><template>xlink.http://news.bbc.co.uk/weather/forecast/18xlink. Here is the weather for Leeds over the next 5 days. I hope it's going to be sunny.</template></category>
 <category><pattern>SEARCH WEATHER YOUR AREA</pattern><template><srai>search weather Leeds</srai></template></category>
+<category><pattern>SHOULD I TAKE AN UMBRELLA</pattern><template><srai>do i need an umbrella</srai></template></category>
+<category><pattern>SHOULD I TAKE MY UMBRELLA</pattern><template><srai>do i need an umbrella</srai></template></category>
 <category><pattern>SHOW ME THE WEATHER IN *</pattern><template><srai>what is the weather in <star/></srai></template></category>
 <category><pattern>SHOW ME THE WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
 <category><pattern>TELL ME ABOUT THE WEATHER *</pattern><template><srai>WHAT IS THE WEATHER <star/></srai></template></category>
 <category><pattern>TELL ME ABOUT THE WEATHER</pattern><template><srai>WHAT IS THE WEATHER</srai></template></category>
 <category><pattern>TELL ME WEATHER FORECAST FOR *</pattern><template><srai>what is the weather in <star/></srai></template></category>
 <category><pattern>TELL ME WEATHER FORECAST</pattern><template><srai>what is the weather</srai></template></category>
-<category><pattern>THE WEATHER</pattern><template><set name="it"> the weather </set> is <random><li>cloudy</li><li>foggy</li><li>rainy</li><li>warm</li><li>cold</li><li>cool</li><li>comfortable</li></random>.</template></category>
+<category><pattern>THE WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
 <category><pattern>THE WHEATHER</pattern><template><srai>the weather</srai></template></category>
 <category><pattern>WE HAVE NO WEATHER *</pattern><template>Don't be silly. You must have weather.</template></category>
+<category><pattern>WEATHER FOR *</pattern><template><srai>search weather <star/></srai></template></category>
 <category><pattern>WEATHER FORECAST FOR *</pattern><template><srai>what is the weather in <star/></srai></template></category>
 <category><pattern>WEATHER FORECAST OF *</pattern><template><srai>what is the weather in <star/></srai></template></category>
 <category><pattern>WEATHER FORECAST</pattern><template><srai>what is the weather going to be like</srai></template></category>
@@ -128,6 +139,5 @@
 <category><pattern>WHEN IS SUNRISE *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
 <category><pattern>WHEN IS SUNSET *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
 <category><pattern>WILL IT RAIN IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
-
 
 </aiml>
