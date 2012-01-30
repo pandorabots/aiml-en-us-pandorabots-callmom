@@ -12,6 +12,18 @@
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 
+<!--   GENERAL HELP   -->
+
+<category>
+<pattern>HELP</pattern>
+<template>
+I assume you mean help using CallMom.  If not, please be more specific.  You can use me
+to make a call, send a text, get driving directions, search the web and much more.  We can
+also just have a conversation.
+</template>
+</category>
+
+
 
 <!--   HELP RELATED TO DIRECTIONS AND MAP   -->
 
@@ -113,6 +125,13 @@ Say "Text the person saying your message."  For example, "Text John Doe saying m
 
 <category>
 <pattern>HOW DO I SEND A TEXT</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE A TEXT</pattern>
 <template>
 <srai>HOW DO I TEXT</srai>
 </template>
