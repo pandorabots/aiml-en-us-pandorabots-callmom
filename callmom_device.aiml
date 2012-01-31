@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 1/21/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact info@pandorabots.com -->
+
+<!-- A few categories to set up contacts just to test the SMS function -->
+<!-- These categories should be moved to callmom_contacts.aiml -->
+
+
+<category>
+<pattern>AIRPLANE MODE</pattern>
+<template>Shutting down network connection.  <oob><airplane></airplane></oob></template>
+</category>
+
+<category>
+<pattern>SWITCHING OVER TO CAPTAIN KIRK</pattern>
+
+<template><srai>SWITCH ME OVER TO CAPTAIN KIRK</srai></template>
+</category>
+
+
+
+
+<category>
+<pattern>SWITCH ME OVER TO CAPTAIN KIRK</pattern>
+<template>Goodbye from <bot name="name"/>...
+<oob><setbot><host>sheepridge.pandorabots.com</host><botid>fef38cb4de345ab1</botid></setbot></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>WHAT VERSION ARE YOU</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
+<pattern>WHICH VERSION ARE YOU</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
+<pattern>CALL MOM VERSION</pattern>
+<template><srai>VERSION</srai></template>
+</category>
+
+<category>
+<pattern>VERSION</pattern>
+<template>
+<oob><version></version></oob>
+Checking app version...
+</template>
+</category>
+
+<category>
+<pattern>OOB CALLMOM VERSION IS *</pattern>
+<template>This is version <set name="version"><star/></set>.
+</template>
+</category>
+
+
+
+<category>
+<pattern>BATTERY LEVEL</pattern>
+<template>
+<oob><battery></battery></oob>
+Checking...
+</template>
+</category>
+
+<category>
+<pattern>OOB BATTERY LEVEL IS *</pattern>
+<template>Battery level is <set name="batterylevel"><star/></set> percent.
+</template>
+</category>
+
+<category>
+<pattern>STORED BATTERY LEVEL</pattern>
+<template>Last battery level check was <get name="batterylevel"/> percent.</template>
+</category>
+
+
+</aiml>
