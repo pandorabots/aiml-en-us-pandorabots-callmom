@@ -15,6 +15,21 @@
 <!-- A few categories to set up contacts just to test the SMS function -->
 <!-- These categories should be moved to callmom_contacts.aiml -->
 
+
+<category>
+<pattern>AIRPLANE MODE</pattern>
+<template>Shutting down network connection.  <oob><airplane></airplane></oob></template>
+</category>
+
+<category>
+<pattern>SWITCHING OVER TO CAPTAIN KIRK</pattern>
+
+<template><srai>SWITCH ME OVER TO CAPTAIN KIRK</srai></template>
+</category>
+
+
+
+
 <category>
 <pattern>SWITCH ME OVER TO CAPTAIN KIRK</pattern>
 <template>Goodbye from <bot name="name"/>...

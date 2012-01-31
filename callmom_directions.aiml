@@ -13,6 +13,21 @@
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 
+
+<category>
+<pattern>WHERE IS THE AIRPORT</pattern>
+
+<template><oob><map>airport</map></oob>
+It is where the planes land.<think><set name="it"><set name="topic">Airport</set></set></think> </template>
+</category>
+
+ 
+
+<category>
+<pattern>GET DIRECTIONS *</pattern>
+
+<template><srai>DIRECTIONS <star/></srai></template>
+</category>
 <category>
 <pattern>WHERE IS * FROM HERE</pattern>
 <template>
