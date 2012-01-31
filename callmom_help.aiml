@@ -130,6 +130,14 @@ Say "Text the person saying your message."  For example, "Text John Doe saying m
 </template>
 </category>
 
+
+<category>
+<pattern>HOW CAN I SEND A TEXT</pattern>
+<template>
+<srai>HOW DO I TEXT</srai>
+</template>
+</category>
+
 <category>
 <pattern>HOW DO I MAKE A TEXT</pattern>
 <template>

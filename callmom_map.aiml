@@ -19,8 +19,27 @@
 </template>
 </category>
 
+
+<category>
+<pattern>I NEED * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
 <category>
 <pattern>WHERE IS THE NEAREST *</pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>NEAREST *</pattern>
 <template><srai>GOOGLEMAP <star/></srai>
 </template>
 </category>
@@ -133,6 +152,7 @@
 <template>
 <random>
 <li>I'm looking on the map.</li>
+<li>I've found several near you.</li>
 <li>Let me try to find it for you.</li>
 <li>I think I can find it.</li>
 <li>Is this what you are looking for?</li>

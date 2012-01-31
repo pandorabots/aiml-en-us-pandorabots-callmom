@@ -36,7 +36,21 @@
 </category>
 
 <category>
-<pattern>_ S * NUMBER IS *</pattern>
+<pattern>_ S HOME NUMBER IS *</pattern>
+<template>
+Got <star/>'s <star index="2"/> number.
+</template>
+</category>
+
+<category>
+<pattern>_ S WORK NUMBER IS *</pattern>
+<template>
+Got <star/>'s <star index="2"/> number.
+</template>
+</category>
+
+<category>
+<pattern>_ S CUSTOM NUMBER IS *</pattern>
 <template>
 Got <star/>'s <star index="2"/> number.
 </template>
