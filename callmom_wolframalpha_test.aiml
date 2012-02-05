@@ -31,13 +31,59 @@ Ok I will ask Wolfram Alpha.
 <pattern>FIND OUT *</pattern>
 <template>
 
-<oob><url>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q</url></oob>
+<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q&amp;format=plaintext</geturl></oob>
+<random>
+<li>I am asking another robot...</li>
+<li>I think I can find the answer.</li>
+<li>Here is the information I have:</li>
+<li>Searching...Searching...Please Stand By.</li>
+<li>Retrieving answer...</li>
+<li>Just a moment.</li>
+<li>Is this the answer you are looking for?</li>
+</random>
 
-Ok I will ask Wolfram Alpha.
 
 </template>
 </category>
 
+<category>
+<pattern>OOB URLDATA *</pattern>
+<template><star/></template>
+</category>
 
+<category>
+<pattern>OOB URLDATA * LPAREN * RPAREN *</pattern>
+<template><star/> (<star index="2"/>) <srai>OOB URLDATA <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA * LPAREN * VBAR * RPAREN *</pattern>
+<template><star/> (<star index="2"/>. <star index="3"/>) <srai>OOB URLDATA <star index="4"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA * LPAREN * VBAR * VBAR * RPAREN *</pattern>
+<template><star/> (<star index="2"/>. <star index="3"/>.  <star index="4"/>) <srai>OOB URLDATA <star index="5"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA * LPAREN * RPAREN</pattern>
+<template><star/> (<star index="2"/>) </template>
+</category>
+
+<category>
+<pattern>OOB URLDATA LPAREN * RPAREN *</pattern>
+<template>(<star/>)  <srai>OOB URLDATA <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA LPAREN * RPAREN</pattern>
+<template>(<star/>) </template>
+</category>
+
+<category>
+<pattern>OOB URLDATA * VBAR *</pattern>
+<template><star/>.  <srai>OOB URLDATA <star index="2"/></srai> </template>
+</category>
 
 </aiml>
