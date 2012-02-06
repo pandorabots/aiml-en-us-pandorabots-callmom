@@ -30,7 +30,7 @@ Ok I will ask Wolfram Alpha.
 <category>
 <pattern>FIND OUT *</pattern>
 <template>
-
+<think><set name="findout"><star/></set></think>
 <oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q&amp;format=plaintext</geturl></oob>
 <random>
 <li>I am asking another robot...</li>
@@ -44,6 +44,21 @@ Ok I will ask Wolfram Alpha.
 
 
 </template>
+</category>
+
+<category>
+<pattern>OOB URLDATA NO RESULT</pattern>
+<template><srai>XFIND <get name="findout"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA LT *</pattern>
+<template><srai>XFIND <get name="findout"/></srai></template>
+</category>
+
+<category>
+<pattern>OOB URLDATA</pattern>
+<template>No data.</template>
 </category>
 
 <category>
