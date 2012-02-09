@@ -5,25 +5,23 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/21/2012 -->
+<!-- Last modified 2/9/2012 -->
 <!-- -->
 <!-- Authors: -->
-<!-- adeena@mignogna.org -->
+<!-- Adeena Mignogna adeena@mignogna.org -->
+<!-- Richard Wallace drwallace@alicebot.org -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 <!-- NOTES:   -->
-<!--    The app id used here is one Adeena created for a CallMom test only -->
+<!--    The Wolfram app id used here is one Adeena created for a CallMom test only -->
 
 
 
 <category>
 <pattern>FIND OUT TEST</pattern>
 <template>
-
 <oob><url>http://api.wolframalpha.com/v2/query?input=pi&amp;appid=LJE8UA-4HVQEAPT4Q</url></oob>
-
 Ok I will ask Wolfram Alpha.
-
 </template>
 </category>
 
@@ -31,7 +29,7 @@ Ok I will ask Wolfram Alpha.
 <pattern>FIND OUT *</pattern>
 <template>
 <think><set name="findout"><star/></set></think>
-<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q&amp;format=plaintext</geturl></oob>
+<oob><geturl>http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryClass=place&amp;QueryString=<star/></geturl></oob>
 <random>
 <li>I am asking another robot...</li>
 <li>I think I can find the answer.</li>
@@ -41,8 +39,6 @@ Ok I will ask Wolfram Alpha.
 <li>Just a moment.</li>
 <li>Is this the answer you are looking for?</li>
 </random>
-
-
 </template>
 </category>
 
