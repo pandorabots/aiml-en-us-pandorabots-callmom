@@ -38,7 +38,7 @@
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
 <think>
-<set name="typeofcontact"><star index="2"/></set>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
 </think>
 </template>
@@ -50,7 +50,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 Got <star/>'s <star index="2"/> number.
 <think>
-<set name="typeofcontact"><star index="2"/></set>
+<set name="typeofcontact"><star index="2"/><star index="2"/></set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
 </think>
 </template>
@@ -71,7 +71,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <pattern>_ _ S MOBILE NUMBER IS *</pattern>
 <template>
 <think><set name="typeofcontact">MOBILE</set></think> 
-<srai>_ _ S NUMBER IS *</srai>
+<srai><star/> <star index="2"/> S NUMBER IS <star index="3"/></srai>
 </template>
 </category>
 
@@ -79,7 +79,9 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <pattern>_ S NUMBER IS *</pattern>
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
-<think><srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
+<think>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
+<srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
 </template>
 </category>
 
@@ -91,6 +93,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 I will remember <person><star/></person>'s number <star index="3"/>.
 <think>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
 <set name="phonenumber"><star index="3"/></set>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 <set name="checkname"><srai>XPHONE <star/> NUMBER</srai></set>
@@ -143,6 +146,27 @@ Ok, I won't replace them.
 
 <category>
 <pattern>XPHONE * NUMBER</pattern>
+<template>
+UNKNOWN
+</template>
+</category>
+
+<category>
+<pattern>XPHONE * MOBILE NUMBER</pattern>
+<template>
+UNKNOWN
+</template>
+</category>
+
+<category>
+<pattern>XPHONE * HOME NUMBER</pattern>
+<template>
+UNKNOWN
+</template>
+</category>
+
+<category>
+<pattern>XPHONE * WORK NUMBER</pattern>
 <template>
 UNKNOWN
 </template>
