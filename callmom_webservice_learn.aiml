@@ -5,11 +5,11 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/9/2012 -->
+<!-- Last modified 2/14/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Adeena Mignogna adeena@mignogna.org -->
-<!-- Richard Wallace drwallace@alicebot.org -->
+<!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 <!-- NOTES:   -->
@@ -59,42 +59,58 @@ Ok I will ask Wolfram Alpha.
 
 <category>
 <pattern>OOB URLDATA *</pattern>
+<template><think><set name="result"><srai>OOB PARSEDATA <star/></srai></set></think>
+<get name="result"/>
+<think>
+<learn>
+<category>
+<pattern><eval><get name="findout"/></eval></pattern>
+<template><eval><get name="response"/></eval></template>
+</category>
+</learn>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>OOB PARSEDATA *</pattern>
 <template><star/></template>
 </category>
 
+
 <category>
-<pattern>OOB URLDATA * LPAREN * RPAREN *</pattern>
-<template><star/> (<star index="2"/>) <srai>OOB URLDATA <star index="3"/></srai></template>
+<pattern>OOB PARSEDATA * LPAREN * RPAREN *</pattern>
+<template><star/> (<star index="2"/>) <srai>OOB PARSEDATA <star index="3"/></srai></template>
 </category>
 
 <category>
-<pattern>OOB URLDATA * LPAREN * VBAR * RPAREN *</pattern>
-<template><star/> (<star index="2"/>. <star index="3"/>) <srai>OOB URLDATA <star index="4"/></srai></template>
+<pattern>OOB PARSEDATA * LPAREN * VBAR * RPAREN *</pattern>
+<template><star/> (<star index="2"/>. <star index="3"/>) <srai>OOB PARSEDATA <star index="4"/></srai></template>
 </category>
 
 <category>
-<pattern>OOB URLDATA * LPAREN * VBAR * VBAR * RPAREN *</pattern>
-<template><star/> (<star index="2"/>. <star index="3"/>.  <star index="4"/>) <srai>OOB URLDATA <star index="5"/></srai></template>
+<pattern>OOB PARSEDATA * LPAREN * VBAR * VBAR * RPAREN *</pattern>
+<template><star/> (<star index="2"/>. <star index="3"/>.  <star index="4"/>) <srai>OOB PARSEDATA <star index="5"/></srai></template>
 </category>
 
 <category>
-<pattern>OOB URLDATA * LPAREN * RPAREN</pattern>
+<pattern>OOB PARSEDATA * LPAREN * RPAREN</pattern>
 <template><star/> (<star index="2"/>) </template>
 </category>
 
 <category>
-<pattern>OOB URLDATA LPAREN * RPAREN *</pattern>
-<template>(<star/>)  <srai>OOB URLDATA <star index="2"/></srai></template>
+<pattern>OOB PARSEDATA LPAREN * RPAREN *</pattern>
+<template>(<star/>)  <srai>OOB PARSEDATA <star index="2"/></srai></template>
 </category>
 
 <category>
-<pattern>OOB URLDATA LPAREN * RPAREN</pattern>
+<pattern>OOB PARSEDATA LPAREN * RPAREN</pattern>
 <template>(<star/>) </template>
 </category>
 
 <category>
-<pattern>OOB URLDATA * VBAR *</pattern>
-<template><star/>.  <srai>OOB URLDATA <star index="2"/></srai> </template>
+<pattern>OOB PARSEDATA * VBAR *</pattern>
+<template><star/>.  <srai>OOB PARSEDATA <star index="2"/></srai> </template>
 </category>
 
 </aiml>
