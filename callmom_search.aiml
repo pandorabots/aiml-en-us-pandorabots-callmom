@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/21/2012 -->
+<!-- Last modified 2/14/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -35,6 +35,145 @@
 
 <category>
 <pattern>LOOK UP *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT ARE SOME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHO IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO IS AN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHO IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO ARE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO ARE THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS A *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHERE IS *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS AN *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHERE IS THE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE ARE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE ARE THE *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE ARE SOME *</pattern>
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+
+
+<category>
+<pattern>SEARCH FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>SEARCH THE WEB FOR *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>SEARCH *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
 
