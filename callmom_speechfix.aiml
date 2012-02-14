@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/21/2012 -->
+<!-- Last modified 2/14/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -19,7 +19,7 @@
 </category>
 
 <category>
-<pattern>WHEN IS SAY * I MEAN *</pattern>
+<pattern>WHEN I SAY * I MEAN *</pattern>
 <template><srai>XSPEECHCORRECT <star index="1"/> XSPLIT <star index="2"/></srai>
 </template>
 </category>
@@ -27,6 +27,18 @@
 <category>
 <pattern>* MEANS *</pattern>
 <template><srai>XSPEECHCORRECT <star index="1"/> XSPLIT <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>MY WIFE MEANS *</pattern>
+<template><srai>XSPEECHCORRECT MY WIFE XSPLIT <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>MY * MEANS *</pattern>
+<template><srai>XSPEECHCORRECT MY <star index="1"/> XSPLIT <star index="2"/></srai>
 </template>
 </category>
 
