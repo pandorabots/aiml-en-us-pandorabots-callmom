@@ -27,6 +27,10 @@
 </category>
 
 
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
 
 <category>
 <pattern>LOOK FOR *</pattern>
