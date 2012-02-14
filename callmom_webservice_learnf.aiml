@@ -64,8 +64,8 @@ Ok I will ask Wolfram Alpha.
 <think>
 <learnf>
 <category>
-<pattern><eval><get name="findout"/></eval></pattern>
-<template><eval><get name="response"/></eval></template>
+<pattern>XFIND <eval><get name="findout"/></eval></pattern>
+<template><eval><get name="result"/></eval></template>
 </category>
 </learnf>
 </think>

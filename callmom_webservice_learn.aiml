@@ -64,8 +64,8 @@ Ok I will ask Wolfram Alpha.
 <think>
 <learn>
 <category>
-<pattern><eval><get name="findout"/></eval></pattern>
-<template><eval><get name="response"/></eval></template>
+<pattern>XFIND <eval><get name="findout"/></eval></pattern>
+<template><eval><get name="result"/></eval></template>
 </category>
 </learn>
 </think>
@@ -76,7 +76,6 @@ Ok I will ask Wolfram Alpha.
 <pattern>OOB PARSEDATA *</pattern>
 <template><star/></template>
 </category>
-
 
 <category>
 <pattern>OOB PARSEDATA * LPAREN * RPAREN *</pattern>
