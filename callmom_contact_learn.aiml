@@ -59,7 +59,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 Got <star/>'s <star index="2"/> number.
 <think>
-<set name="typeofcontact"><star index="2"/><star index="3"/></set>
+<set name="typeofcontact"><star index="2"/></set>
 <srai>xlearnnumber <star/> XSPLIT <star index="3"/></srai>
 </think>
 </template>
@@ -152,7 +152,8 @@ Ok, I won't replace them.
 <template><eval><star index="2"/></eval></template>
 </category>
 </learn>
-</template>
+
+ </template>
 </category>
 
 
