@@ -151,7 +151,7 @@ That wasn't one of the choices. Let me remind you:<br/><srai>CALLMULTIPLE</srai>
 <condition name="phonenumber">
 <li value="UNKNOWN">Error: No phone number chosen to dial.</li>
 <li>
-Now dialling <get name="whoamicalling"/> on <get name="phonenumber"/>...
+Now dialing <get name="whoamicalling"/> on <get name="phonenumber"/>...
 <oob><dial><get name="phonenumber"/></dial></oob>
 </li>
 </condition>
