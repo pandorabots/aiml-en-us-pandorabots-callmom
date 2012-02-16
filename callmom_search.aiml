@@ -26,6 +26,20 @@
 </template>
 </category>
 
+<category>
+<pattern>FIND OUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>FIND OUT HOW *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>FIND OUT HOW TO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
 
 <category>
 <pattern>HOW DO I *</pattern>
@@ -182,53 +196,80 @@
 </category>
 
 
+<category>
+<pattern>RANDOM SEARCH PHRASE</pattern>
+<template>
+<random>
+<li><srai>RANDOM LONG SEARCH PHRASE</srai></li>
+<li><srai>RANDOM MEDIUM SEARCH PHRASE</srai></li>
+<li><srai>RANDOM SHORT SEARCH PHRASE</srai></li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>RANDOM LONG SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>That's not something I get asked all the time.</li>
+<li>Give me a moment to formulate the reply.</li>
+<li>Searching...Searching...Please stand by.</li>
+<li>Searching...Searching...Please stand by.</li>
+<li>Is this the answer you are looking for?</li>
+<li>I have never been asked that before.</li>
+<li>I will try to find out from the web.</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>RANDOM MEDIUM SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>Here is the information I have:</li>
+<li>I think I can find the answer.</li>
+<li>I'm asking another webservice.</li> 
+<li>I am asking another robot...</li>
+<li>I will try to find out.</li>
+<li>That's a good question.</li>
+<li>I am searching for it.</li>
+<li>Let me think about it.</li>
+<li>Interesting question.</li>
+</random>
+</template>
+</category>
+
+
+<category>
+<pattern>RANDOM SHORT SEARCH PHRASE</pattern>
+<template>
+<random>
+<li>Retrieving answer...</li>
+<li>Just a moment.</li>
+<li>Searching.</li>
+<li>Hold on.</li>
+<li>Wait.</li>
+</random>
+</template>
+</category>
+
 
 <category><pattern>XFIND *</pattern>
 <template>
- <random>
- <li>Let me think about it.</li>
- <li>Have you tried a web search?</li>
- <li>I haven't heard of <person/> .</li>
- <li>There might be more than one.</li>
- <li>I need time to formulate the reply.</li>
- <li>I would look into the web for that knowledge.</li>
- <li>Does it have anything to do with <get name="topic"/> ?</li>
- <li>Interesting question.</li>
- <li>That's a good question.</li>
- <li>That's not something I get asked all the time.</li>
- <li>I don't know anything about <set name="it"><person/></set> .</li>
- <li>Are you testing me?</li>
- <li>I will search for it.</li>
- <li>I will try to find out.</li>
- <li>I can ask someone about it.</li>
- <li>I would do a search for it.</li>
- <li>Would you like to know more?</li>
- <li>Have you tried searching the web?</li>
- <li>Do a web search for it.</li>
- <li>Try searching the web.</li>
- <li>I have never been asked that before.</li>
- <li>I think you already know the answer.</li>
- <li>Searching...Searching...Please stand by.</li>
- <li>Have you tried a web search?</li>
- <li>I haven't heard of <person/> .</li>
- <li>I would look into the web for that knowledge.</li>
- <li>Does it have anything to do with <get name="topic"/>?</li>
- <li>Interesting question.</li>
- <li>That's a good question.</li>
- <li>Would you like to know more?</li>
- <li>What is your purpose in asking?</li>
- <li>I have never been asked that before.</li>
-</random> 
 <think>
-<set name="it"><srai>PUSH <set name="topic"><person/></set></srai></set>
+<set name="it"><set name="topic"><person/></set></set>
 </think>
-<srai>XSEARCH <star/></srai>
+<srai>RANDOM LONG SEARCH PHRASE</srai>
+<!-- try dbpedia first: -->
+<srai>XDBPEDIA <star/></srai>
 </template>
 </category>
 
 <category>
 <pattern>XSEARCH *</pattern>
-<template><oob><search><star/></search></oob></template>
+<template><oob><search><star/></search></oob>
+</template>
 </category>
 
 

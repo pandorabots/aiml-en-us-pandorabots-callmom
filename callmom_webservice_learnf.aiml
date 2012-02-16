@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/14/2012 -->
+<!-- Last modified 2/16/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Adeena Mignogna adeena@mignogna.org -->
@@ -14,7 +14,6 @@
 <!-- For more information contact info@pandorabots.com -->
 <!-- NOTES:   -->
 <!--    The Wolfram app id used here is one Adeena created for a CallMom test only -->
-
 
 
 <category>
@@ -26,25 +25,46 @@ Ok I will ask Wolfram Alpha.
 </category>
 
 <category>
-<pattern>FIND OUT *</pattern>
+<pattern>XWOLFRAMALPHA *</pattern>
 <template>
-<think><set name="findout"><star/></set></think>
-<oob><geturl>http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryClass=place&amp;QueryString=<star/></geturl></oob>
-<random>
-<li>I am asking another robot...</li>
-<li>I think I can find the answer.</li>
-<li>Here is the information I have:</li>
-<li>Searching...Searching...Please Stand By.</li>
-<li>Retrieving answer...</li>
-<li>Just a moment.</li>
-<li>Is this the answer you are looking for?</li>
-</random>
+<think>
+<set name="findout"><star/></set>
+<set name="webservice">wolframalpha</set>
+</think>
+<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q</geturl></oob>
+<srai>RANDOM MEDIUM SEARCH PHRASE</srai>
 </template>
 </category>
 
+
+<category>
+<pattern>XDBPEDIA *</pattern>
+<template>
+<think>
+<set name="findout"><star/></set>
+<set name="webservice">dbpedia</set>
+</think>
+<oob><geturl>http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryString=<star/></geturl></oob>
+<srai>RANDOM SHORT SEARCH PHRASE</srai>
+</template>
+</category>
+
+
+<!-- XFIND tries dbpedia first.
+If dbpedia return no result,
+the bot tries wolframalpha.
+If wolframalpha returns no result,
+the bot defualts to a web search.
+-->
+
 <category>
 <pattern>OOB URLDATA NO RESULT</pattern>
-<template><srai>XFIND <get name="findout"/></srai></template>
+<template>
+<condition name="webservice">
+<li value="dbpedia"><srai>XWOLFRAMALPHA <get name="findout"/></srai></li>
+<li><srai>XSEARCH <get name="findout"/></srai></li>
+</condition>
+</template>
 </category>
 
 <category>
