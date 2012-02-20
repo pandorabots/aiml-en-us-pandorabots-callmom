@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/14/2012 -->
+<!-- Last modified 2/19/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -15,15 +15,92 @@
 
 
 <category>
-<pattern>WIKIPEDIA</pattern>
-<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
+<pattern>WHAT COLOR IS *</pattern>
+<template><srai>XFIND COLOR <star/></srai></template>
+</category>
+
+<category>
+<pattern>DEFINE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MANY *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW TO *</pattern>
+<template><srai>XFIND <star/></srai></template>
 </category>
 
 
 <category>
-<pattern>WHERE IS THE NEAREST *</pattern>
-<template><srai>GOOGLEMAP <star/></srai>
-</template>
+<pattern>CAN YOU HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW DO I *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WIKIPEDIA</pattern>
+<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
+</category>
+
+<category>
+<pattern>CAN YOU HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WILL YOU SEARCH *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HELP ME *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DOES *</pattern>
+<template><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
@@ -138,43 +215,6 @@
 <category>
 <pattern>WHAT IS *</pattern>
 <template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE IS A *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>WHERE IS *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE IS AN *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>WHERE IS THE *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE ARE *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE ARE THE *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE ARE SOME *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
 </category>
 
 
