@@ -30,11 +30,11 @@ Opening messaging application.
 </template>
 </category>
 
-<category><pattern>SAY HI TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hi</srai></template></category>
+<category><pattern>SAY HI TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hi ENDTEXT</srai></template></category>
 
-<category><pattern>SAY HELLO TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hello</srai></template></category>
+<category><pattern>SAY HELLO TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hello ENDTEXT</srai></template></category>
 
-<category><pattern>SAY * TO *</pattern><template><srai>XTEXT <star index="2"/> XMESSAGE <star/></srai></template></category>
+<category><pattern>SAY * TO *</pattern><template><srai>XTEXT <star index="2"/> XMESSAGE <star/> ENDTEXT</srai></template></category>
 
 <category><pattern>TEXT * *</pattern><template><srai>XTEXT <star index="1"/> XMESSAGE <star index="2"/></srai></template></category>
 <category><pattern>TEXT * TO SAY *</pattern><template><srai>XTEXT <star index="1"/> XMESSAGE <star index="2"/></srai></template></category>
