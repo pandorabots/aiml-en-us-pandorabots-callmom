@@ -5,13 +5,36 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/14/2012 -->
+<!-- Last modified 2/19/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
+
+
+<category>
+<pattern>SEND TEXT MESSAGE</pattern>
+<template>
+<oob><sms><recipient></recipient> <message></message></sms></oob>
+Opening messaging application.
+</template>
+</category>
+
+<category>
+<pattern>SEND TEXT</pattern>
+<template>
+<oob><sms><recipient></recipient> <message></message></sms></oob>
+Opening messaging application.
+</template>
+</category>
+
+<category><pattern>SAY HI TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hi</srai></template></category>
+
+<category><pattern>SAY HELLO TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hello</srai></template></category>
+
+<category><pattern>SAY * TO *</pattern><template><srai>XTEXT <star index="2"/> XMESSAGE <star/></srai></template></category>
 
 <category><pattern>TEXT * *</pattern><template><srai>XTEXT <star index="1"/> XMESSAGE <star index="2"/></srai></template></category>
 <category><pattern>TEXT * TO SAY *</pattern><template><srai>XTEXT <star index="1"/> XMESSAGE <star index="2"/></srai></template></category>
@@ -39,6 +62,7 @@
 <category><pattern>SEND A * TO *</pattern><template><srai>TEXT <star index="2"/></srai></template></category>
 <category><pattern>SEND A * TO * ON * MOBILE *</pattern><template><srai>TEXT <star index="2"/> SAYING <star index="4"/></srai></template></category>
 <category><pattern>SEND A TEXT TO *</pattern><template><srai>TEXT <star index="1"/></srai></template></category>
+<category><pattern>SEND TEXT TO *</pattern><template><srai>TEXT <star index="1"/></srai></template></category>
 <category><pattern>SEND A TEXT MESSAGE TO *</pattern><template><srai>TEXT <star index="1"/></srai></template></category>
 <category><pattern>SEND A MESSAGE TO *</pattern><template><srai>TEXT <star index="1"/></srai></template></category>
 <category><pattern>SEND AN SMS MESSAGE TO *</pattern><template><srai>TEXT <star index="1"/></srai></template></category>
