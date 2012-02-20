@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/14/2012 -->
+<!-- Last modified 2/19/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Richard Wallace rich@pandorabots.com -->
@@ -27,6 +27,12 @@
 “Play some Coltrane.”
 “I’m locked out.” 
 -->
+<category>
+<pattern>ARE YOU BETTER THAN SIRI</pattern>
+<template>
+Unlike other Android and Apple virtual assistants, CallMom can learn and adapt to your style.  Anyone can change and modify my responses.
+</template>
+</category>
 
 <category>
 <pattern>WE HAVE A FLAT TIRE</pattern>
