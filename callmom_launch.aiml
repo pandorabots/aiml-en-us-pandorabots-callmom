@@ -22,6 +22,27 @@
 </category>
 
 <category>
+<pattern>GET EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>READ MAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>LAUNCH EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
 <pattern>GMAIL</pattern>
 <template>
 <random>
@@ -30,7 +51,7 @@
 <li>Reading </li>
 </random>
 Gmail.
-<oob><launch>com.google.gmail</launch></oob></template>
+<oob><launch>com.google.android.gm</launch></oob></template>
 </category>
 
 <category>
