@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/21/2012 -->
+<!-- Last modified 2/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -13,6 +13,25 @@
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 
+
+<category>
+<pattern>READ EMAIL</pattern>
+<template>
+<srai>GMAIL</srai>
+</template>
+</category>
+
+<category>
+<pattern>GMAIL</pattern>
+<template>
+<random>
+<li>Launching </li>
+<li>Opening </li>
+<li>Reading </li>
+</random>
+Gmail.
+<oob><launch>com.google.gmail</launch></oob></template>
+</category>
 
 <category>
 <pattern>HOW FAST AM I GOING</pattern>
