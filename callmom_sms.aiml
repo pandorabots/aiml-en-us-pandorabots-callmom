@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/19/2012 -->
+<!-- Last modified 2/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -15,20 +15,55 @@
 
 
 <category>
-<pattern>SEND TEXT MESSAGE</pattern>
-<template>
-<oob><sms><recipient></recipient> <message></message></sms></oob>
-Opening messaging application.
-</template>
+<pattern>can you send a text for me</pattern>
+<template>Sure.  Who would you like to text?</template>
 </category>
 
 <category>
 <pattern>SEND TEXT</pattern>
-<template>
-<oob><sms><recipient></recipient> <message></message></sms></oob>
-Opening messaging application.
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND TEXT MESSAGE</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>can you send a text</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>send a text</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SMS</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+
+<category>
+<pattern>will you send a text</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>*</pattern><that>WHO WOULD YOU LIKE TO TEXT</that>
+<template><think><set name="recipient"><person/></set></think>
+Ok.  What would you like to say to <get name="recipient"/>?
 </template>
 </category>
+
+<category>
+<pattern>_</pattern><that>WHAT WOULD YOU LIKE TO SAY TO *</that>
+<template>
+<srai>XTEXT <get name="recipient"/> XMESSAGE <star/></srai>
+</template></category>
+
+
 
 <category><pattern>SAY HI TO *</pattern><template><srai>XTEXT <star/> XMESSAGE hi ENDTEXT</srai></template></category>
 
