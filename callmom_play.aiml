@@ -16,7 +16,7 @@
 
 <category>
 <pattern>JUKEBOX</pattern>
-<template>Sorry, I can't play music at the music.</template>
+<template>Sorry, I can't play music at the moment.</template>
 </category>
 
 <category><pattern>PLAY *</pattern><template>Not playing <star/>.</template></category>
