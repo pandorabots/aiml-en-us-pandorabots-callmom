@@ -59,6 +59,12 @@ I'll remember your email <star/>.
 </template>
 </category>
 
+<category>
+<pattern>TRANSCRIPTS</pattern>
+<template>
+<srai>TRANSCRIPT</srai>
+</template>
+</category>
 
 <category>
 <pattern>GET A TRANSCRIPT</pattern>
