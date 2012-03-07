@@ -119,6 +119,11 @@ the bot defualts to a web search.
 </category>
 
 <category>
+<pattern>OOB PARSEDATA * LPAREN * RPAREN LPAREN *</pattern>
+<template><star/> (<star index="2"/>) <srai>OOB PARSEDATA LPAREN <star index="2"/></srai></template>
+</category>
+
+<category>
 <pattern>OOB PARSEDATA LPAREN * RPAREN *</pattern>
 <template>(<star/>)  <srai>OOB PARSEDATA <star index="2"/></srai></template>
 </category>
