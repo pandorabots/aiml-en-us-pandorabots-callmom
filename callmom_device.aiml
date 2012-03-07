@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/21/2012 -->
+<!-- Last modified 3/6/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Richard Wallace rich@pandorabots.com -->
@@ -67,7 +67,72 @@ Checking app version...
 </template>
 </category>
 
+<category>
+<pattern>HOW MUCH _ BATTERY *</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
 
+<category>
+<pattern>HOW MUCH _ BATTERY</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>BATTERY</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW IS _ BATTERY *</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW IS _ BATTERY</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS _ BATTERY *</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS _ BATTERY</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU FEEL</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+
+<category>
+<pattern>HOW MUCH ENERGY *</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH POWER *</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW IS IT GOING</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+
+<category>
+<pattern>POWER LEVEL</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
+
+<category>
+<pattern>HOW ARE YOU</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
+</category>
 
 <category>
 <pattern>BATTERY LEVEL</pattern>
