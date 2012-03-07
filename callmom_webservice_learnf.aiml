@@ -150,6 +150,11 @@ the bot defualts to a web search.
 </category>
 
 <category>
+<pattern>OOB PARSEDATA LPAREN *</pattern>
+<template>(<srai>OOB PARSEDATA <star/></srai> </template>
+</category>
+
+<category>
 <pattern>OOB PARSEDATA * VBAR</pattern>
 <template><star/>.</template>
 </category>

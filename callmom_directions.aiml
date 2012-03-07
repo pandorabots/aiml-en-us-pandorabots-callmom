@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License -->
 <!-- as published by the Free Software Foundation. -->
-<!-- Last modified 2/19/2012 -->
+<!-- Last modified 3/7/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -16,7 +16,6 @@
 
 <category>
 <pattern>WHERE IS THE AIRPORT</pattern>
-
 <template><oob><map>airport</map></oob>
 It is where the planes land.<think><set name="it"><set name="topic">Airport</set></set></think> </template>
 </category>
@@ -68,16 +67,16 @@ It is where the planes land.<think><set name="it"><set name="topic">Airport</set
 </category>
 
 <category>
-<pattern>HOW DO I GET TO *</pattern>
+<pattern>HOW DO I GET TO * FROM *</pattern>
 <template>
-<srai>directions to <star/></srai>
+<srai>directions from <star index="2"/> to <star/></srai>
 </template>
 </category>
 
 <category>
-<pattern>_ TO * FROM *</pattern>
+<pattern>HOW DO I GET TO *</pattern>
 <template>
-<srai><star/> from <star index="3"/> to <star index="2"/></srai>
+<srai>directions to <star/></srai>
 </template>
 </category>
 
@@ -131,13 +130,6 @@ Ok so you live in <set name="location"><star/></set>.<br/><srai>directions to <g
 <pattern>HOW DO I GET FROM *</pattern>
 <template>
 <srai>dirctions from <star/></srai>
-</template>
-</category>
-
-<category>
-<pattern>HOW DO I GET FROM * TO *</pattern>
-<template>
-<srai>directions from <star/> to <star index="2"/></srai>
 </template>
 </category>
 
