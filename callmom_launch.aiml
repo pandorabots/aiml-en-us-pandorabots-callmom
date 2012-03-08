@@ -5,13 +5,25 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/21/2012 -->
+<!-- Last modified 3/8/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
+
+<category>
+<pattern>TAKE A PICTURE</pattern>
+<template><srai>CAMERA</srai></template>
+</category>
+
+<category>
+<pattern>CAMERA</pattern>
+<template><oob><launch>com.android.camera</launch></oob>
+Activating device camera.
+</template>
+</category>
 
 
 <category>
