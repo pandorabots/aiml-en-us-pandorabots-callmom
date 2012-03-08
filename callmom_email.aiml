@@ -114,10 +114,21 @@ Sending "<star/>" to the developers.
 <category>
 <pattern>TEST EMAIL</pattern>
 <template>Sending an email.
-<oob><email><to>drwallace@gmail.com</to><cc>drwallace@gmail.com</cc><subject>test</subject><body>This is a test of CallMom</body></email></oob>
+<oob><email><to>info@pandorabots.com</to><cc>info@pandorabots.com.com</cc><subject>test</subject><body>This is a test of CallMom</body></email></oob>
 </template>
 </category>
 
+<category>
+<pattern>SEND EMAIL</pattern>
+<template>Opening a blank email.
+<oob><email><from></from><body></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>SEND MAIL</pattern>
+<template><srai>SEND EMAIL</srai></template>
+</category>
 
 <category>
 <pattern>CLEAR DIALOG HISTORY</pattern>
