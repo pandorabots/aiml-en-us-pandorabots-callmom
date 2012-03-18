@@ -42,17 +42,6 @@
 </template>
 </category>
 
-<category>
-<pattern>_ S NUMBER IS *</pattern>
-<template>
-I will remember <person><star/></person>'s number <star index="2"/>.
-<think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
-<srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
-</think>
-</template>
-</category>
-
 
 <category>
 <pattern>_ S * NUMBER IS *</pattern>
@@ -93,7 +82,7 @@ I'm remembering <person><star/> <star index="2"/></person> as
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
 <think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
+<set name="typeofcontact">MOBILE</set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
 </template>
 </category>
@@ -106,7 +95,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 I will remember <person><star/></person>'s number <star index="3"/>.
 <think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
+<set name="typeofcontact">MOBILE</set>
 <set name="phonenumber"><star index="3"/></set>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 <set name="checkname"><srai>XPHONE <star/> NUMBER</srai></set>
