@@ -298,7 +298,7 @@
 <category><pattern>XFIND *</pattern>
 <template>
 <think>
-<set name="it"><set name="topic"><person/></set></set>
+<set name="it"><set name="findout"><set name="topic"><person/></set></set></set>
 </think>
 <srai>RANDOM LONG SEARCH PHRASE</srai>
 <!-- try dbpedia first: -->
