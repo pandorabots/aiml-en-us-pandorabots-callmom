@@ -25,6 +25,11 @@ Ok I will ask Wolfram Alpha.
 </category>
 
 <category>
+<pattern>TRANSLATE *</pattern>
+<template><srai>XWOLFRAMALPHA translate <star/></srai></template>
+</category>
+
+<category>
 <pattern>XWOLFRAMALPHA *</pattern>
 <template>
 <think>
@@ -80,6 +85,7 @@ the bot defualts to a web search.
 <category>
 <pattern>OOB URLDATA *</pattern>
 <template><think><set name="result"><srai>OOB PARSEDATA <star/></srai></set></think>
+<get name="findout"/>? 
 <get name="result"/>
 <think>
 <learnf>
