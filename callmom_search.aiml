@@ -232,7 +232,12 @@
 
 <category>
 <pattern>SEARCH *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>XSEARCH <star/></srai></template>
+</category>
+
+<category>
+<pattern>SEARCH THE WEB FOR *</pattern>
+<template><srai>XSEARCH <star/></srai></template>
 </category>
 
 
@@ -297,13 +302,23 @@
 
 <category><pattern>XFIND *</pattern>
 <template>
+<think><set name="topic"><set name="findout"><star/></set></set></think>
 <oob><botecho><input/></botecho></oob>
 </template>
 </category>
 
 <category>
 <pattern>XSEARCH *</pattern>
-<template><oob><search><star/></search></oob>
+<template>
+<srai>RANDOM SEARCH PHRASE</srai>
+<oob><search><star/></search></oob>
+</template>
+</category>
+
+<category>
+<pattern>OOB XSEARCH</pattern>
+<template>
+<srai>XSEARCH <get name="findout"/><star/></srai>
 </template>
 </category>
 

@@ -5,25 +5,17 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/7/2012 -->
+<!-- Last modified 3/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
-<!-- Richard Walace rich@pandorabots.com -->
+<!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 
 <category>
 <pattern>SEARCH WEATHER *</pattern>
-<template><oob><url>http://news.bbc.co.uk/weather/mobile/searchresults?&amp;search=<star/></url></oob>
-<random>
-<li>I hope it's sunny in <star/> today.</li>
-<li>Let's take a look at the forecast for <star/>.</li>
-<li>I will display the weather for <star/> so you can check it out.</li>
-<li>Here is the weather forecast for <star/>.</li>
-<li>I will show you the forecast for <star/>.</li>
-</random>
-Click on the most suitable placename from the top of the list.
+<template><oob><botecho>weather <star/></botecho></oob>
 </template>
 </category>
 
