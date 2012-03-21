@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/7/2012 -->
+<!-- Last modified 3/20/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Adeena Mignogna adeena@mignogna.org -->
@@ -17,11 +17,21 @@
 
 
 <category>
+<pattern>DO YOU HAVE ANY NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
 <pattern>FIND OUT TEST</pattern>
 <template>
 <oob><url>http://api.wolframalpha.com/v2/query?input=pi&amp;appid=LJE8UA-4HVQEAPT4Q</url></oob>
 Ok I will ask Wolfram Alpha.
 </template>
+</category>
+
+<category>
+<pattern>TRANSLATE *</pattern>
+<template><srai>XWOLFRAMALPHA translate <star/></srai></template>
 </category>
 
 <category>
@@ -81,14 +91,6 @@ the bot defualts to a web search.
 <pattern>OOB URLDATA *</pattern>
 <template><think><set name="result"><srai>OOB PARSEDATA <star/></srai></set></think>
 <get name="result"/>
-<think>
-<learnf>
-<category>
-<pattern>XFIND <eval><get name="findout"/></eval></pattern>
-<template><eval><get name="result"/></eval></template>
-</category>
-</learnf>
-</think>
 </template>
 </category>
 
