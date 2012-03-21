@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/19/2012 -->
+<!-- Last modified 3/20/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -297,12 +297,7 @@
 
 <category><pattern>XFIND *</pattern>
 <template>
-<think>
-<set name="it"><set name="findout"><set name="topic"><person/></set></set></set>
-</think>
-<srai>RANDOM LONG SEARCH PHRASE</srai>
-<!-- try dbpedia first: -->
-<srai>XDBPEDIA <star/></srai>
+<oob><botecho><input/></botecho></oob>
 </template>
 </category>
 
