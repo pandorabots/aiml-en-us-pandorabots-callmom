@@ -22,6 +22,21 @@
 </category>
 
 <category>
+<pattern>DO YOU HAVE NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE NEWS *</pattern>
+<template><oob><botecho>news <star/></botecho></oob></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE * NEWS *</pattern>
+<template><oob><botecho>news <star index="2"/></botecho></oob></template>
+</category>
+
+<category>
 <pattern>FIND OUT TEST</pattern>
 <template>
 <oob><url>http://api.wolframalpha.com/v2/query?input=pi&amp;appid=LJE8UA-4HVQEAPT4Q</url></oob>
@@ -30,8 +45,24 @@ Ok I will ask Wolfram Alpha.
 </category>
 
 <category>
+<pattern>SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU SAY * IN *</pattern>
+<template><srai>TRANSLATE <star/> TO <star index="2"/></srai></template>
+</category>
+
+
+<category>
 <pattern>TRANSLATE *</pattern>
-<template><srai>XWOLFRAMALPHA translate <star/></srai></template>
+<template><oob><botecho>translate <star/></botecho></oob></template>
 </category>
 
 <category>
@@ -41,7 +72,7 @@ Ok I will ask Wolfram Alpha.
 <set name="findout"><star/></set>
 <set name="webservice">wolframalpha</set>
 </think>
-<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=LJE8UA-4HVQEAPT4Q</geturl></oob>
+<oob><geturl>http://api.wolframalpha.com/v2/query?input=<star/>&amp;appid=YourAppIdGoesHere</geturl></oob>
 <srai>RANDOM MEDIUM SEARCH PHRASE</srai>
 </template>
 </category>
@@ -60,110 +91,9 @@ Ok I will ask Wolfram Alpha.
 </category>
 
 
-<!-- XFIND tries dbpedia first.
-If dbpedia return no result,
-the bot tries wolframalpha.
-If wolframalpha returns no result,
-the bot defualts to a web search.
--->
-
 <category>
-<pattern>OOB URLDATA NO RESULT</pattern>
-<template>
-<condition name="webservice">
-<li value="dbpedia"><srai>XWOLFRAMALPHA <get name="findout"/></srai></li>
-<li><srai>XSEARCH <get name="findout"/></srai></li>
-</condition>
-</template>
-</category>
-
-<category>
-<pattern>OOB URLDATA LT *</pattern>
-<template><srai>XFIND <get name="findout"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB URLDATA</pattern>
-<template>No data.</template>
-</category>
-
-<category>
-<pattern>OOB URLDATA *</pattern>
-<template><think><set name="result"><srai>OOB PARSEDATA <star/></srai></set></think>
-<get name="result"/>
-</template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA *</pattern>
-<template><star/></template>
-</category>
-
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * RPAREN *</pattern>
-<template><star/> (<star index="2"/>) <srai>OOB PARSEDATA <star index="3"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * </pattern>
-<template><star/> (<srai>OOB PARSEDATA <star index="3"/></srai></template>
-</category>
-
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * VBAR * RPAREN *</pattern>
-<template><star/> (<star index="2"/>. <star index="3"/>) <srai>OOB PARSEDATA <star index="4"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * VBAR * VBAR * RPAREN *</pattern>
-<template><star/> (<star index="2"/>. <star index="3"/>.  <star index="4"/>) <srai>OOB PARSEDATA <star index="5"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * RPAREN</pattern>
-<template><star/> (<star index="2"/>) </template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * LPAREN * RPAREN LPAREN *</pattern>
-<template><star/> (<star index="2"/>) <srai>OOB PARSEDATA LPAREN <star index="2"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA LPAREN * RPAREN *</pattern>
-<template>(<star/>)  <srai>OOB PARSEDATA <star index="2"/></srai></template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA LPAREN * RPAREN</pattern>
-<template>(<star/>) </template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * VBAR *</pattern>
-<template><star/>.  <srai>OOB PARSEDATA <star index="2"/></srai> </template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA VBAR *</pattern>
-<template><srai>OOB PARSEDATA <star/></srai> </template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA LPAREN *</pattern>
-<template>(<srai>OOB PARSEDATA <star/></srai> </template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * VBAR</pattern>
-<template><star/>.</template>
-</category>
-
-<category>
-<pattern>OOB PARSEDATA * RPAREN</pattern>
-<template><star/>.</template>
+<pattern>OOB *</pattern>
+<template>Unrecognized OOB command: <star/>.</template>
 </category>
 
 </aiml>
