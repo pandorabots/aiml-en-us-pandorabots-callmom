@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/20/2012 -->
+<!-- Last modified 3/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -14,13 +14,69 @@
 <!-- For more information contact info@pandorabots.com -->
 
 
+
+<category>
+<pattern>WHAT IS NEW</pattern>
+<template><srai>XFIND LATEST HEADLINES</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS PI *</pattern>
+<template><srai>XFIND PI <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW FAR IS THE MOON</pattern>
+<template><srai>XFIND DISTANCE TO MOON</srai></template>
+</category>
+
+
+<category>
+<pattern>HOW FAR IS THE SUN</pattern>
+<template><srai>XFIND DISTANCE TO SUN</srai></template>
+</category>
+
+
 <category>
 <pattern>WHAT COLOR IS *</pattern>
 <template><srai>XFIND COLOR <star/></srai></template>
 </category>
 
 <category>
+<pattern>WHAT TIME IS IT IN *</pattern>
+<template><srai>XFIND TIME IN <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS THE TIME IN *</pattern>
+<template><srai>XFIND TIME IN <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT TIME IS *</pattern>
+<template><srai>XFIND TIME <star/></srai></template>
+</category>
+
+
+
+<category>
 <pattern>DEFINE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WAS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>IS *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>DOES *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
 
@@ -30,13 +86,59 @@
 </category>
 
 <category>
+<pattern>WHY *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
 <pattern>WHO *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHEN *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE WAS *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>HOW *</pattern>
 <template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO YOU MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO WE MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO THEY MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW CAN I MAKE *</pattern>
+<template><srai>XFIND MAKE <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW OLD *</pattern>
+<template><srai>XFIND OLD <star/></srai></template>
 </category>
 
 <category>
