@@ -42,6 +42,17 @@
 </template>
 </category>
 
+<category>
+<pattern>_ S NUMBER IS *</pattern>
+<template>
+I will remember <person><star/></person>'s number <star index="2"/>.
+<think>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
+<srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
+</think>
+</template>
+</category>
+
 
 <category>
 <pattern>_ S * NUMBER IS *</pattern>
@@ -82,7 +93,7 @@ I'm remembering <person><star/> <star index="2"/></person> as
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
 <think>
-<set name="typeofcontact">MOBILE</set>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
 </template>
 </category>
@@ -95,7 +106,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 I will remember <person><star/></person>'s number <star index="3"/>.
 <think>
-<set name="typeofcontact">MOBILE</set>
+<set name="typeofcontact">MOBILE<star index="2"/></set>
 <set name="phonenumber"><star index="3"/></set>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 <set name="checkname"><srai>XPHONE <star/> NUMBER</srai></set>
@@ -190,6 +201,38 @@ I don't have anyone in your contact list with that name. Would you like to add <
 <pattern>YES</pattern>
 <that>WOULD YOU LIKE TO ADD * AS A CONTACT</that>
 <template>
+Sure, shall I add <get name="newcontactpers"/> from your phone book or is it a brand new contact?
+</template>
+</category>
+
+<category>
+<pattern>_ PHONE</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+<srai>contact</srai>
+</template>
+</category>
+
+<category>
+<pattern>_ PHONE *</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+<srai>contact</srai>
+</template>
+</category>
+
+<category>
+<pattern>_ NEW</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+No problem, what is the phone number of <get name="newcontactpers"/>?
+</template>
+</category>
+
+<category>
+<pattern>_ NEW *</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
 No problem, what is the phone number of <get name="newcontactpers"/>?
 </template>
 </category>
@@ -215,6 +258,22 @@ The phone number for <get name="newcontactpers"/> is <set name="newphone"><star 
 <that>IS THAT NUMBER CORRECT</that>
 <template>
 No problem, what is the phone number of <get name="newcontactpers"/>?
+</template>
+</category>
+
+<category>
+<pattern>NO _</pattern>
+<that>IS THAT NUMBER CORRECT</that>
+<template>
+<srai>NO</srai>
+</template>
+</category>
+
+<category>
+<pattern>YES _</pattern>
+<that>IS THAT NUMBER CORRECT</that>
+<template>
+<srai>YES</srai>
 </template>
 </category>
 
