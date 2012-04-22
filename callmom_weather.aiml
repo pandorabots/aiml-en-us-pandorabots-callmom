@@ -55,7 +55,7 @@
 <category><pattern>CHECK THE WEATHER FORECAST *</pattern><template><srai>what is the weather <star/></srai></template></category>
 <category><pattern>CHECK WEATHER</pattern><template><srai>what is the weather like</srai></template></category>
 <category><pattern>DO I NEED * UMBRELLA</pattern><template><srai>what is the weather</srai></template></category>
-<category><pattern>DO I NEED * UMBRELLA *</pattern><template><srai>what is the weather</srai></template></category>
+<category><pattern>DO I NEED * UMBRELLA *</pattern><template><srai>what is the weather <star index="2"/></srai></template></category>
 <category><pattern>DO YOU KNOW _ WEATHER *</pattern><template><srai>what is the weather</srai></template></category>
 <category><pattern>DO YOU KNOW _ WEATHER IN *</pattern><template><srai>what is the weather in <star index="2"/></srai></template></category>
 <category><pattern>DO YOU KNOW WEATHER</pattern><template><srai>do you know the weather</srai></template></category>
