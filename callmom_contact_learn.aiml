@@ -47,9 +47,12 @@
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
 <think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
+<set name="typeofcontact">MOBILE</set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
 </think>
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -62,6 +65,9 @@ Got <star/>'s <star index="2"/> number.
 <set name="typeofcontact"><star index="2"/></set>
 <srai>xlearnnumber <star/> XSPLIT <star index="3"/></srai>
 </think>
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -73,6 +79,9 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <set name="typeofcontact">MOBILE</set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai>
 </think>
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -85,6 +94,9 @@ I'm remembering <person><star/> <star index="2"/></person> as
 <srai>xlearnnumber <star/> XSPLIT <star index="3"/></srai>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 </think> 
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -93,8 +105,11 @@ I'm remembering <person><star/> <star index="2"/></person> as
 <template>
 I will remember <person><star/></person>'s number <star index="2"/>.
 <think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
+<set name="typeofcontact">MOBILE</set>
 <srai>xlearnnumber <star/> XSPLIT <star index="2"/></srai></think>
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -106,7 +121,7 @@ I will remember <person><star/></person>'s number <star index="2"/>.
 <template>
 I will remember <person><star/></person>'s number <star index="3"/>.
 <think>
-<set name="typeofcontact">MOBILE<star index="2"/></set>
+<set name="typeofcontact">MOBILE</set>
 <set name="phonenumber"><star index="3"/></set>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 <set name="checkname"><srai>XPHONE <star/> NUMBER</srai></set>
@@ -129,6 +144,9 @@ You already have someone called "<star/>" in your contact list with the number <
 <template>
 <think><srai>xlearnnumber <star/> XSPLIT <get name="phonenumber"/></srai></think>
 Thank you. I have replaced that contact.
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -137,6 +155,9 @@ Thank you. I have replaced that contact.
 <that>WOULD YOU LIKE TO REPLACE * WITH *</that>
 <template>
 Ok, I won't replace them.
+<condition name="function">
+<li value="*"><srai><get name="function"/></srai><set name="function"></set></li>
+</condition>
 </template>
 </category>
 
@@ -146,9 +167,10 @@ Ok, I won't replace them.
  <template>
 <think><set name="contacts"><person/> - <star index="2"/><br/><get name="contacts"/></set></think>
 
+
 <learn>
 <category>
-<pattern>XPHONE <eval><star index="1"/> <get name="typeofcontact"/></eval> NUMBER</pattern>
+<pattern>XPHONE <eval><star index="1"/></eval> <eval><get name="typeofcontact"/></eval> NUMBER</pattern>
 <template><eval><star index="2"/></eval></template>
 </category>
 </learn>
@@ -206,6 +228,14 @@ Sure, shall I add <get name="newcontactpers"/> from your phone book or is it a b
 </category>
 
 <category>
+<pattern>PHONE *</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+<srai>contact</srai>
+</template>
+</category>
+
+<category>
 <pattern>_ PHONE</pattern>
 <that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
 <template>
@@ -218,6 +248,14 @@ Sure, shall I add <get name="newcontactpers"/> from your phone book or is it a b
 <that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
 <template>
 <srai>contact</srai>
+</template>
+</category>
+
+<category>
+<pattern>NEW *</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+No problem, what is the phone number of <get name="newcontactpers"/>?
 </template>
 </category>
 
@@ -282,8 +320,11 @@ No problem, what is the phone number of <get name="newcontactpers"/>?
 <that>IS THAT NUMBER CORRECT</that>
 <template>
 Thanks, I have added <get name="newcontactpers"/> to your contacts. Their number is <get name="newphone"/>.<br/>
-<think><srai>xlearnnumber <get name="newcontact"/> XSPLIT <get name="newphone"/></srai></think>
+
+<think><set name="typeofcontact">MOBILE</set></think>
+<srai>xlearnnumber <get name="newcontact"/> XSPLIT <get name="newphone"/></srai>
 <srai><get name="function"/></srai>
+<set name="function"></set>
 </template>
 </category>
 
