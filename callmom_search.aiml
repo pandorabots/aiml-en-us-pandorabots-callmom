@@ -152,6 +152,16 @@
 </category>
 
 <category>
+<pattern>HOW MUCH IS A *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MUCH IS THE *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
 <pattern>HOW MUCH *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
