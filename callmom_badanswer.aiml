@@ -20,6 +20,24 @@
 <!-- Modified by John Campbell to allow multi-sentence inputs, June 30, 2005 --> 
 <!-- Modified 4/24/2012 for CallMom -->
 
+
+<category>
+<pattern>NEW ANSWER *</pattern> 
+<template>
+<learn>
+	<category>
+	<pattern>
+		<eval><uppercase><input index="2"/></uppercase></eval>
+	</pattern>
+	<template>
+	<eval><star/></eval>
+	</template>
+	</category>
+</learn>
+If you say, "<input index="2"/>" to me again, I will respond with, "<star/>".
+</template>
+</category>
+
 <category>
 <pattern>BAD ANSWER</pattern> 
 <template>
