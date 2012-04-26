@@ -5,13 +5,20 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/29/2012 -->
+<!-- Last modified 4/25/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>* IN FRENCH</pattern>
+
+<template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
+</category>
 
 <category>
 <pattern>STARBUCKS</pattern>
