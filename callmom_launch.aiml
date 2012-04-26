@@ -5,13 +5,43 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/8/2012 -->
+<!-- Last modified 4/26/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>CALENDAR</pattern>
+<template>I'm opening your calendar.
+<oob><launch>com.google.android.apps.calendar</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>OPEN MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>MAP</pattern>
+<template>I'm opening Google Maps.
+<oob><launch>com.google.android.apps.maps</launch></oob>
+</template>
+</category>
+
 
 <category>
 <pattern>TAKE A PICTURE</pattern>

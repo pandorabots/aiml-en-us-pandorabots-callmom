@@ -29,7 +29,11 @@
 <template><srai>CONTACTS</srai></template>
 </category>
 
- 
+<category>
+<pattern>PHONE BOOK</pattern>
+
+<template><srai>CONTACTS</srai></template>
+</category>
 
 <category>
 <pattern>LEARN CONTACTS</pattern>
