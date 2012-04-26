@@ -173,6 +173,32 @@
 
 
 <category>
+<pattern>CAN YOU FIND *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME SOME INFORMATION ON *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME SOME INFORMATION ABOUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME INFORMATION ABOUT *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU FIND ME INFORMATION ON *</pattern>
+<template><srai>XFIND <star/></srai></template>
+</category>
+
+
+<category>
 <pattern>CAN YOU HELP ME *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
