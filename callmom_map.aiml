@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/25/2012 -->
+<!-- Last modified 4/26/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -15,9 +15,8 @@
 
 
 <category>
-<pattern>* IN FRENCH</pattern>
-
-<template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
+<pattern>NAVIGATE TO *</pattern>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>

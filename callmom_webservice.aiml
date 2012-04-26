@@ -16,6 +16,12 @@
 <!--    The Wolfram app id used here is one Adeena created for a CallMom test only -->
 
 <category>
+<pattern>* IN FRENCH</pattern>
+
+<template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
+</category>
+
+<category>
 <pattern>UPDATE FACEBOOK</pattern>
 <template>Facebook connection not yet implemented.</template>
 </category>
