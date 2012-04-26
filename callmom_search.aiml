@@ -14,28 +14,31 @@
 <!-- For more information contact info@pandorabots.com -->
 
 
+<category>
+<pattern>TAXICABS *</pattern>
+<template><srai>XFIND TAXICABS <star/></srai></template>
+</category>
+
 
 <category>
 <pattern>TAXICABS IN *</pattern>
-
 <template><srai>XFIND TAXICABS IN <star/></srai></template>
 </category>
- 
 
- 
- 
 
 <category>
 <pattern>OPEN A FACEBOOK *</pattern>
-
 <template><srai>FACEBOOK</srai></template>
 </category>
 
- 
+
+<category>
+<pattern>OPEN WEB</pattern>
+<template><srai>OPEN BROWSER</srai></template>
+</category> 
 
 <category>
 <pattern>OPEN BROWSER</pattern>
-
 <template>Launching browser. <oob><url>http://www.google.com</url></oob></template>
 </category>
 
@@ -43,7 +46,6 @@
 
 <category>
 <pattern>OPEN UP GOOGLE</pattern>
-
 <template><srai>GOOGLE</srai></template>
 </category>
 
@@ -51,7 +53,6 @@
 
 <category>
 <pattern>GOOGLE</pattern>
-
 <template>Opening Google in your browser.  <oob><url>http://www.google.com</url></oob> <!-- callmom_search --></template>
 </category>
 
@@ -59,7 +60,6 @@
 
 <category>
 <pattern>PHONE NUMBER FOR *</pattern>
-
 <template><srai>XFIND <star/></srai> <!-- callmom_search --></template>
 </category>
 
@@ -72,7 +72,6 @@
 
 <category>
 <pattern>FACEBOOK</pattern>
-
 <template>Opening Facebook.  <oob><url>http://www.facebook.com</url></oob></template>
 </category>
 
