@@ -32,31 +32,6 @@
 </category>
 
 
-<category>
-<pattern>OPEN WEB</pattern>
-<template><srai>OPEN BROWSER</srai></template>
-</category> 
-
-<category>
-<pattern>OPEN BROWSER</pattern>
-<template>Launching browser. <oob><url>http://www.google.com</url></oob></template>
-</category>
-
- 
-
-<category>
-<pattern>OPEN UP GOOGLE</pattern>
-<template><srai>GOOGLE</srai></template>
-</category>
-
- 
-
-<category>
-<pattern>GOOGLE</pattern>
-<template>Opening Google in your browser.  <oob><url>http://www.google.com</url></oob> <!-- callmom_search --></template>
-</category>
-
- 
 
 <category>
 <pattern>PHONE NUMBER FOR *</pattern>

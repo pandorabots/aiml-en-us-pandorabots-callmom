@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/26/2012 -->
+<!-- Last modified 4/27/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -13,26 +13,36 @@
 <!-- -->
 <!-- For more information contact callmom-info@pandorabots.com -->
 
+ 
+
+ 
+
 <category>
-<pattern>OPEN CALENDAR</pattern>
-<template><srai>CALENDAR</srai></template>
+<pattern>GOOGLE</pattern>
+<template>
+<random>
+<li>Launching </li>
+<li>Opening </li>
+<li>Staring </li>
+</random>
+Google search.
+<oob><launch>com.google.android.googlequicksearchbox</launch></oob>
+</template>
 </category>
+
+<category>
+<pattern>BROWSER</pattern>
+<template>I'm opening your browser.
+<oob><launch>com.google.browser</launch></oob>
+</template>
+</category>
+
 
 <category>
 <pattern>CALENDAR</pattern>
 <template>I'm opening your calendar.
 <oob><launch>com.google.android.apps.calendar</launch></oob>
 </template>
-</category>
-
-<category>
-<pattern>OPEN MAPS</pattern>
-<template><srai>MAP</srai></template>
-</category>
-
-<category>
-<pattern>MAPS</pattern>
-<template><srai>MAP</srai></template>
 </category>
 
 <category>
@@ -44,15 +54,72 @@
 
 
 <category>
-<pattern>TAKE A PICTURE</pattern>
-<template><srai>CAMERA</srai></template>
-</category>
-
-<category>
 <pattern>CAMERA</pattern>
 <template><oob><launch>com.android.camera</launch></oob>
 Activating device camera.
 </template>
+</category>
+
+
+<category>
+<pattern>GALLERY</pattern>
+<template><oob><launch>com.android.gallery</launch></oob>
+Opening your Gallery.
+</template>
+</category>
+
+
+<category>
+<pattern>GMAIL</pattern>
+<template>
+<random>
+<li>Launching </li>
+<li>Opening </li>
+<li>Reading </li>
+</random>
+Gmail.
+<oob><launch>com.google.android.gm</launch></oob></template>
+</category>
+
+<category>
+<pattern>MESSAGING</pattern>
+<template>Launching MMS app.
+<oob><launch>com.android.mms</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>MUSIC</pattern>
+<template>Launching Music app.
+<oob><launch>com.android.music</launch></oob>
+</template>
+</category>
+
+<category>
+<pattern>OPEN UP GOOGLE</pattern>
+<template><srai>GOOGLE</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+
+<category>
+<pattern>TAKE A PICTURE</pattern>
+<template><srai>CAMERA</srai></template>
 </category>
 
 
@@ -84,17 +151,6 @@ Activating device camera.
 </template>
 </category>
 
-<category>
-<pattern>GMAIL</pattern>
-<template>
-<random>
-<li>Launching </li>
-<li>Opening </li>
-<li>Reading </li>
-</random>
-Gmail.
-<oob><launch>com.google.android.gm</launch></oob></template>
-</category>
 
 <category>
 <pattern>HOW FAST AM I GOING</pattern>
