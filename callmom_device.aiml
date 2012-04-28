@@ -5,12 +5,12 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 3/8/2012 -->
+<!-- Last modified 4/28/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
 <!-- A few categories to set up contacts just to test the SMS function -->
 <!-- These categories should be moved to callmom_contacts.aiml -->
@@ -66,6 +66,12 @@ Checking app version...
 <pattern>OOB CALLMOM VERSION IS *</pattern>
 <template>This is version <set name="version"><star/></set>.
 </template>
+</category>
+
+
+<category>
+<pattern>CHARGING</pattern>
+<template><srai>BATTERY LEVEL</srai></template>
 </category>
 
 <category>

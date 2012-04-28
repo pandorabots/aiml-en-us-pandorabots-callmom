@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/27/2012 -->
+<!-- Last modified 4/28/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -96,6 +96,11 @@ Gmail.
 </category>
 
 <category>
+<pattern>OPEN WEB *</pattern>
+<template><srai>BROWSER</srai></template>
+</category>
+
+<category>
 <pattern>OPEN UP GOOGLE</pattern>
 <template><srai>GOOGLE</srai></template>
 </category>
@@ -105,9 +110,50 @@ Gmail.
 <template><srai>CALENDAR</srai></template>
 </category>
 
+<category>
+<pattern>SHOW CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>SHOW CALENDAR</pattern>
+<template><srai>CALENDAR</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CALCULATOR</pattern>
+<template><srai>CALCULATOR</srai></template>
+</category>
+
+<category>
+<pattern>SHOW CALCULATOR</pattern>
+<template><srai>CALCULATOR</srai></template>
+</category>
+
 
 <category>
 <pattern>OPEN MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+
+<category>
+<pattern>SHOW MAPS</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>SHOW MAP</pattern>
+<template><srai>MAP</srai></template>
+</category>
+
+<category>
+<pattern>SHOW ME * MAP</pattern>
 <template><srai>MAP</srai></template>
 </category>
 
