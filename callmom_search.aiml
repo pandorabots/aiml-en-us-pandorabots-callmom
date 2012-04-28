@@ -50,6 +50,11 @@
 <template>Opening Facebook.  <oob><url>http://www.facebook.com</url></oob></template>
 </category>
 
+<category>
+<pattern>EBAY</pattern>
+<template>Opening Ebay.  <oob><url>http://www.ebay.com</url></oob></template>
+</category>
+
  
 
 <category>
