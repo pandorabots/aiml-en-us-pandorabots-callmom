@@ -19,7 +19,7 @@
 </category>
 
 <category>
-<pattern>can you send a text for me</pattern>
+<pattern>CAN YOU SEND A TEXT FOR ME</pattern>
 <template>Sure.  Who would you like to text?</template>
 </category>
 
@@ -30,6 +30,16 @@
 
 <category>
 <pattern>SEND TEXT</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND A SMS</pattern>
+<template>Sure.  Who would you like to text?</template>
+</category>
+
+<category>
+<pattern>SEND A TEXT</pattern>
 <template>Sure.  Who would you like to text?</template>
 </category>
 

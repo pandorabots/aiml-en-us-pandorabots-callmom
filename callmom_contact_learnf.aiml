@@ -30,6 +30,24 @@
 </category>
 
 <category>
+<pattern>GOTO CONTACTS</pattern>
+
+<template><srai>CONTACTS</srai></template>
+</category>
+
+<category>
+<pattern>GOTO MY CONTACTS</pattern>
+
+<template><srai>CONTACTS</srai></template>
+</category>
+
+<category>
+<pattern>OPEN CONTACTS</pattern>
+
+<template><srai>CONTACTS</srai></template>
+</category>
+
+<category>
 <pattern>PHONE BOOK</pattern>
 
 <template><srai>CONTACTS</srai></template>
@@ -41,11 +59,9 @@
 <template><srai>CONTACTS</srai></template>
 </category>
 
- 
 
 <category>
 <pattern>LEARNING CONTACT</pattern>
-
 <template><srai>CONTACT</srai></template>
 </category>
 
@@ -53,7 +69,6 @@
 
 <category>
 <pattern>LEARNING A CONTACT</pattern>
-
 <template><srai>CONTACT</srai> <!-- callmom_contact --></template>
 </category>
 
