@@ -219,7 +219,7 @@ Xtext <star/> leading to infinite loop.
 <category>
 <pattern>SENDTEXTMESSAGE</pattern>
 <template>
-<oob><sms><recipient><get name="numbertodial"/></recipient> <message><get name="textmessage"/></message></sms></oob>
+<oob><sms><recipient><get name="numbertodial"/></recipient><message><get name="textmessage"/></message></sms></oob>
 Now sending "<get name="textmessage"/>" to <get name="textcontactpers"/>.
 </template>
 </category>
