@@ -13,6 +13,12 @@
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 
+<category>
+<pattern>HOW OLD IS THE QUEEN</pattern>
+
+<template><srai>XFIND HOW OLD IS THE QUEEN</srai> <!-- callmom_search --></template>
+</category>
+
 
 <category>
 <pattern>TAXICABS *</pattern>
@@ -39,22 +45,6 @@
 </category>
 
  
-<category>
-<pattern>OPEN MY FACEBOOK *</pattern>
-<template><srai>FACEBOOK</srai></template>
-</category>
-
-
-<category>
-<pattern>FACEBOOK</pattern>
-<template>Opening Facebook.  <oob><url>http://www.facebook.com</url></oob></template>
-</category>
-
-<category>
-<pattern>EBAY</pattern>
-<template>Opening Ebay.  <oob><url>http://www.ebay.com</url></oob></template>
-</category>
-
  
 
 <category>
@@ -265,10 +255,6 @@
 </category>
 
 
-<category>
-<pattern>WIKIPEDIA</pattern>
-<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
-</category>
 
 <category>
 <pattern>CAN YOU HELP ME *</pattern>

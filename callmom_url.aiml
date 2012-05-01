@@ -15,38 +15,76 @@
 
 
 <category>
-<pattern>OPEN WEB</pattern>
-<template><srai>BROWSER</srai></template>
+<pattern>OPEN MY FACEBOOK *</pattern>
+<template><srai>FACEBOOK</srai></template>
+</category>
+
+
+<category>
+<pattern>FACEBOOK</pattern>
+<template>Opening Facebook.  <oob><url>http://www.facebook.com</url></oob></template>
+</category>
+
+<category>
+<pattern>EBAY</pattern>
+<template>Opening Ebay.  <oob><url>http://www.ebay.com</url></oob></template>
+</category>
+
+
+<category>
+<pattern>WIKIPEDIA</pattern>
+<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
+</category>
+
+<category>
+<pattern>GOTO EBAY</pattern>
+<template><srai>EBAY</srai> <!-- callmom_webservice --></template>
 </category>
 
  
 
 <category>
-<pattern>OPEN E MAIL</pattern>
-
-<template><srai>READ EMAIL</srai></template>
+<pattern>EBAY</pattern>
+<template><oob><url>http://www.ebay.com</url></oob>  
+Launching your browser with Ebay. <!-- callmom_webservice --></template>
 </category>
 
  
 
 <category>
-<pattern>OPEN PLAY</pattern>
-<template><srai>GOOGLE PLAY</srai></template>
+<pattern>GOTO GOOGLE</pattern>
+<template><srai>GOOGLE</srai> <!-- callmom_webservice --></template>
 </category>
 
  
 
 <category>
-<pattern>OPEN ON MY *</pattern>
-<template><srai>OPEN MY <star/></srai></template>
+<pattern>GOTO MY CONTACTS *</pattern>
+<template><srai>CONTACT</srai> <!-- callmom_contact --></template>
 </category>
 
  
 
 <category>
-<pattern>OPEN BROWSER</pattern>
-<template><srai>BROWSER</srai></template>
+<pattern>HULU</pattern>
+<template><oob><url>http://www.hulu.com</url></oob> Opening Hulu. <!-- callmom_webservice --></template>
 </category>
+
+ 
+
+<category>
+<pattern>OPEN FACEBOOK</pattern>
+<template><srai>FACEBOOK</srai> <!-- callmom_webservice --></template>
+</category>
+
+
+ 
+<category>
+<pattern>WWW DOT * DOT COM</pattern>
+<template>Opening <star/>.  <oob><url>http://www.<star/>.com</url></oob></template>
+</category>
+
+ 
 
 <category>
 <pattern>GOOGLE</pattern>

@@ -16,6 +16,12 @@
 <!--    The Wolfram app id used here is one Adeena created for a CallMom test only -->
 
 <category>
+<pattern>CONVERT *</pattern>
+
+<template><srai>XFIND <star/></srai> <!-- callmom_webservice --></template>
+</category>
+
+<category>
 <pattern>* IN FRENCH</pattern>
 
 <template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
@@ -47,13 +53,6 @@
 <template><oob><botecho>news <star index="2"/></botecho></oob></template>
 </category>
 
-<category>
-<pattern>FIND OUT TEST</pattern>
-<template>
-<oob><url>http://api.wolframalpha.com/v2/query?input=pi&amp;appid=LJE8UA-4HVQEAPT4Q</url></oob>
-Ok I will ask Wolfram Alpha.
-</template>
-</category>
 
 <category>
 <pattern>SAY * IN *</pattern>
