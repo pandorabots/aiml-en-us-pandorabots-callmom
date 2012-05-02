@@ -5,12 +5,12 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/28/2012 -->
+<!-- Last modified 3/8/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
+<!-- For more information contact info@pandorabots.com -->
 
 <!-- A few categories to set up contacts just to test the SMS function -->
 <!-- These categories should be moved to callmom_contacts.aiml -->
@@ -66,12 +66,6 @@ Checking app version...
 <pattern>OOB CALLMOM VERSION IS *</pattern>
 <template>This is version <set name="version"><star/></set>.
 </template>
-</category>
-
-
-<category>
-<pattern>CHARGING</pattern>
-<template><srai>BATTERY LEVEL</srai></template>
 </category>
 
 <category>
@@ -152,6 +146,24 @@ Checking...
 <category>
 <pattern>OOB BATTERY LEVEL IS *</pattern>
 <template>Battery level is <set name="batterylevel"><star/></set> percent.
+<condition name="batterylevel">
+<li value="0">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="1">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="2">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="3">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="4">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="5">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="6">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="7">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="8">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="9">Your phone is about to shutdown. You should plug it in straight away.</li>
+<li value="10">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+<li value="11">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+<li value="12">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+<li value="13">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+<li value="14">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+<li value="15">Your phone is running out of charge. You should plug it in as soon as you can.</li>
+</condition>
 </template>
 </category>
 
