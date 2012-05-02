@@ -54,7 +54,7 @@
 <pattern>*</pattern>
 <that>WHO WOULD YOU LIKE TO TEXT</that>
 <template>
-<think><set name="textcontact"><star/></set><set name="topic">SMSMESSGE</set></think>
+<think><set name="textcontact"><star/></set><set name="topic">SMSMESSAGE</set></think>
 Sure what would you like to say to <star/>?
 </template>
 </category>
@@ -108,7 +108,7 @@ Sure what would you like to say to <star/>?
 <category><pattern>SEND AN SMS TO *</pattern><template><srai>TEXT <star/></srai></template></category>
 <category><pattern>_ A SMS *</pattern><template><srai><star/> an SMS <star index="2"/></srai></template></category>
 
-<category><pattern>TEXT *</pattern><template><think><set name="textcontact"><star/></set><set name="topic">SMS</set></think>Sure, what would you like to say to <set name="textcontactpers"><person/></set>?</template></category>
+<category><pattern>TEXT *</pattern><template><think><set name="textcontact"><star/></set><set name="topic">SMSMESSAGE</set></think>Sure, what would you like to say to <set name="textcontactpers"><person/></set>?</template></category>
 
 <!-- <category><pattern>TEXT * AND * *</pattern><template><srai>TEXT <star/> <star index="3"/></srai><srai>TEXT <star index="2"/> <star index="3"/></srai></template></category>
 <category><pattern>TEXT BOTH * AND *</pattern><template><srai>TEXT <star/> AND <star index="2"/></srai></template></category> -->
