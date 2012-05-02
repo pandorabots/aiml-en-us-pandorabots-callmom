@@ -20,6 +20,16 @@
 </category>
 
 <category>
+<pattern>SEARCH WEATHER *</pattern>
+<template>
+<think><set name="weatherlocation"><formal><star/></formal></set></think>
+<oob><url>http://www.square-bear.co.uk/mitsuku/weather.php?location=<get name="weatherlocation"/>&amp;name=<get name="name"/></url></oob>
+Here is the current weather and the forecast for the next few days in <get name="weatherlocation"/>.
+</template>
+</category>
+
+
+<category>
 <pattern>WEATHER</pattern>
 <template>
 <condition> 

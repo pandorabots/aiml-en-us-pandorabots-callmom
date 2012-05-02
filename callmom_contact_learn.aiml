@@ -243,8 +243,17 @@ Ok, I won't replace them.
 </category>
 </learn>
 
+<learn>
+<category>
+<pattern>XPHONE <eval><get name="newcontact"/></eval> <eval><get name="typeofcontact"/></eval> NUMBER</pattern>
+<template><eval><star index="2"/></eval></template>
+</category>
+</learn>
+
+
  </template>
 </category>
+
 
 
 <category>
