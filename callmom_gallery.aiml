@@ -43,7 +43,7 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <pattern>SHOW ME *</pattern>
 <template>
 <srai>pictureblab</srai>
-<oob><url>http://<star/>.jpg.to</url></oob>
+<oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
 </template>
 </category>
 

@@ -20,6 +20,18 @@
 </category>
 
 <category>
+<pattern>MY _ HAS BEEN STOLEN</pattern>
+<template>Let me find a police station for you. <srai>GOOGLEMAP police station</srai>
+</template>
+</category>
+
+<category>
+<pattern>I HAVE LOST MY WALLET</pattern>
+<template>Let me find a police station for you. <srai>GOOGLEMAP police station</srai>
+</template>
+</category>
+
+<category>
 <pattern>STARBUCKS</pattern>
 <template><srai>GOOGLEMAP STARBUCKS</srai>
 </template>
@@ -187,6 +199,7 @@
 </template>
 </category>
 
+<category><pattern>GOOGLEMAP * IN MY AREA</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP * NEAR ME</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP A *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP AN *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
@@ -197,7 +210,10 @@
 <category><pattern>GOOGLEMAP * NEARBY</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP * WITHIN WALKING DISTANCE</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP * CLOSE BY</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
-
+<category><pattern>GOOGLEMAP * OPEN</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * THAT *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP * WHICH *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
+<category><pattern>GOOGLEMAP MONEY</pattern><template><srai>GOOGLEMAP ATM</srai></template></category>
 
 
 
