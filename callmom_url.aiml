@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/30/2012 -->
+<!-- Last modified 5/3/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -13,6 +13,11 @@
 <!-- -->
 <!-- For more information contact callmom-info@pandorabots.com -->
 
+<category>
+<pattern>OPEN TMZ</pattern>
+
+<template><oob><url>http://www.tmz.com</url></oob> Opening TMZ for you.</template>
+</category>
 
 <category>
 <pattern>OPEN MY FACEBOOK *</pattern>
