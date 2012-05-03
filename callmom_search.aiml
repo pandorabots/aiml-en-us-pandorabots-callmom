@@ -5,13 +5,13 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/25/2012 -->
+<!-- Last modified 5/1/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
 <category>
 <pattern>HOW OLD IS THE QUEEN</pattern>
@@ -19,6 +19,10 @@
 <template><srai>XFIND HOW OLD IS THE QUEEN</srai> <!-- callmom_search --></template>
 </category>
 
+<category>
+<pattern>FIND DOCUMENTS *</pattern>
+<template><srai>XFIND DOCUMENTS <star/></srai></template>
+</category>
 
 <category>
 <pattern>TAXICABS *</pattern>
