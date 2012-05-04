@@ -31,6 +31,12 @@
 <template><srai>setupcalendarentry</srai></template>
 </category>
 
+<category>
+<pattern>REMIND ME *</pattern>
+
+<template><srai>setupcalendarentry</srai></template>
+</category>
+
  
 
 <category>
@@ -45,15 +51,31 @@
 <pattern>REMIND ME TO * TOMORROW ENDCAL</pattern>
 
 <template>
-<think><set name="eventname"><star/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai></think>
+<think><set name="eventname"><star/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai><set name="newhour">9</set></think>
 Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TOMORROW AT * TO * ENDCAL</pattern>
+
+<template>
+<think><set name="newhour"><star index="1"/></set><set name="eventname"><star index="2"/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * AT * TOMORROW ENDCAL</pattern>
+
+<template>
+<srai>REMIND me tomorrow at <star index="2"/> to <star/> ENDCAL</srai>
+</template>
 </category>
 
 <category>
 <pattern>ADDNEWCALENDAREVENT</pattern>
 
 <template>
-<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour>9</hour><minute>00</minute><duration>30</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
+<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour><get name="newhour"/></hour><minute>00</minute><duration>30</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
 </template>
 </category>
 
