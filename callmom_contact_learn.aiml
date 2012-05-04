@@ -233,7 +233,7 @@ Ok, I won't replace them.
 <category>
  <pattern>XLEARNNUMBER * XSPLIT *</pattern>
  <template>
-<think><set name="contacts"><person/> - <star index="2"/><br/><get name="contacts"/></set></think>
+<think><set name="contacts"><person/>|<star index="2"/>|<get name="contacts"/></set></think>
 
 
 <learn>
@@ -402,6 +402,14 @@ Thanks, I have added <get name="newcontactpers"/> to your contacts. Their number
 <srai>xlearnnumber <get name="newcontact"/> XSPLIT <get name="newphone"/></srai>
 <srai><get name="function"/></srai>
 <set name="function"></set>
+</template>
+</category>
+
+<category>
+<pattern>LIST CONTACTS</pattern>
+<template>
+I will display a list of the contacts you have told me about.
+<oob><url>http://www.square-bear.co.uk/mitsuku/contacts.php?contacts=<get name="name"/>|<get name="contacts"/></url></oob>
 </template>
 </category>
 
