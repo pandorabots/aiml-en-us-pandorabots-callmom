@@ -53,7 +53,7 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 <pattern>ADDNEWCALENDAREVENT</pattern>
 
 <template>
-<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour>9</hour><minute>00</minute><duration>30</duration></schedule></oob>
+<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour>9</hour><minute>00</minute><duration>30</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
 </template>
 </category>
 
