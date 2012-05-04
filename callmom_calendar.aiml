@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- -->
+<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU Lesser General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Last modified 5/4/2012 -->
+<!-- -->
+<!-- Authors: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- Richard Wallace rich@pandorabots.com -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
+
+
+<category>
+<pattern>TEST SCHEDULE</pattern>
+
+<template>
+<oob><schedule><title>Test entry</title><description>A test of entering a meeting</description><location>Your house</location><year><date format="%Y"/></year><month><date format="%m"/></month><day><date format="%d"/></day><hour>14</hour><minute>00</minute><duration>30</duration></schedule></oob> I will add a test entry to your calendar for today at 2pm.<srai>calendar</srai></template>
+</category>
+
+<category><pattern>OOB TEST SCHEDULE</pattern>
+<template><oob><schedule><title>CallMom Event</title><description>Test Event</description><location>Skype</location><year>2012</year><month>5</month><day>4</day><hour>16</hour><minute>15</minute><duration>60</duration></schedule></oob> Testing calendar.</template>
+</category>
+
+<category>
+<pattern>REMIND ME TO *</pattern>
+
+<template><srai>setupcalendarentry</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SETUPCALENDARENTRY</pattern>
+
+<template><srai><input index="1"/> ENDCAL</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME TO * TOMORROW ENDCAL</pattern>
+
+<template>
+<think><set name="eventname"><star/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+<category>
+<pattern>ADDNEWCALENDAREVENT</pattern>
+
+<template>
+<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour>9</hour><minute>00</minute><duration>30</duration></schedule></oob>
+</template>
+</category>
+
+<!-- This category needs completing -->
+
+<category>
+<pattern>XTOMORROW</pattern>
+<template>
+<think>
+<condition name="checkdate">
+<li value="01 01"><set name="newmonth">01</set><set name="newdate">02</set></li>
+<li value="01 02"><set name="newmonth">01</set><set name="newdate">02</set></li>
+<li value="01 03"><set name="newmonth">01</set><set name="newdate">02</set></li>
+<li value="01 04">01 05</li>
+<li value="01 05">01 06</li>
+<li value="01 06">01 07</li>
+<li value="01 07">01 08</li>
+<li value="01 08">01 09</li>
+<li value="01 09">01 10</li>
+<li value="01 10">01 11</li>
+<li value="01 11">01 12</li>
+<li value="01 12">01 13</li>
+<li value="01 13">01 14</li>
+<li value="01 14">01 15</li>
+<li value="01 15">01 16</li>
+<li value="01 16">01 17</li>
+<li value="01 17">01 18</li>
+<li value="01 18">01 19</li>
+<li value="01 19">01 20</li>
+<li value="01 20">01 21</li>
+<li value="01 21">01 22</li>
+<li value="01 22">01 23</li>
+<li value="01 23">01 24</li>
+<li value="01 24">01 25</li>
+<li value="01 25">01 26</li>
+<li value="01 26">01 27</li>
+<li value="01 27">01 28</li>
+<li value="01 28">01 29</li>
+<li value="01 29">01 30</li>
+<li value="01 30">01 31</li>
+<li value="01 31">02 01</li>
+
+<li value="05 01"><set name="newmonth">05</set><set name="newdate">02</set></li>
+<li value="05 02"><set name="newmonth">05</set><set name="newdate">03</set></li>
+<li value="05 03"><set name="newmonth">05</set><set name="newdate">04</set></li>
+<li value="05 04"><set name="newmonth">05</set><set name="newdate">05</set></li>
+<li value="05 05"><set name="newmonth">05</set><set name="newdate">06</set></li>
+<li value="05 06"><set name="newmonth">05</set><set name="newdate">07</set></li>
+<li value="05 07"><set name="newmonth">05</set><set name="newdate">08</set></li>
+<li value="05 08"><set name="newmonth">05</set><set name="newdate">09</set></li>
+<li value="05 09"><set name="newmonth">05</set><set name="newdate">10</set></li>
+<li value="05 10"><set name="newmonth">05</set><set name="newdate">11</set></li>
+<li value="05 11"><set name="newmonth">05</set><set name="newdate">12</set></li>
+<li value="05 12"><set name="newmonth">05</set><set name="newdate">13</set></li>
+<li value="05 13"><set name="newmonth">05</set><set name="newdate">14</set></li>
+<li value="05 14"><set name="newmonth">05</set><set name="newdate">15</set></li>
+<li value="05 15"><set name="newmonth">05</set><set name="newdate">16</set></li>
+<li value="05 16"><set name="newmonth">05</set><set name="newdate">17</set></li>
+<li value="05 17"><set name="newmonth">05</set><set name="newdate">18</set></li>
+<li value="05 18"><set name="newmonth">05</set><set name="newdate">19</set></li>
+<li value="05 19"><set name="newmonth">05</set><set name="newdate">20</set></li>
+<li value="05 20"><set name="newmonth">05</set><set name="newdate">21</set></li>
+
+
+<li value="12 27">12 28</li>
+<li value="12 28">12 29</li>
+<li value="12 29">12 30</li>
+<li value="12 30">12 31</li>
+<li value="12 31">01 01</li>
+
+<li value="02 28">
+<think><set name="checkyear"><date format="%Y"/></set></think>
+<condition name="checkyear">
+<li value="2012">02 29</li>
+<li value="2016">02 29</li>
+<li value="2020">02 29</li>
+<li value="2024">02 29</li>
+<li value="2028">02 29</li>
+<li value="2032">02 29</li>
+<li value="2036">02 29</li>
+<li>03 01</li>
+</condition>
+
+</li>
+</condition>
+</think>
+
+</template>
+</category>
+
+
+
+</aiml>
