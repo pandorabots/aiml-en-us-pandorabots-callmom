@@ -53,16 +53,16 @@
 </template>
 </category>
 
+<!--
 <category>
 <pattern>SET PREDICATES</pattern>
 <template>
 <think>
-<!-- PHONE SPECIFIC PREDICATES: -->
 <set name="botmode">CALLMOM</set>
 </think>
 </template>
 </category>
-
+-->
 
 <category>
 <pattern>HOW ABOUT A *</pattern>
