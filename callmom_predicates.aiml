@@ -14,9 +14,25 @@
 <!-- For more information contact callmom-info@pandorabots.com -->
 
 <category>
+<pattern>SET PREDICATES BOTNAME * TIMEZONE * TIMEZONEID * TIMEZONEOFFSET * HOURS * MINUTES  ENDPREDICATES</pattern>
+<template>
+<think>
+<set name="botmode">CALLMOM</set>
+<set name="botname"><star/></set>
+<set name="timezone"><star index="2"/></set>
+<set name="timezoneid"><star index="3"/></set>
+<set name="timezonehours"><star index="4"/></set>
+<set name="timezoneminutes"><star index="5"/></set>
+</think>
+<srai>SET PREDICATES <get name="meta"/></srai>
+</template>
+</category>
+
+<category>
 <pattern>SET PREDICATES BOTNAME * TIMEZONE * TIMEZONEID * ENDPREDICATES</pattern>
 <template>
 <think>
+<set name="botmode">CALLMOM</set>
 <set name="botname"><star/></set>
 <set name="timezone"><star index="2"/></set>
 <set name="timezoneid"><star index="3"/></set>
