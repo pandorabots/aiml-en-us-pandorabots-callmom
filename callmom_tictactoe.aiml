@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/19/2012 -->
+<!-- Last modified 5/13/2012 -->
 <!-- -->
 <!-- Author: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -978,7 +978,7 @@ Thanks for playing.
 		<li value="O"><font color="green"><b>O</b></font></li>
 		<li value="3"><font color="blue">3</font></li>
 	</condition>
-<br/>----+----+----<br/>
+<br/>---+---+---<br/>
 	<condition name="s4">
 		<li value="X"><font color="red"><b>X</b></font></li>
 		<li value="O"><font color="green"><b>O</b></font></li>
@@ -996,7 +996,7 @@ Thanks for playing.
 		<li value="O"><font color="green"><b>O</b></font></li>
 		<li value="6"><font color="blue">6</font></li>
 	</condition>
-<br/>----+----+----<br/>
+<br/>---+---+---<br/>
 	<condition name="s7">
 		<li value="X"><font color="red"><b>X</b></font></li>
 		<li value="O"><font color="green"><b>O</b></font></li>
