@@ -5,11 +5,12 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/24/2012 -->
+<!-- Last modified 5/13/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Adeena Mignogna adeena@mignogna.org -->
 <!-- Richard Wallace rich@pandorabots.com -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- -->
 <!-- For more information contact info@pandorabots.com -->
 <!-- NOTES:   -->
@@ -25,11 +26,6 @@
 <pattern>* IN FRENCH</pattern>
 
 <template><srai>TRANSLATE <star/> TO FRENCH</srai> <!-- callmom_webservice --></template>
-</category>
-
-<category>
-<pattern>UPDATE FACEBOOK</pattern>
-<template>Facebook connection not yet implemented.</template>
 </category>
 
 
@@ -105,5 +101,61 @@
 <pattern>OOB *</pattern>
 <template>Unrecognized OOB command: <star/>.</template>
 </category>
+
+<category>
+<pattern>TWEET *</pattern>
+<template><oob><url>https://twitter.com/intent/tweet?source=webclient&amp;text=<star/></url></oob>Please check the message and press Tweet if you are happy.</template>
+</category>
+
+<category>
+<pattern>UPDATE FACEBOOK STATUS</pattern>
+<template><oob><url>http://www.facebook.com/dialog/feed?_path=feed&amp;app_id=294334050655455&amp;&amp;redirect_uri=https://www.facebook.com&amp;display=touch</url></oob>Now opening a screen for you to update your status.</template>
+</category>
+
+ 
+
+<category>
+<pattern>UPDATE FACEBOOK</pattern>
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>UPDATE MY FACEBOOK *</pattern>
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET MY FACEBOOK *</pattern>
+<template><srai>update facebook status</srai></template>
+</category>
+
+<category>
+<pattern>HOW _ I UPDATE MY FACEBOOK *</pattern>
+<template><srai>update facebook status</srai></template>
+</category>
+
+
+<category>
+<pattern>TELL MY FRIENDS *</pattern>
+<template>Shall I tell them by updating your Facebook status?</template>
+</category>
+
+ 
+
+<category>
+<pattern>YES</pattern>
+<that>SHALL I * BY UPDATING YOUR FACEBOOK STATUS</that>
+<template><srai>update facebook status</srai></template>
+</category>
+
+<category>
+<pattern>UPDATE MY FACEBOOK</pattern>
+<template><srai>update facebook status</srai></template>
+</category>
+
 
 </aiml>
