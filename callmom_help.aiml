@@ -5,13 +5,13 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/21/2012 -->
+<!-- Last modified 5/13/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Adeena Mignogna   adeenajm@gmail.com  -->
 <!-- Richard Wallace   rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
 <!--   GENERAL HELP   -->
 
@@ -21,6 +21,13 @@
 I assume you mean help using CallMom.  If not, please be more specific.  You can use me
 to make a call, send a text, get driving directions, search the web and much more.  We can
 also just have a conversation.
+</template>
+</category>
+
+<category>
+<pattern>HELP *</pattern>
+<template>
+<srai>HELP</srai>
 </template>
 </category>
 

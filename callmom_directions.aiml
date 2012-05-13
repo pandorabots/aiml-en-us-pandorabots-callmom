@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License -->
 <!-- as published by the Free Software Foundation. -->
-<!-- Last modified 3/7/2012 -->
+<!-- Last modified 5/14/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -23,12 +23,12 @@ It is where the planes land.<think><set name="it"><set name="topic">Airport</set
  
 <category>
 <pattern>HOW FAR IS *</pattern>
-<template><srai>DIRECTIONS <star/></srai></template>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>
 <pattern>HOW FAR AWAY IS *</pattern>
-<template><srai>DIRECTIONS <star/></srai></template>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>
@@ -39,17 +39,17 @@ It is where the planes land.<think><set name="it"><set name="topic">Airport</set
 
 <category>
 <pattern>GET DIRECTIONS *</pattern>
-<template><srai>DIRECTIONS <star/></srai></template>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>
 <pattern>GET DIRECTIONS TO *</pattern>
-<template><srai>DIRECTIONS <star/></srai></template>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>
 <pattern>GIVE ME DIRECTIONS DIRECTIONS TO *</pattern>
-<template><srai>DIRECTIONS <star/></srai></template>
+<template><srai>DIRECTIONS TO <star/></srai></template>
 </category>
 
 <category>
