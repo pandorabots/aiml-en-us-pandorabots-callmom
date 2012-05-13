@@ -5,13 +5,13 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/3/2012 -->
+<!-- Last modified 2/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
+<!-- For more information contact info@pandorabots.com -->
 
 
 <category>
@@ -36,11 +36,6 @@
 
 <category>
 <pattern>SEND A TEXT</pattern>
-<template>Sure. Who would you like to text?</template>
-</category>
-
-<category>
-<pattern>SEND A TEXT MESSAGE</pattern>
 <template>Sure. Who would you like to text?</template>
 </category>
 
@@ -81,6 +76,7 @@ Sure what would you like to say to <star/>?
 <category><pattern>SAY * TO *</pattern><template><srai>XTEXT <star index="2"/> XMESSAGE <star/> ENDTEXT</srai></template></category>
 
 <category><pattern>TEXT * *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
+<category><pattern>TEXT * * I *</pattern><template><srai>XTEXT <star/> <star index="2"/> XMESSAGE I <star index="3"/></srai></template></category>
 <category><pattern>TEXT _ TO SAY *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
 <category><pattern>TELL *</pattern><template><srai>TEXT <star/></srai></template></category>
 <category><pattern>TEXT _ SAYING *</pattern><template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template></category>
@@ -166,6 +162,18 @@ Xtext <star/> leading to infinite loop.
 <set name="textcontact"><star/></set>
 <set name="textcontactpers"><person/></set>
 <set name="numbertodial"><srai>xphone <star/> mobile number</srai></set>
+<condition name="numbertodial">
+<li value="UNKNOWN"><set name="numbertodial"><srai>xphone <star/> mobile number</srai></set></li>
+</condition>
+<condition name="numbertodial">
+<li value="UNKNOWN"><set name="numbertodial"><srai>xphone <star/> MAIN number</srai></set></li>
+</condition>
+<condition name="numbertodial">
+<li value="UNKNOWN"><set name="numbertodial"><srai>xphone <star/> HOME number</srai></set></li>
+</condition>
+<condition name="numbertodial">
+<li value="UNKNOWN"><set name="numbertodial"><srai>xphone <star/> work number</srai></set></li>
+</condition>
 <set name="function">XTEXT <star/> XMESSAGE <star index="2"/> ENDTEXT</set>
 </think>
 <condition name="numbertodial">

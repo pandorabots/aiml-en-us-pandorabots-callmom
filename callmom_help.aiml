@@ -25,15 +25,8 @@ also just have a conversation.
 </category>
 
 <category>
-<pattern>HELP *</pattern>
-<template>
-<srai>HELP</srai>
-</template>
-</category>
-
-<category>
 <pattern>WHAT CAN YOU DO</pattern>
-<template>I can make calls, send texts and emails, learn contacts, launch apps, look for directions and locations on a map, tell you my battery level, answer questions from web services, learn to correct speech recognition errors and more!
+<template>I can make calls, send texts and emails, learn contacts, launch apps, look for directions and locations on a map, tell you my battery level, answer questions from web services, learn to correct speech recognition errors, tell you the weather, chat to you like a friend and more!
 </template>
 </category>
 

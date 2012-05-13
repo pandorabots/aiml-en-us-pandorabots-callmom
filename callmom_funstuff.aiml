@@ -23,54 +23,46 @@ to identify. You can add as many people as you like
 as long as you remember the phrases for each one.
 Have fun! - Steve Worswick -->
 
+<category>
+<pattern>MEMORIZE *</pattern>
+<template>Scanning, please wait.<br/><br/> Thank you. <star/>'s face added to database.</template>
+</category>
+
+<category>
+<pattern>WHO IS HERE</pattern>
+<that>* S FACE ADDED TO DATABASE</that>
+<template>Let's take a look. I would say that is <thatstar/>.</template>
+</category>
 
 <category>
 <pattern>WHO IS THIS</pattern>
-<template>Let's take a look. I would say that is your work colleague Charlie Black.</template>
+<template>Let's take a look. I would say that is Chris Smith.</template>
 </category>
 
  
 <category>
 <pattern>WHO IS THIS PERSON</pattern>
-<template>Unless I am mistaken, you are pointing me at Kirsty Rowe.</template>
+<template>Unless I am mistaken, you are pointing me at Philip Dunn.</template>
 </category>
 
 
 <category>
 <pattern>TELL ME WHO THIS IS</pattern>
-<template>Why that's Paul of course.</template>
+<template>Why that's Jenny Heath of course.</template>
 </category>
 
 
 <category>
 <pattern>WHO AM I LOOKING AT</pattern>
-<template>That looks like your beautiful wife Tracey to me.</template>
+<template>That looks like Iain Johnson.</template>
 </category>
 
 
 <category>
 <pattern>WHO IS SAT HERE</pattern>
-<template>That's Paula. She is Josh's girlfriend.</template>
+<template>Checking, checking. Please stand by. That looks like Ryan King to me.</template>
 </category>
 
-<!-- Currency converter - only does dollars and pounds at the moment -->
 
-<category>
-<pattern>WHAT IS _ DOLLARS IN POUNDS</pattern>
-<template><oob><url>http://exchangerates.mobi/USD-GBP/<star/></url></oob>
-<srai>currencyconverterblab</srai>
-</template>
-</category>
-
-<category>
-<pattern>WHAT IS _ POUNDS IN DOLLARS</pattern>
-<template><oob><url>http://exchangerates.mobi/GBP-USD/<star/></url></oob><srai>currencyconverterblab</srai>
-</template>
-</category>
-
-<category>
-<pattern>CURRENCYCONVERTERBLAB</pattern>
-<template>I will convert it for you and display it on your screen.</template>
-</category>
 
 </aiml>

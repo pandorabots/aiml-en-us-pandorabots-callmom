@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/13/2012 -->
+<!-- Last modified 2/19/2012 -->
 <!-- -->
 <!-- Author: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -742,7 +742,7 @@ Please enter the square you wish to play.
 <category> 
 <pattern>DRAWGRID</pattern>
 <template>
-<table class="table" bgcolor="#ffffff">
+<oob><table>
 <tr align="center"><td>
 	<condition name="s1">
 		<li value="X"><font color="red"><b>X</b></font></li>
@@ -805,8 +805,8 @@ Please enter the square you wish to play.
 	</condition>
 </td>
 </tr>
-</table>
-<br/>
+</table></oob>
+<br/><br/>
 </template>
 </category>
 

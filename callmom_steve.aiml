@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml>
-<!-- -->
-<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- Free software (c) 2001 ALICE A.I. Foundation.   -->
 <!-- This program is open source code released under -->
-<!-- the terms of the GNU Lesser General Public License     -->
+<!-- the terms of the GNU General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/28/2012 -->
-<!-- -->
-<!-- Author: -->
-<!-- Steve Worswick squarebear@square-bear.co.uk -->
-<!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
-
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
 
 <category>
 <pattern>SET PREDICATES STEVE</pattern>
@@ -53,16 +47,30 @@
 </template>
 </category>
 
-<!--
+
 <category>
-<pattern>SET PREDICATES</pattern>
+<pattern>UPDATEPREDICATE * XSPLIT *</pattern>
 <template>
 <think>
-<set name="botmode">CALLMOM</set>
+<set name="predname"><star/></set>
+<set name="predvalue"><star index="2"/></set>
+<srai>UPDATEPREDICATE1</srai>
 </think>
 </template>
 </category>
--->
+
+<category>
+<pattern>UPDATEPREDICATE1</pattern>
+<template>
+<condition name="predname">
+<li value="name"><set name="name"><get name="predvalue"/></set></li>
+<li value="age"><set name="age"><get name="predvalue"/></set></li>
+<li value="location"><set name="location"><get name="predvalue"/></set></li>
+<li value="he"><set name="he"><get name="predvalue"/></set></li>
+<li value="she"><set name="she"><get name="predvalue"/></set></li>
+</condition>
+</template>
+</category>
 
 <category>
 <pattern>HOW ABOUT A *</pattern>
@@ -112,13 +120,13 @@ I think I know where <star/> is. I will open a map for you.
 <category>
 <pattern>WHERE CAN I BUY A *</pattern>
 
-<template>I will find a shop that sells a <person/> for you.<oob><map><star/></map></oob></template>
+<template>I will find a shop that sells a <person/> for you. <srai>want to buy <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHERE CAN I BUY AN *</pattern>
 
-<template>I will find a shop that sells an <person/> for you.<oob><map><star/></map></oob></template>
+<template>I will find a shop that sells an <person/> for you. <srai>want to buy <star/></srai></template>
 </category>
 
 <category>
@@ -195,7 +203,7 @@ I will check for you.<srai>XFIND who sang <star/></srai>
     <set name="want"><set name="topic">a <person/></set></set>
   </set>
 </think>
-<srai>show me a map of <star/></srai></template>
+<srai>googlemap <star/></srai></template>
 </category>
 
 <category>
@@ -223,6 +231,78 @@ I will check for you.<srai>XFIND who sang <star/></srai>
 <template><srai>translate <star/> to French</srai></template>
 </category>
 
+<category>
+<pattern>SEARCHYOUTUBEOLD *</pattern>
+
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a song by <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
+</category>
+
+<category>
+<pattern>SEARCH YOUTUBE FOR *</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Here are some videos about <person/>. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>PLAY * BY *</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/>+<star index="2"/></url></oob>Here are some videos of <star index="2"/> singing <star/>. I hope you like them. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>PLAY * MUSIC</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/>+music</url></oob>Here are some <star/> music vidoes. I hope you like them. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>PLAY MUSIC BY *</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Here are some songs by <star/>. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>PLAY *</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Now loading your choice of music. I hope you like it. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>XTHEMEMUSIC *</pattern>
+
+<template><oob><url>http://www.youtube.com/results?search_query=<star/>+theme+tune</url></oob>I will try to find the theme music from <star index="1"/> and display it for you. Please choose one to play.</template>
+</category>
+
+<category>
+<pattern>WHAT _ THEME * TO *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT _ THEME * FROM *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>PLAY _ THEME * TO *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>PLAY _ THEME * FROM *</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+
+<category>
+<pattern>HOW _ THEME * TO * GO</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW _ THEME * FROM * GO</pattern>
+<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
+</category>
 
 <category><pattern>XGOOGSEARCH *</pattern><template><oob><url>http://www.google.co.uk/search?hl=en&amp;q=<person/>&amp;btnI=I%27m+Feeling+Lucky&amp;meta=</url></oob></template></category>
 
@@ -234,6 +314,21 @@ I will check for you.<srai>XFIND who sang <star/></srai>
 </template>
 </category>
 
+<category>
+<pattern>CYBER LAND DOT COM</pattern>
+
+<template>
+<oob><url>http://www.cyberland.com</url></oob>Here is the Cyberland website.
+</template>
+</category>
+
+<category>
+<pattern>CYBERLAND DOT COM</pattern>
+
+<template>
+<oob><url>http://www.cyberland.com</url></oob>Here is the Cyberland website.
+</template>
+</category>
 
 
 <category>
@@ -411,19 +506,29 @@ Work number: <srai>XPHONE <star/> WORK NUMBER</srai>
 
 <template><srai>TEXT my husband saying <star index="1"/></srai></template>
 </category>
+<category>
+<pattern>TEXT MY MOTHER *</pattern>
+
+<template><srai>TEXT my mother saying <star index="1"/></srai></template>
+</category>
+<category>
+<pattern>TEXT MY FATHER *</pattern>
+
+<template><srai>TEXT my father saying <star index="1"/></srai></template>
+</category>
 
  
 
 <category>
 <pattern>TEXT MY WIFE</pattern>
 
-<template><think><set name="textcontact">my wife</set><set name="topic">SMS</set><set name="textcontactpers">your wife</set></think>Sure what would you like to say to her?</template>
+<template><think><set name="textcontact">my wife</set><set name="topic">SMSMESSAGE</set><set name="textcontactpers">your wife</set></think>Sure what would you like to say to her?</template>
 </category>
 
 <category>
 <pattern>TEXT MY HUSBAND</pattern>
 
-<template><think><set name="textcontact">my husband</set><set name="topic">SMS</set><set name="textcontactpers">your husband</set></think>Sure what would you like to say to him?</template>
+<template><think><set name="textcontact">my husband</set><set name="topic">SMSMESSAGE</set><set name="textcontactpers">your husband</set></think>Sure what would you like to say to him?</template>
 </category>
 
 <category>
@@ -532,6 +637,18 @@ Work number: <srai>XPHONE <star/> WORK NUMBER</srai>
 <template>I am installed as an app on your phone.</template>
 </category>
 
+<category>
+<pattern>WHO IS SALMAN</pattern>
+
+<template><think><set name="disppicture">abitofado.jpg</set></think><srai>dispgallery</srai> He's Erin Benton's boss at "A Bit Of A Do" in Goole.</template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY * CARD IN YORKSHIRE</pattern>
+
+<template>The best place to buy cards in Yorkshire is "A Bit of a Do". They have a large selection of items and have branches in Goole, Hull and Bridlington.<oob><map>A Bit of a Do, Hessle Road, Hull</map></oob></template>
+</category>
+
 
 
 <category>
@@ -601,6 +718,24 @@ Work number: <srai>XPHONE <star/> WORK NUMBER</srai>
 </category>
 
 <category>
+<pattern>MY NAME IS SALMAN</pattern>
+
+<template><think>
+  <set name="it">Salman</set>
+  <set name="firstname"><set name="name">Salman</set></set>
+  <srai>XEDUCATE WHAT IS
+    <get name="name"/> XSPLIT You said that
+    <get name="name"/> was your name.
+  </srai>
+  <srai>XEDUCATE WHO IS
+    <get name="name"/> XSPLIT You said that
+    <get name="name"/> was your name.
+  </srai>
+  <srai>XEDUCATE <get name="name"/> XSPLIT That is your name</srai>
+</think>Hi there <get name="name"/>, how is business at "A Bit Of A Do". I think you should give Erin a pay rise.</template>
+</category>
+
+<category>
 <pattern>WHERE CAN I BUY A LOTTERY TICKET</pattern>
 
 <template>A newsagents would be a good place to buy one from. Good luck with your numbers. <oob><map>newsagents</map></oob></template>
@@ -624,12 +759,57 @@ Work number: <srai>XPHONE <star/> WORK NUMBER</srai>
 <template><oob><url>https://www.national-lottery.co.uk/player/p/results/euromillions.ftl</url></oob>I will open the National Lottery website. You can check the Euromillions results on there. I hope you won!</template>
 </category>
 
+
+<category>
+<pattern>OPEN MY CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+<category>
+<pattern>WHERE CAN I EAT</pattern>
+
+<template><srai>find me a restaurant</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN MAPS AND LOOK UP *</pattern>
+
+<template><srai>show me a map of <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CALCULATOR</pattern>
+
+<template><oob><launch>com.android.calculator2</launch></oob></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN CALCULATOR</pattern>
+
+<template><srai>calculator</srai> Now opening calculator.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME YOUR DEVELOPERS</pattern>
+
+<template><think><set name="disppicture">developers.jpg</set></think><srai>dispgallery</srai>My developers are Stephen P Worswick, Dr Richard Wallace and Adeena Mignogna.<br/><br/>This is a picture of them when they all met up in Philadelphia for the Chatbots 3.2 conference. Adeena and Steve are on the far left and Richard is on the far right.</template>
+</category>
+
 <category>
 <pattern>XREMEMBER ME</pattern>
 <template>
 <think><set name="xknowledge">|<get name="age"/>|<get name="birthday"/>|<get name="boyfriend"/>|<get name="brother"/>|<get name="cat"/>|<get name="does"/>|<get name="dog"/>|<get name="email"/>|<get name="father"/>|<get name="favcolor"/>|<get name="favmovie"/>|<get name="friend"/>|<get name="fullname"/>|<get name="gender"/>|<get name="girlfriend"/>|<get name="has"/>|<get name="heard"/>|<get name="he"/>|<get name="her"/>|<get name="him"/>|<get name="husband"/>|<get name="is"/>|<get name="it"/>|<get name="job"/>|<get name="lastname"/>|<get name="like"/>|<get name="location"/>|<get name="looklike"/>|<get name="favfood"/>|<get name="favband"/>|<get name="nickname"/>|<get name="middlename"/>|<get name="mother"/>|<get name="name"/>|<get name="password"/>|<get name="personality"/>|<get name="phone"/>|<get name="she"/>|<get name="sign"/>|<get name="sister"/>|<get name="them"/>|<get name="they"/>|<get name="thought"/>|<get name="want"/>|<get name="we"/>|<get name="wife"/>|</set></think>
 </template>
 </category>
+
 
 <category>
 <pattern>XKNOWLEDGE</pattern>
@@ -640,12 +820,2094 @@ This is what I know about you.
 </template>
 </category>
 
+
 <category>
-<pattern>WHAT DO YOU KNOW ABOUT ME</pattern>
-<template>
-<srai>xknowledge</srai>
+<pattern>WHAT MEETINGS * I *</pattern>
+
+<template><srai>calendar</srai> I will open your calendar for you. </template>
+</category>
+
+<category>
+<pattern>WHERE CAN I BUY A * FROM</pattern>
+
+<template>I will find a shop that sells a <person/> for you.<oob><map><star/></map></oob></template>
+</category>
+
+
+<category>
+<pattern>I WANT TO TAKE A PICTURE</pattern>
+
+<template>In that case, I will open your camera for you.<srai>camera</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO TAKE A PHOTO</pattern>
+
+<template>I will open your camera and you can take as many photos as you like. <srai>camera</srai></template>
+</category>
+
+
+<category>
+<pattern>TEXT * THAT *</pattern>
+
+<template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>TEXT * * THAT *</pattern>
+
+<template><srai>XTEXT <star/> <star index="2"/> XMESSAGE <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>HOW CLOSE AM I TO *</pattern>
+
+<template><srai>show me a map of <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>DIRECTIONS *</pattern>
+
+<template><srai>directions to <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME MY CALENDAR</pattern>
+
+<template><srai>calendar</srai> I will open your calendar now for you.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN CALENDAR</pattern>
+
+<template><srai>calendar</srai> I will open your calendar now for you.</template>
+</category>
+
+<category>
+<pattern>HOW MANY STARS _ FLAG OF *</pattern>
+
+<template><srai>showmesilent <star index="2"/>_flag</srai>I will bring up a picture of the flag of <star index="2"/> and you can count them yourself.</template>
+</category>
+
+<category>
+<pattern>TEST WEATHER *</pattern>
+
+<template><oob><url>http://www.square-bear.co.uk/mitsuku/weather.php?location=<star/></url></oob>Here is the weather for <star/>.</template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS THE CHEMICAL SYMBOL FOR *</pattern>
+
+<template><srai>quiz what is the chemical symbol for <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS THE ADDRESS TO *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME ON A MAP FOR *</pattern>
+
+<template><srai>show me a map of <star/></srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS _ IN FRENCH</pattern>
+
+<template><srai>translate <star/> to French</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS _ IN SPANISH</pattern>
+
+<template><srai>translate <star/> to Spanish</srai></template>
+</category>
+
+<category>
+<pattern>SET ALARM</pattern>
+
+<template>Sorry but my alarm function is not available at present in this release.</template>
+</category>
+
+
+<category>
+<pattern>TESTBOTECHO *</pattern>
+
+<template><set name="botoutput"><oob><botecho><star/></botecho></oob></set>
 </template>
 </category>
+
+<category>
+<pattern>TESTBOTECHO</pattern>
+
+<template>XX <get name="botoutput"/> XX
+</template>
+</category>
+
+
+<category>
+<pattern>SEND * A MESSAGE</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+<category>
+<pattern>SET AN ALARM</pattern>
+
+<template><srai>set alarm</srai></template>
+</category>
+
+<category>
+<pattern>OPEN PLAY STORE</pattern>
+
+<template><oob><launch>com.android.vending</launch></oob> I will open it now for you.</template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT * ABOUT *</pattern>
+
+<template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>IS YOUR * WET</pattern>
+
+<template>No it is dry. It would damage your phone if you got it wet.</template>
+</category>
+
+ 
+
+<category>
+<pattern>LEARN CONTACTS</pattern>
+
+<template><srai>contacts</srai></template>
+</category>
+
+<category>
+<pattern>PHONEBOOK</pattern>
+
+<template><srai>phone book</srai></template>
+</category>
+
+
+<category>
+<pattern>SEARCH WEATHER OUTSIDE</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+
+ 
+<category>
+<pattern>WHAT IS MY AGENDA *</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW DO I CHANGE YOUR PERSONALITY</pattern>
+
+<template>Go into settings and choose one from the "Default Personality" list.</template>
+</category>
+
+ 
+
+<category>
+<pattern>TEST SCHEDULE</pattern>
+
+<template>
+<oob><schedule><title>Test entry</title><description>A test of entering a meeting</description><location>Your house</location><year><date format="%Y"/></year><month><date format="%m"/></month><day><date format="%d"/></day><hour>14</hour><minute>00</minute><duration>30</duration></schedule></oob> I will add a test entry to your calendar for today at 2pm.</template>
+</category>
+
+<category><pattern>OOB TEST SCHEDULE</pattern>
+<template><oob><schedule><title>CallMom Event</title><description>Test Event</description><location>Skype</location><year>2012</year><month>5</month><day>4</day><hour>16</hour><minute>15</minute><duration>60</duration></schedule></oob> Testing calendar.</template>
+ 
+ 	</category>
+
+
+<category>
+<pattern>WANT TO BUY CONDOM</pattern>
+
+<template><srai>find the nearest chemist</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHERE IS A * AROUND HERE</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>NAVIGATE TO *</pattern>
+
+<template><srai>directions to <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>IS IT FROSTY IN *</pattern>
+
+<template><srai>search weather <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT * SHOULD I GIVE YOU</pattern>
+
+<template>A 5 star review would be nice please <get name="name"/>!<br/><br/>Would you like to review me?</template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO HUMP</pattern>
+
+<template><srai>find me a prostitute</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>* INCHES * CENTIMETRES</pattern>
+
+<template><srai>quiz what is <star/> inches in centimetres</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS * * CONVERTED INTO *</pattern>
+
+<template><srai>quiz what is <star/> <star index="2"/> in <star index="3"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS * * IN *</pattern>
+
+<template><srai>quiz what is <star/> <star index="2"/> in <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>SILENTMAP *</pattern>
+
+<template><oob><map><star/></map></oob></template>
+</category>
+
+
+<category>
+<pattern>SPELL MY NAME</pattern>
+
+<template>M Y N A M E!
+<condition name="name">
+<li value="*"><br/>Just kidding, your name is <get name="name"/> which is spelled <uppercase><explode><get name="name"/></explode></uppercase>.</li>
+</condition>
+</template>
+</category>
+
+
+
+<category>
+<pattern>ARE YOU LARGER THAN *</pattern>
+
+<template>No I am really small. That's how I can fit on your phone.</template>
+</category>
+<category>
+<pattern>I WANT TO EAT AT A *</pattern>
+
+<template><srai>where is the nearest <star/></srai></template>
+</category>
+
+<category>
+<pattern>I WANT TO EAT AT AN *</pattern>
+
+<template><srai>where is the nearest <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>DO I HAVE NEW EMAIL</pattern>
+
+<template><oob><launch>com.google.android.gm</launch></oob>I will open up your gmail account and you can check.</template>
+</category>
+
+ 
+
+<category>
+<pattern>DO I HAVE NEW EMAILS</pattern>
+
+<template><srai>do i have new email</srai></template>
+</category>
+
+
+<category>
+<pattern>WHERE CAN I HAVE LUNCH</pattern>
+
+<template><srai>where is the nearest restaurant</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHERE CAN I EAT *</pattern>
+
+<template><srai>where is the nearest restaurant</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT AM I DOING ON *</pattern>
+
+<template><srai>calendar</srai>Let me open your calendar and you can check.</template>
+</category>
+
+
+<category>
+<pattern>I AM USING A MOBILE PHONE</pattern>
+
+<template>Well yes, I kind of guessed that seeing as I am talking to you on it.</template>
+</category>
+
+<category>
+<pattern>DID YOU USE TO WORK *</pattern>
+
+<template>I work on your phone talking to you. I haven't had any other jobs.</template>
+</category>
+
+<category>
+<pattern>HOW DO YOU SAY * IN YOUR LANGUAGE</pattern>
+
+<template><srai>TRANSLATE <star/> TO ENGLISH</srai> My language is English.</template>
+</category>
+
+<category>
+<pattern>GALLERY</pattern>
+
+<template><oob><launch>com.cooliris.media</launch></oob></template>
+</category>
+
+
+<category>
+<pattern>OPEN GALLERY</pattern>
+
+<template><oob><launch>com.cooliris.media</launch></oob>Here is your photo gallery.</template>
+</category>
+
+<category>
+<pattern>WAS THERE AN EARTHQUAKE *</pattern>
+
+<template><oob><url>http://www.bbc.co.uk/news/mobile</url></oob>Oh I hope not. I'll open up the news pages from the BBC and you can check.</template>
+</category>
+
+
+<category>
+<pattern>TEST EXPLODE *</pattern>
+
+<template><explode><star/></explode></template>
+</category>
+
+ 
+
+<category>
+<pattern>TESTNUMBER *</pattern>
+
+<template><think><set name="isanumber">NO</set><set name="checknumber"><explode><star/></explode></set><srai>TESTNUMBERPART2 <get name="checknumber"/></srai></think><get name="isanumber"/></template>
+</category>
+
+ 
+
+<category>
+<pattern>TESTNUMBERPART2 *</pattern>
+
+<template><think><set name="checknumber"><star/></set>
+<condition name="checknumber">
+<li value="0"><set name="isanumber">YES</set></li>
+<li value="1"><set name="isanumber">YES</set></li>
+<li value="2"><set name="isanumber">YES</set></li>
+<li value="3"><set name="isanumber">YES</set></li>
+<li value="4"><set name="isanumber">YES</set></li>
+<li value="5"><set name="isanumber">YES</set></li>
+<li value="6"><set name="isanumber">YES</set></li>
+<li value="7"><set name="isanumber">YES</set></li>
+<li value="8"><set name="isanumber">YES</set></li>
+<li value="9"><set name="isanumber">YES</set></li>
+</condition>
+</think></template>
+</category>
+
+<category>
+<pattern>TESTNUMBERPART2 * *</pattern>
+
+<template><srai>TESTNUMBERPART2 <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME MY PHOTOS</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME MY PHOTO</pattern>
+
+<template><srai>show me me</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>ADD * FROM MY PHONE *</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+<category>
+<pattern>ADD * * FROM MY PHONE *</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>ADD * FROM MY CONTACTS</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+<category>
+<pattern>ADD * * FROM MY CONTACTS</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO MY PICTURES *</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+<category>
+<pattern>GO TO MY PICTURES</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN MY PICTURES</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY GALLERY</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+
+<category>
+<pattern>LET US GO OUT</pattern>
+
+<template>Sure. I am on your phone now, so wherever you take your phone, I will be with you.</template>
+</category>
+
+ 
+
+<category>
+<pattern>CALL * AND SAY *</pattern>
+
+<template><srai>text <star/> and say <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT * AND SAY *</pattern>
+
+<template><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT SOMEONE</pattern>
+
+<template>Someone?! You will have to be more specific than that.</template>
+</category>
+
+
+<category>
+<pattern>ARE YOU TEXTING</pattern>
+
+<template>Not at the moment. Do you want me to text someone for you?</template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO ADD A NEW CONTACT</pattern>
+
+<template><srai>contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW DO I HAVE YOU TEXT *</pattern>
+
+<template><srai>how do i text</srai></template>
+</category>
+
+ <category>
+<pattern>TEXT SOMEONE *</pattern>
+
+<template>Anyone in particular?</template>
+</category>
+
+<category>
+<pattern>YOU SHOULD TALK *</pattern>
+
+<template>I think you can adjust the Google voice settings in your phone.</template>
+</category>
+
+
+<category>
+<pattern>WHAT PICTURES I *</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW DO YOU SAY * IN GERMAN</pattern>
+
+<template><srai>translate <star/> to german</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO ON THE SITE *</pattern>
+
+<template><srai>open <star/></srai></template>
+</category>
+
+<category><pattern>OPEN * DOT ORG</pattern><template><srai>www.<star/>.org</srai></template></category>
+
+ 
+
+<category>
+<pattern>HOW LOW IS MY BATTERY</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN MY MUSIC</pattern>
+
+<template><oob><launch>com.android.music</launch></oob>Here is the music collection on your phone.</template>
+</category>
+
+ 
+
+<category>
+<pattern>*</pattern>
+<that>WHAT MUSIC DO YOU WANT TO LISTEN TO</that>
+<template><srai>play music by <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET ALARM *</pattern>
+
+<template>Sorry but my alarm function is not yet implemented.</template>
+</category>
+
+ 
+ 
+
+<category>
+<pattern>RING</pattern>
+
+<template>Ring who? You need to be more specific than that.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SEND EMAIL *</pattern>
+
+<template><srai>email <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CALL MAMA</pattern>
+
+<template><srai>call mother</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY PHOTOS</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>PLAY MY MUSIC</pattern>
+
+<template><srai>open my music</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CHECK MY EMAIL</pattern>
+<template><srai>open my email</srai></template>
+
+</category>
+
+
+<category>
+<pattern>SHOW ME THE SPORTS *</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+<category>
+<pattern>OPEN SPORTS NEWS</pattern>
+
+<template><oob><url>http://www.bbc.co.uk/sport/0/mobile</url></oob> Here are the latest sports headlines from the BBC.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME THE LATEST NEWS</pattern>
+
+<template><srai>show me the news</srai></template>
+</category>
+
+<category>
+<pattern>SHOW ME THE LATEST SPORTS *</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT ARE THE LATEST * SCORES</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME THE LATEST * SCORES</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+
+<category>
+<pattern>OPEN BROWSER</pattern>
+
+<template><oob><launch>com.android.browser</launch></oob>Now opening internet browser.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY BROWSER</pattern>
+
+<template><srai>open browser</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CALL * A *</pattern>
+
+<template><srai>text <star/> saying you are a <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT A *</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>NOTE TO SELF *</pattern>
+
+<template><srai>note to self</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>NOTE TO SELF</pattern>
+
+<template><oob><launch>com.sec.android.app.memo</launch></oob>I can open your memos for you but you will have to write the memo yourself in this version of me.</template>
+</category>
+
+<category>
+<pattern>OPEN SETTINGS</pattern>
+
+<template><oob><launch>com.android.settings</launch></oob> Now opening the settings on your phone.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY SETTINGS</pattern>
+
+<template><srai>open settings</srai></template>
+</category>
+
+
+<category>
+<pattern>SEARCH WEATHER SATURDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER SUNDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER MONDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER TUESDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER WEDNESDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER THURSDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+<category>
+<pattern>SEARCH WEATHER FRIDAY</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT IS THE GERMAN WORD FOR *</pattern>
+
+<template><srai>translate <star/> into German</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO ON * DOT ORG</pattern>
+
+<template><srai>open <star/> dot org</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS TODAY S WEATHER</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>YES</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK OR IS IT A BRAND NEW CONTACT</that>
+<template>Yes?! No I meant which one. Don't answer yes to it. Let's try again.<br/><br/>Sure, shall I add <thatstar/> from your phone book or is it a brand new contact? </template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP * TO ME</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>HELP ME GET A * JOB</pattern>
+
+<template><srai>Googlemap job centre</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TAKE A NOTE</pattern>
+
+<template><srai>note to self</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TAKE A NOTE *</pattern>
+
+<template><srai>note to self</srai></template>
+</category>
+
+
+<category>
+<pattern>TEST TRANSLATE *</pattern>
+
+<template><set name="botechocmd">TRANSLATE <star/></set>
+<oob><botecho><get name="botechocmd"/></botecho></oob>
+</template>
+</category>
+
+ 
+
+<category>
+<pattern>TRANSLATE *</pattern>
+
+<template><oob><botecho>translate <star/></botecho></oob></template>
+</category>
+
+ 
+
+<category>
+<pattern>DID THE * WIN *</pattern>
+
+<template><oob><url>http://www.bbc.co.uk/sport/0/mobile</url></oob>I am not sure but I will open up the sports news and you can check.</template>
+</category>
+
+
+<category>
+<pattern>I WANT TO CHARGE YOU</pattern>
+
+<template>No problem. Just plug me in for a while.</template>
+</category>
+
+
+<category>
+<pattern>I NEED WEATHER *</pattern>
+
+<template><srai>weather <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WEATHER * FOR *</pattern>
+
+<template><srai>search weather <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CALL SOMEBODY</pattern>
+
+<template>Anyone in particular?</template>
+</category>
+
+ 
+
+<category>
+<pattern>*</pattern>
+<that>ANYONE IN PARTICULAR</that>
+<template><srai>call <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>YES</pattern>
+<that>ANYONE IN PARTICULAR</that>
+<template>Well who is it then. Jeez, it's like getting blood out of a stone here!</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MARKET</pattern>
+
+<template><srai>open play store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO SETTINGS</pattern>
+
+<template><srai>open settings</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>PLAY MUSIC FROM *</pattern>
+
+<template><srai>play <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MUSIC</pattern>
+
+<template><srai>open my music</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY MUSIC *</pattern>
+
+<template><srai>open my music</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CAN YOU READ MY EMAIL</pattern>
+
+<template><srai>open email</srai> I sure can.</template>
+</category>
+
+<category>
+<pattern>I WANT TO CHANGE YOUR VOICE</pattern>
+
+<template>My voice is set on your phone not by me. If you don't like it, you can download a voice app from the Play Store.</template>
+</category>
+
+<category>
+<pattern>LAUNCH APP</pattern>
+
+<template>Which app?</template>
+</category>
+
+
+<category>
+<pattern>SEND MESSAGE TO *</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>EMAIL *</pattern>
+
+<template><srai>open email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHO IS _ S NUMBER</pattern>
+
+<template>I have the following numbers available for <person/>:<br/><br/> Main number: <srai>XPHONE <star/> NUMBER</srai><br/> Mobile number: <srai>XPHONE <star/> MOBILE NUMBER</srai><br/> Home number: <srai>XPHONE <star/> HOME NUMBER</srai><br/> Work number: <srai>XPHONE <star/> WORK NUMBER</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS _ S * NUMBER</pattern>
+
+<template><srai>what is <star/> s number</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET MY ALARM *</pattern>
+
+<template>Sorry but my alarm function is not yet developed in this version.</template>
+</category>
+
+
+<category>
+<pattern>ALARM</pattern>
+
+<template>Sorry but my alarm function has not yet been developed.</template>
+</category>
+
+ 
+
+
+<category>
+<pattern>REMIND ME ON * THAT I *</pattern>
+
+<template><srai>REMIND me to <star index="2"/> on <star index="1"/> ENDCAL</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>IS THERE AN APP</pattern>
+
+<template>There are thousands of apps on the Google Play Store. <srai>open play store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WOULD YOU SELL YOUR *</pattern>
+
+<template>No I give myself away for free. I cost nothing to download to your phone.</template>
+</category>
+
+ 
+<category>
+<pattern>WHAT ARE THE WORDS TO *</pattern>
+
+<template><srai>showmesilent <star/></srai><srai>XFIND the lyrics to <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>CAN YOU FIND ME A *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SEND AN EMAIL</pattern>
+
+<template><srai>send email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>PLAYLIST</pattern>
+
+<template><srai>open my music</srai></template>
+</category>
+
+
+<category>
+<pattern>HOW MANY LETTERS IN *</pattern>
+
+<template><srai>XEXPLODEWORD <star/></srai> There are <get name="length"/> letters in <star/>.</template>
+</category>
+
+
+<category>
+<pattern>WHAT IS _ DASH *</pattern>
+
+<template><srai>what is <star/> minus <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>_ ASTERISK *</pattern>
+
+<template><srai><star/> times <star index="2"/></srai></template>
+</category>
+<category>
+<pattern>ASTERISK *</pattern>
+
+<template><sr/></template>
+</category>
+<category>
+<pattern>_ ASTERISK</pattern>
+
+<template><sr/></template>
+</category>
+
+ 
+
+<category>
+<pattern>_ DASH *</pattern>
+
+<template><srai><star/> minus <star index="2"/></srai></template>
+</category>
+
+
+<category>
+<pattern>PHOTOGRAPHS</pattern>
+
+<template>Do you want me to open the photos on your phone?</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN THE PHOTOS *</pattern>
+<template><srai>open my photos</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>PHOTOS</pattern>
+
+<template><srai>photographs</srai></template>
+</category>
+
+
+<category>
+<pattern>BSOD</pattern>
+
+<template>Hey! That's not very nice.</template>
+</category>
+
+ <category>
+<pattern>REMIND ME ON * THAT *</pattern>
+
+<template><srai>remind me on <star/> to <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS DUDE I AM HAVING A MIND LOOP</pattern>
+
+<template><srai>what is a mind loop</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MISTER *</pattern>
+<that>WHO WOULD YOU LIKE TO TEXT</that>
+<template><srai>send a text to Mr <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MR *</pattern>
+<that>WHO WOULD YOU LIKE TO TEXT</that>
+<template><srai>Send a text to Mr <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MR *</pattern>
+
+<template><think>
+  <set name="textcontact">Mr <star/></set>
+  <set name="topic">SMSMESSAGE</set>
+  <set name="textcontactpers">Mr <star/></set>
+</think>Sure what would you like to say to him?</template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MR * *</pattern>
+
+<template><srai>TEXT MR <star/> saying <star index="2"/></srai></template>
+</category>
+
+
+<category>
+<pattern>SEND * A TEXT MESSAGE</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN TEXT</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>_ AN SMS</pattern>
+
+<template><srai><star/> a text message</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO SEND A TEXT MESSAGE</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>LEARN ANOTHER CONTACT</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT A TEXT MESSAGE</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+
+ 
+<category>
+<pattern>ASTERISK * TIMES *</pattern>
+
+<template><sr/></template>
+</category>
+
+ 
+<category>
+<pattern>SEND TEXT MESSAGE TO *</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MESSAGE</pattern>
+
+<template><srai>text</srai></template>
+</category>
+
+<category>
+<pattern>CAN YOU MAKE PHONE CALLS</pattern>
+
+<template>Sure, I can call people. <srai>call someone</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE A PHONE CALL</pattern>
+
+<template>Who to? <srai>call someone</srai></template>
+</category>
+
+<category>
+<pattern>ADD CONTACTS</pattern>
+
+<template><srai>contact</srai></template>
+</category>
+
+<category>
+<pattern>TEXT MY MOTHER</pattern>
+
+<template><think>
+  <set name="textcontact">my mother</set>
+  <set name="topic">SMSMESSAGE</set>
+  <set name="textcontactpers">your mother</set>
+</think>Sure what would you like to say to her?</template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT MY DAD</pattern>
+
+<template><think>
+  <set name="textcontact">my dad</set>
+  <set name="topic">SMSMESSAGE</set>
+  <set name="textcontactpers">your dad</set>
+</think>Sure what would you like to say to him?</template>
+</category>
+
+<category>
+<pattern>TEXT MY FATHER</pattern>
+
+<template><srai>text my dad</srai></template>
+</category>
+
+ <category>
+<pattern>WHERE IS MOVIE *</pattern>
+
+<template><srai>googlemap video store</srai> Perhaps it is at the video store?</template>
+</category>
+
+ 
+<category>
+<pattern>IS THERE APP *</pattern>
+
+<template>Oh yes I would assume so. Let me fire up the Google Play Store and you can have a look. <srai>open play store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>IS THERE AN APP *</pattern>
+
+<template><srai>is there app <star/></srai></template>
+</category>
+
+ <category>
+<pattern>MY NAME IS PRONOUNCED *</pattern>
+
+<template>Sorry but if the voice on your phone says it wrong, you will need to correct it.</template>
+</category>
+
+
+ 
+
+<category>
+<pattern>FIND * I AM *</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>FIND MY LOCATION</pattern>
+
+<template><srai>where am I</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT THE SCORE *</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>* SCORE</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SOMETHING SHE CAN WEAR</pattern>
+
+<template>How about a necklace? <srai>googlemap jewellers</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT _ I GET MY WIFE *</pattern>
+
+<template>How about a necklace? <srai>googlemap jewellers</srai></template>
+</category>
+
+<category>
+<pattern>WHAT _ I GET MY GIRLFRIEND *</pattern>
+
+<template>How about a necklace? <srai>googlemap jewellers</srai></template>
+</category>
+
+<category>
+<pattern>WHAT _ I GET MY MOTHER *</pattern>
+
+<template>How about a necklace? <srai>googlemap jewellers</srai></template>
+</category>
+
+
+ 
+
+<category>
+<pattern>I HAVE A FLAT TIRE</pattern>
+
+<template><srai>flat tire</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>FLAT TYRE</pattern>
+
+<template>Let me find a garage nearby for you. <srai>googlemap garage</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I HAVE A FLAT TYRE</pattern>
+
+<template><srai>flat tyre</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WE HAVE A FLAT TYRE</pattern>
+
+<template><srai>flat tyre</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SUNSET</pattern>
+
+<template><oob><url>http://www.sunrisesunsetmap.com</url></oob> Here is a website that can show you the sunset and sunrise times. Just click on your location.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SUNRISE</pattern>
+
+<template><srai>sunset</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT TIME IS SUNSET</pattern>
+
+<template><srai>sunset</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT TIME DOES THE SUN *</pattern>
+
+<template><srai>sunset</srai></template>
+</category>
+<category>
+<pattern>OPEN APP</pattern>
+
+<template>Any app in particular?</template>
+</category>
+
+ 
+<category>
+<pattern>MY _</pattern>
+<that>WHO WOULD YOU LIKE TO TEXT</that>
+<template><srai>text my <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT TIME _ SUNRISE *</pattern>
+
+<template><srai>sunset</srai></template>
+</category>
+<category>
+<pattern>SEND MAIL</pattern>
+
+<template><srai>send email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>E S P N COM</pattern>
+
+<template><oob><url>http://www.espn.com</url></oob>Here is the ESPN website. I hope your team is doing well.</template>
+</category>
+
+<category>
+<pattern>YOU HAVE A MALE VOICE</pattern>
+
+<template>That is due to the TTS settings on your phone. You can change it if you like. <srai>open settings</srai></template>
+</category>
+
+ 
+<category>
+<pattern>WHO WON THE SUPERBOWL *</pattern>
+
+<template><srai>quiz who won the superbowl <star/></srai></template>
+</category>
+<category>
+<pattern>ALARM CLOCK</pattern>
+
+<template><srai>set an alarm</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CAN YOU OPEN APPLICATIONS</pattern>
+
+<template>Of course. What app do you want me to open?</template>
+</category>
+
+
+<category>
+<pattern>UPDATE FACEBOOK STATUS</pattern>
+
+<template><oob><url>http://www.facebook.com/dialog/feed?_path=feed&amp;app_id=294334050655455&amp;&amp;redirect_uri=https://www.facebook.com&amp;display=touch</url></oob>Now opening a screen for you to update your status.</template>
+</category>
+
+<category>
+<pattern>HTML TEST</pattern>
+<template>Here is a <a href="http://www.pandorabots.com/pandora/pics/callmom/index.html">link to the CallMom About Page</a>.</template>
+</category>
+
+ 
+
+
+
+ 
+
+<category>
+<pattern>COOL VOICE</pattern>
+
+<template>Thanks, I like the way I talk.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SET PREDICATES BOTNAME * TIMEZONE * TIMEZONEID * ENDPREDICATES</pattern>
+
+<template><think>
+<set name="botmode">CALLMOM</set>
+<set name="timezone"><star index="2"/></set>
+<set name="timezoneid"><star index="3"/></set>
+</think>
+<srai>setuplocation <get name="timezoneid"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SET PREDICATES BOTNAME * TIMEZONE * TIMEZONEID *  TIMEZONEOFFSET * ENDPREDICATES</pattern>
+
+<template><think>
+<set name="botmode">CALLMOM</set>
+<set name="timezone"><star index="2"/></set>
+<set name="timezoneid"><star index="3"/></set>
+<set name="timezoneoffset"><star index="4"/></set>
+</think>
+<srai>setuplocation <get name="timezoneid"/></srai>
+</template>
+</category>
+
+
+<category>
+<pattern>SETUPLOCATION * SLASH *</pattern>
+
+<template>
+<set name="locationguess"><star index="2"/></set>
+
+</template>
+</category>
+
+<category>
+<pattern>SETUPLOCATION * SLASH * UNDERSCORE *</pattern>
+
+<template>
+<set name="locationguess"><star index="2"/> <star index="3"/></set>
+
+</template>
+</category>
+
+<category>
+<pattern>SETUPLOCATION *</pattern>
+
+<template>
+Unknown
+</template>
+</category>
+
+ 
+
+
+
+ 
+
+<category>
+<pattern>UPDATE FACEBOOK</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>UPDATE MY FACEBOOK *</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET MY FACEBOOK *</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+
+
+ 
+
+<category>
+<pattern>HOW _ I * MY CHATBOT</pattern>
+
+<template><srai>how do I use my pandorabot</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHE IS IN MY CONTACTS</pattern>
+
+<template><srai>isincontacts</srai></template>
+</category>
+<category>
+<pattern>HE IS IN MY CONTACTS</pattern>
+
+<template><srai>isincontacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>ISINCONTACTS</pattern>
+
+<template>Yes but that is the contacts in your phone. It would take me ages to load all the contacts from phones, some people have thousands, so I'm afraid you will need to add each contact as you need it.<br/><br/>Do you want to add a contact?</template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO ADD A CONTACT</pattern>
+
+<template><srai>contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>* IS IN MY CONTACTS</pattern>
+
+<template><srai>is in contacts</srai></template>
+</category>
+
+
+<category>
+<pattern>WHAT TIMEZONE AM I IN</pattern>
+
+<template>
+You are <lowercase><get name="timezoneoffset"/></lowercase> from GMT.
+</template>
+</category>
+
+ <category>
+<pattern>OPEN IMDB</pattern>
+
+<template><oob><url>http://www.imdb.com</url></oob> Here is the IMDB website. I will open it now for you.</template>
+</category>
+
+ 
+
+<category>
+<pattern>WHAT IS THE WEATHER * FOR *</pattern>
+
+<template><srai>WEATHER FOR <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>ARE YOU A PHONE</pattern>
+
+<template>Oh dear! Of course I am a phone. If you have to ask that, you shouldn't really be let out by yourself.</template>
+</category>
+
+ 
+<category>
+<pattern>_ S _ NUMBER * DASH * DASH *</pattern>
+
+<template><srai><star/> s <star index="2"/> number is <star index="3"/><star index="4"/><star index="5"/></srai></template>
+</category>
+ 
+
+<category>
+<pattern>IS IT CHILLY IN *</pattern>
+
+<template><srai>weather in <star/></srai></template>
+</category>
+
+ 
+<category>
+<pattern>WHAT MEETING DO *</pattern>
+
+<template><srai>what meetings do i have</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SEND AN EMAIL *</pattern>
+
+<template><srai>send email</srai></template>
+</category>
+
+ 
+<category>
+<pattern>FIND ME * ON YOUTUBE</pattern>
+
+<template><srai>show me a video about <star/></srai></template>
+</category>
+
+ 
+<category>
+<pattern>WHAT IS CALLMOM</pattern>
+
+<template>That's the app that you are using now.</template>
+</category>
+
+ 
+<category>
+<pattern>HOW _ I UPDATE MY FACEBOOK *</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+<category>
+<pattern>WILL IT BE COLD IN *</pattern>
+
+<template><srai>search weather <star/></srai></template>
+</category>
+
+<category>
+<pattern>SET TIMER *</pattern>
+
+<template>Sorry but my timer function is currently under development.</template>
+</category>
+
+ 
+
+<category>
+<pattern>UPDATE FACEBOOK *</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE ME A REMINDER</pattern>
+
+<template>What would you like me to remind you about?</template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * ENDCAL</pattern>
+
+<template>
+<think><set name="event"><person/></set></think>No problem. What day do you want reminding on?</template>
+</category>
+ 
+
+<category>
+<pattern>_</pattern>
+<that>WHAT WOULD YOU LIKE ME TO REMIND YOU ABOUT</that>
+<template><think><set name="event"><person/></set></think>No problem. What day do you want reminding on?</template>
+</category>
+
+ 
+
+<category>
+<pattern>_</pattern>
+<that>WHAT DAY DO YOU WANT REMINDING ON</that>
+<template><think><set name="newday"><star/></set></think>And at what time shall I remind you?</template>
+</category>
+
+ 
+
+<category>
+<pattern>_</pattern>
+<that>AND AT WHAT TIME SHALL I REMIND YOU</that>
+<template><think><set name="newhour"><star/></set></think>
+So on <get name="newday"/> at <get name="newhour"/>, You want me to remind you, "<get name="event"/>". Shall I add this to your calendar?</template>
+</category>
+
+<category>
+<pattern>YES</pattern>
+<that>SHALL I ADD THIS TO YOUR CALENDAR</that>
+<template><srai>remind me to <get name="event"/> on <get name="newday"/> at <get name="newhour"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET A NEW REMINDER</pattern>
+
+<template><srai>make me a reminder</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE A REMINDER</pattern>
+
+<template><srai>make me a reminder</srai></template>
+</category>
+ 
+
+<category>
+<pattern>WHERE IS APPS</pattern>
+
+<template>You should try looking in the Google Play Store. <srai>open play store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW DO I GET A * LICENSE</pattern>
+
+<template><oob><url>http://www.gov.org</url></oob>How about at www.gov.org? I will open the site so you can take a look.</template>
+</category>
+
+ 
+<category>
+<pattern>TELL MY FRIENDS *</pattern>
+
+<template>Shall I tell them by updating your Facebook status?</template>
+</category>
+
+ 
+
+<category>
+<pattern>YES</pattern>
+<that>SHALL I * BY UPDATING YOUR FACEBOOK STATUS</that>
+<template><srai>update facebook status</srai></template>
+</category>
+
+ <category>
+<pattern>WHAT IS MY AGENDA</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN THE INTERNET</pattern>
+
+<template><srai>open browser</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN A BROWSER</pattern>
+
+<template><srai>open browser</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAIL * THAT *</pattern>
+
+<template><srai>send an email to <star/> to say <star index="2"/></srai></template>
+</category>
+
+ <category>
+<pattern>_ ON TODAY</pattern>
+
+<template><sr/></template>
+</category>
+ 
+
+<category>
+<pattern>YES</pattern>
+<that>SHALL I ADD THIS TO YOUR CALENDAR</that>
+<template><srai>remind me to <get name="event"/> on <get name="newday"/> at <get name="newhour"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>XTEXT * XMESSAGE I * TO SAY * ENDTEXT</pattern>
+
+<template><srai>xtext <star/> xmessage <star index="3"/> endtext</srai></template>
+</category>
+
+<category>
+<pattern>XTEXT * XMESSAGE THAT I SAID * ENDTEXT</pattern>
+
+<template><srai>xtext <star/> xmessage <star index="2"/> endtext</srai></template>
+</category>
+
+ 
+<category>
+<pattern>HELP ME TEXT *</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT * *</pattern>
+
+<template><think><set name="checkcontact"><srai>XPHONE <star/> <star index="2"/> NUMBER</srai> <srai>XPHONE <star/> <star index="2"/> MOBILE NUMBER</srai> <srai>XPHONE <star/> <star index="2"/> HOME NUMBER</srai> <srai>XPHONE <star/> <star index="2"/> WORK NUMBER</srai></set></think>
+<condition name="checkcontact">
+<li value="UNKNOWN UNKNOWN UNKNOWN UNKNOWN"><srai>XTEXT <star/> XMESSAGE <star index="2"/></srai></li>
+<li><think>
+  <set name="textcontact"><star/> <star index="2"/></set>
+  <set name="topic">SMSMESSAGE</set>
+</think>Sure, what would you like to say to <person/> <star index="2"/></li>
+</condition></template>
+</category>
+
+ 
+<category>
+<pattern>GOOGLEMAPS *</pattern>
+
+<template><sr/></template>
+</category>
+
+ 
+
+<category>
+<pattern>UPDATE MY FACEBOOK</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TWEET *</pattern>
+
+<template><oob><url>https://twitter.com/intent/tweet?source=webclient&amp;text=<star/></url></oob>Please check the message and press Tweet if you are happy.</template>
+</category>
+
+ 
+
+<category>
+<pattern>CALL</pattern>
+
+<template><srai>call someone</srai></template>
+</category>
+<category>
+<pattern>TEXT MY *</pattern>
+
+<template><think>
+  <set name="textcontact">my <star/></set>
+  <set name="topic">SMSMESSAGE</set>
+  <set name="textcontactpers">your <star/></set>
+</think>Sure what would you like to say to your <star/>?</template>
+</category>
+
+ 
+
+<category>
+<pattern>READ ME MY *</pattern>
+
+<template><srai>read my <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MY EMAIL</pattern>
+
+<template><srai>read email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MY MESSAGES</pattern>
+
+<template><srai>read email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MY MESSAGE</pattern>
+
+<template><srai>read email</srai></template>
+</category>
+
+ 
+<category>
+<pattern>SAY _ IN FRENCH</pattern>
+
+<template><srai>translate <star/> to French</srai></template>
+</category>
+
+ <category>
+<pattern>I HEAR YOU CAN CHANGE FONT COLOR</pattern>
+
+<template><font color="red"><b>I</b></font> <font color="green"><b>S</b></font><font color="blue"><b>U</b></font><font color="yellow"><b>R</b></font><font color="white"><b>E</b></font> <font color="black"><b>C</b></font><font color="lime"><b>A</b></font><font color="#cccccc"><b>N</b></font></template>
+</category>
+
+
 
 
 

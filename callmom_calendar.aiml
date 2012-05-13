@@ -14,6 +14,8 @@
 <!-- For more information contact callmom-info@pandorabots.com -->
 
 
+<!-- still to do "remind me today" -->
+
 
 
 <category>
@@ -35,11 +37,67 @@
 Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
 </category>
 
+
+
+<category>
+<pattern>REMIND ME TO * NEXT *</pattern>
+
+<template>
+<srai>remind me on <star index="2"/> to <star/></srai></template>
+</category>
+
 <category>
 <pattern>REMIND ME TO * ON *</pattern>
 
 <template>
 <srai>remind me on <star index="2"/> to <star/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * ON * AT *</pattern>
+
+<template>
+<srai>remind me on <star index="2"/> to <star index="1"/> at <star index="3"/></srai></template>
+</category>
+
+
+
+
+
+<category>
+<pattern>REMIND ME ON * TO * AT *</pattern>
+
+<template>
+<think><set name="eventname"><star index="2"/></set><set name="checkdate"><date format="%m %d"/></set><srai>DATENUM <star/></srai><srai>breakuptime <star index="3"/></srai></think>
+Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+
+<category>
+<pattern>REMIND ME THAT *</pattern>
+
+<template>
+<srai>remind me to <star/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME THAT I HAVE TO *</pattern>
+
+<template>
+<srai>remind me to <star/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME THAT I MUST *</pattern>
+
+<template>
+<srai>remind me to <star/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * IN *</pattern>
+
+<template>Sorry but I have not yet been taught how to do times.</template>
 </category>
 
 <category>
@@ -59,7 +117,8 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 <category>
 <pattern>SETUPCALENDARENTRY</pattern>
 
-<template><srai><input index="1"/> ENDCAL</srai></template>
+<template>
+<think><set name="newminute">00</set></think><srai><input index="1"/> ENDCAL</srai></template>
 </category>
 
  
@@ -89,10 +148,33 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 </category>
 
 <category>
+<pattern>REMIND ME TODAY TO *</pattern>
+
+<template>
+<srai>remind me to <star/> endcal</srai></template>
+</category>
+
+<category>
+<pattern>REMIND ME ON TODAY TO *</pattern>
+
+<template>
+<srai>remind me to <star/> endcal</srai></template>
+</category>
+
+
+
+
+
+<category>
 <pattern>REMIND ME TO * AT * ENDCAL</pattern>
 
 <template>
-<think><set name="eventname"><star/></set><set name="newmonth"><date format="%m"/></set><set name="newdate"><date format="%d"/></set><set name="newhour"><star index="2"/></set></think>
+<think>
+<set name="eventname"><star/></set>
+<set name="newmonth"><date format="%m"/></set>
+<set name="newdate"><date format="%d"/></set>
+<srai>breakuptime <star index="2"/></srai>
+</think>
 Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
 </template>
 </category>
@@ -126,11 +208,61 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
 <pattern>ADDNEWCALENDAREVENT</pattern>
 
 <template>
-<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour><get name="newhour"/></hour><minute>00</minute><duration>30</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
+<oob><schedule><title><get name="eventname"/></title><description><get name="eventname"/></description><location></location><year><date format="%Y"/></year><month><get name="newmonth"/></month><day><get name="newdate"/></day><hour><get name="newhour"/></hour><minute><get name="newminute"/></minute><duration>60</duration></schedule></oob><oob><launch>com.android.calendar</launch></oob>
 </template>
 </category>
 
 <!-- Date functions - do not change -->
+
+<category>
+<pattern>BREAKUPTIME *</pattern>
+<template>
+<think>
+<set name="breaktime"><explode><star/></explode></set>
+<srai>breakuptime1 <get name="breaktime"/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 *</pattern>
+<template>
+<think>
+<set name="newhour"><star/></set>
+<set name="newminute">00</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 * *</pattern>
+<template>
+<think>
+<set name="newhour"><star/><star index="2"/></set>
+<set name="newminute">00</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 * * *</pattern>
+<template>
+<think>
+<set name="newhour"><star/></set>
+<set name="newminute"><star index="2"/><star index="3"/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 * * * *</pattern>
+<template>
+<think>
+<set name="newhour"><star/><star index="2"/></set>
+<set name="newminute"><star index="3"/><star index="4"/></set>
+</think>
+</template>
+</category>
 
 <category>
 <pattern>DATENUM SUNDAY</pattern>

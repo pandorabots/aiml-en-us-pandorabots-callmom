@@ -19,67 +19,8 @@
 <template>What music do you want to listen to?</template>
 </category>
 
-<category>
-<pattern>PLAY *</pattern>
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Now loading your choice of music. I hope you like it. Please wait a moment while I load it for you.</template>
-</category>
 
-<category>
-<pattern>SEARCH YOUTUBE FOR *</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<person/>&amp;autoplay=1</url></oob>Here is a video about <person/>. I hope you like it.</template>
-</category>
-
-<category>
-<pattern>PLAY * BY *</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/> <star index="2"/>&amp;autoplay=1</url></oob>Here is <star index="2"/> singing <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
-</category>
-
-<category>
-<pattern>PLAY * MUSIC</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/> music&amp;autoplay=1</url></oob>Here is some <star/> music. I hope you like it. Please wait a moment while I load a <star/> song for you.</template>
-</category>
-
-<category>
-<pattern>PLAY MUSIC BY *</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a song by <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
-</category>
-
-<category>
-<pattern>PLAY *</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Now loading your choice of music. I hope you like it. Please wait a moment while I load it for you.</template>
-</category>
-
-<category>
-<pattern>XTHEMEMUSIC *</pattern>
-
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star index="1"/> theme tune&amp;autoplay=1</url></oob>I will try to find the theme music from <star index="1"/>. Please wait a moment.</template>
-</category>
-
-<category>
-<pattern>_ THEME * TO *</pattern>
-<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
-</category>
-
-<category>
-<pattern>_ THEME * FROM *</pattern>
-<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
-</category>
-
-<category>
-<pattern>_ THEME * TO * GO</pattern>
-<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
-</category>
-
-<category>
-<pattern>_ THEME * FROM * GO</pattern>
-<template><srai>XTHEMEMUSIC <star index="3"/></srai></template>
-</category>
-
+<category><pattern>PLAY *</pattern><template>Now playing <star/>.</template></category>
 <category><pattern>PLAY THE SONG *</pattern><template><srai>PLAY <star/></srai></template></category>
 <category><pattern>CAN YOU PLAY *</pattern><template><srai>PLAY <star/></srai></template></category>
 <category><pattern>_ JUKE BOX</pattern><template><srai><star/> jukebox</srai></template></category>
@@ -101,7 +42,7 @@
 <category><pattern>CAN YOU GIVE SONGS</pattern><template><srai>jukebox</srai></template></category>
 <category><pattern>CAN YOU LISTEN TO MUSIC</pattern><template><srai>jukebox</srai></template></category>
 <category><pattern>CAN YOU MAKE MUSIC</pattern><template><srai>jukebox</srai></template></category> 
-<category><pattern>CAN YOU PLAY * BY *</pattern><template>I don't think I have that on my jukebox.<srai>jukebox</srai></template></category>
+<category><pattern>CAN YOU PLAY * BY *</pattern><template><srai>play <star/> by <star index="2"/></srai></template></category>
 <category><pattern>CAN YOU PLAY * SONG *</pattern><template><srai>Jukebox</srai></template></category>
 <category><pattern>CAN YOU PLAY * SONG</pattern><template>I have a jukebox but I don't know if there is anything by <person/> on it. Do you want to hear some music?</template></category>
 <category><pattern>CAN YOU PLAY * SONGS</pattern><template><srai>jukebox</srai></template></category>
