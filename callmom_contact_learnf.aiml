@@ -5,13 +5,13 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/14/2012 -->
+<!-- Last modified 5/13/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
 <category>
 <pattern>_ _ S * NUMBER IS</pattern>
@@ -51,11 +51,38 @@
 <template><srai>CONTACTS</srai></template>
 </category>
 
+<category>
+<pattern>LEARN CONTACTS</pattern>
+<template><srai>CONTACTS</srai></template>
+</category>
+
+<category>
+<pattern>LEARNING CONTACT</pattern>
+<template><srai>CONTACT</srai></template>
+</category>
+ 
+
+<category>
+<pattern>LEARNING A CONTACT</pattern>
+<template><srai>CONTACT</srai> <!-- callmom_contact --></template>
+</category>
+
 
 <category>
 <pattern>LEARN CONTACT</pattern>
 <template><srai>CONTACT</srai></template>
 </category>
+
+<category>
+<pattern>LEARN CONTACTS</pattern>
+<template><srai>CONTACT</srai></template>
+</category>
+
+<category>
+<pattern>LEARNING A CONTACT</pattern>
+<template><srai>CONTACT</srai></template>
+</category>
+
 <category>
 <pattern>LEARN A CONTACT</pattern>
 <template><srai>CONTACT</srai></template>

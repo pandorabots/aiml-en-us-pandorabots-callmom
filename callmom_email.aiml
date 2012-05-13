@@ -5,14 +5,18 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 2/20/2012 -->
+<!-- Last modified 5/13/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact info@pandorabots.com -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
+<category>
+<pattern>SEND AN E MAIL</pattern>
+<template><srai>SEND EMAIL</srai></template>
+</category>
 
 <category>
 <pattern>MY EMAIL IS *</pattern>
@@ -93,21 +97,21 @@ Sending email to <star/> from <get name="name"/>: "I <star index="2"/>".</templa
 <pattern>TELL THE DEVELOPERS *</pattern>
 <template>
 Sending "<star/>" to the developers.
-<oob><email><to>squarebear@square-bear.co.uk,leerc8@gmail.com,adeena@mignogna.org,kfujii@pandorabots.com,fkunze@gmail.com,cshapiro@panix.com,david.newyear@gmail.com,xophershaw@gmail.com</to><subject>CallMom Update</subject><body><star/></body></email></oob>
+<oob><email><to>callmom-info@pandorabots.com</to><subject>Message for CallMom Developers</subject><body><star/></body></email></oob>
 </template>
 </category>
 
 <category>
 <pattern>EMAIL RICHARD *</pattern>
 <template>Sending "<star/>" to Richard.
-<oob><email><to>drwallace@gmail.com</to><body><star/></body></email></oob>
+<oob><email><to>rich@pandorabots.com</to><body><star/></body></email></oob>
 </template>
 </category>
 
 <category>
 <pattern>EMAIL RICHARD ABOUT * AND SAY *</pattern>
 <template>Sending "<star index="2"/>" to Richard with subject "<star/>".
-<oob><email><to>drwallace@gmail.com</to><subject><star/></subject><body><star index="2"/></body></email></oob>
+<oob><email><to>rich@pandorabots.com</to><subject><star/></subject><body><star index="2"/></body></email></oob>
 </template>
 </category>
 
@@ -122,6 +126,12 @@ Sending "<star/>" to the developers.
 <pattern>SEND EMAIL</pattern>
 <template>Opening a blank email.
 <oob><email><to></to><subject></subject><body></body></email></oob>
+</template>
+</category>
+
+<category>
+<pattern>SEND MAIL</pattern>
+<template><srai>send email</srai>
 </template>
 </category>
 
