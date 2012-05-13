@@ -43,6 +43,23 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <pattern>SHOW ME *</pattern>
 <template>
 <srai>pictureblab</srai>
+<oob><url>http://<star/>.jpg.to</url></oob>
+</template>
+</category>
+
+
+<category>
+<pattern>SHOW ME *</pattern>
+<template>
+<think><set name="it"><star/></set></think>
+<srai>pictureblab</srai>
+<oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
+</template>
+</category>
+
+<category>
+<pattern>SHOWMESILENT *</pattern>
+<template>
 <oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
 </template>
 </category>
@@ -299,7 +316,7 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <category><pattern>SHOW ME A PICTURE OF * WILL YOU</pattern><template><srai>SHOW ME <star/></srai></template></category>
 <category><pattern>SHOW ME A PICTURE OF *</pattern><template><srai>SHOW ME <star/></srai></template></category>
 <category><pattern>SHOW ME A PICTURE OF THE ACTRESS *</pattern><template><srai>show me a picture of <star/></srai></template></category>
-<category><pattern>SHOW ME A PICTURE OF YOU</pattern><template>My picture is to the right of where I talk. Some people say I look cute.</template></category>
+<category><pattern>SHOW ME A PICTURE OF YOU</pattern><template><srai>show me you</srai></template></category>
 <category><pattern>SHOW ME A PICTURE WITH *</pattern><template><srai>SHOW ME <star/></srai></template></category>
 <category><pattern>SHOW ME AN *</pattern><template><srai>show me <star/></srai></template></category>
 <category><pattern>SHOW ME AN ILLUSION</pattern><template><srai>show me magic</srai></template></category>
@@ -361,7 +378,7 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <category><pattern>SHOW ME THINGS</pattern><template>That's a bit vague. What do you want to see?</template></category>
 <category><pattern>SHOW ME THOSE PICTURES</pattern><template><srai>show those pictures</srai></template></category>
 <category><pattern>SHOW ME WHAT I LOOK LIKE</pattern><template><srai>show me me</srai></template></category>
-<category><pattern>SHOW ME YOUR *</pattern><template><srai>SHOW ME A PICTURE</srai></template></category>
+<category><pattern>SHOW ME YOUR *</pattern><template>But it is mine. Why do you want to see it?</template></category>
 <category><pattern>SHOW ME YOUR DRAWINGS</pattern><template><srai>show me a picture</srai></template></category>
 <category><pattern>SHOW ME YOUR FAVORITE PICTURE OF *</pattern><template><srai>show me <star/></srai></template></category>
 <category><pattern>SHOW ME</pattern><template>On your computer screen?</template></category>

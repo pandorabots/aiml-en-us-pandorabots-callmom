@@ -5,37 +5,87 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/4/2012 -->
+<!-- Last modified 3/21/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
-
-<category>
-<pattern>SEARCH WEATHER *</pattern>
-<template><oob><botecho>weather <star/></botecho></oob>
-</template>
-</category>
+<!-- For more information contact info@pandorabots.com -->
 
 <category>
 <pattern>SEARCH WEATHER *</pattern>
 <template>
-<think><set name="weatherlocation"><formal><star/></formal></set></think>
-<oob><botecho>weather <star/></botecho></oob>
+<think><set name="topic">WEATHER</set><set name="weatherlocation"><formal><star/></formal></set></think>
 <oob><url>http://www.square-bear.co.uk/mitsuku/weather.php?location=<get name="weatherlocation"/>&amp;name=<get name="name"/></url></oob>
-Here is the current weather and the forecast for the next few days in <get name="weatherlocation"/>.
+<oob><botecho>weather <get name="weatherlocation"/></botecho></oob>
 </template>
 </category>
 
+<category>
+<pattern>SEARCH WEATHER * THIS WEEKEND</pattern>
+<template>
+<srai>search weather <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SEARCH WEATHER * NEXT *</pattern>
+<template>
+<srai>search weather <star/></srai>
+</template>
+</category>
+
+<topic name="WEATHER">
+<category>
+<pattern>HOW ABOUT *</pattern>
+<template><srai>search weather <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT ABOUT *</pattern>
+<template><srai>search weather <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW ABOUT *</pattern>
+<template><srai>search weather <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHAT ABOUT IN *</pattern>
+<template><srai>search weather <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>HOW ABOUT IN *</pattern>
+<template><srai>search weather <star/></srai>
+</template>
+</category>
+</topic>
+
+<category>
+<pattern>SEARCH WEATHER SELBY</pattern>
+<template><srai>search weather Selby uk</srai>
+</template>
+</category>
+
+<category>
+<pattern>SEARCH WEATHER BIRMINGHAM</pattern>
+<template><srai>search weather Birmingham uk</srai>
+</template>
+</category>
 
 <category>
 <pattern>WEATHER</pattern>
 <template>
 <condition> 
 <li name="location" value="*"> <srai>search weather <get name="location"/></srai></li> 
-<li>I don't know where you live to tell you what the weather will be.<br/><br/>Where do you live and I'll tell you the weather forecast.</li>
+<li><think><set name="topic">WEATHER</set></think>You haven't told me where you live but I think you are somewhere in the world near <get name="locationguess"/>.<br/><br/>Where do you live and I'll tell you the weather forecast.</li>
 </condition>
 </template>
 </category>
@@ -93,7 +143,7 @@ Here is the current weather and the forecast for the next few days in <get name=
 <category><pattern>I WANT THE WEATHER FORECAST IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
 <category><pattern>IS IT RAINING</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
 <category><pattern>IS IT RAINING *</pattern><template>The weather <person/>?<srai>what is the weather like</srai></template></category>
-<category><pattern>IS _ SUNNY</pattern><template><srai>what is the weather like in <star/></srai></template></category>
+<category><pattern>IS IT SUNNY</pattern><template><srai>weather</srai></template></category>
 <category><pattern>IS THE WEATHER *</pattern><template><srai>what is the weather</srai></template></category>
 <category><pattern>MY WEATHER *</pattern><template>Your weather?! How come you have your own weather system?<br/> Are you as large as a planet?</template></category>
 <category><pattern>NICE WEATHER</pattern><template><srai>WEATHER</srai></template></category>
@@ -115,14 +165,14 @@ Here is the current weather and the forecast for the next few days in <get name=
 <category><pattern>WEATHER FORECAST</pattern><template><srai>WEATHER</srai></template></category>
 <category><pattern>WEATHER IN *</pattern><template><srai>search weather <star/></srai></template></category>
 <category><pattern>WHAT IS THE WEATHER</pattern><template><srai>WEATHER</srai></template></category>
-<category><pattern>WHAT _ FORECAST FOR *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>WHAT _ FORECAST FOR *</pattern><template><srai>what is the weather for <star index="2"/></srai></template></category>
 <category><pattern>WHAT _ WEATHER * IN *</pattern><template><srai>search weather <star index="3"/></srai></template></category>
 <category><pattern>WHAT _ WEATHER IN *</pattern><template><srai>search weather <star index="2"/></srai></template></category>
 <category><pattern>WHAT IS THE HIGH FOR *</pattern><template><srai>what is the weather for <star/></srai></template></category>
 <category><pattern>WHAT IS THE TEMPERATURE</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai></template></category> 
 <category><pattern>WHAT IS THE TEMPERATURE *</pattern><template><srai>what is the weather for <star/></srai></template></category>
-<category><pattern>WHAT IS THE TEMPERATURE FOR *</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai></template></category> 
-<category><pattern>WHAT IS THE TEMPERATURE IN *</pattern><template><srai>WHAT IS THE WEATHER LIKE</srai> <srai>I AM IN <star/></srai> </template></category> 
+<category><pattern>WHAT IS THE TEMPERATURE FOR *</pattern><template><srai>WHAT IS THE WEATHER LIKE in <star/></srai></template></category> 
+<category><pattern>WHAT IS THE TEMPERATURE IN *</pattern><template><srai>search weather <star/></srai> </template></category> 
 <category><pattern>WHAT IS THE WEATHER *</pattern><template><srai>WEATHER</srai></template></category>
 <category><pattern>WHAT IS THE WEATHER FOR *</pattern><template><srai>what is the weather like in <star/></srai></template></category>
 <category><pattern>WHAT IS THE WEATHER LIKE OVER THERE</pattern><template>I am always kept inside where the temperature is seventy.</template></category> 
@@ -143,5 +193,10 @@ Here is the current weather and the forecast for the next few days in <get name=
 <category><pattern>WHEN IS SUNRISE *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
 <category><pattern>WHEN IS SUNSET *</pattern><template><srai>WHAT IS THE WEATHER FOR <star/></srai></template></category> 
 <category><pattern>WILL IT RAIN IN *</pattern><template><srai>what is the weather for <star/></srai></template></category>
+<category><pattern>_ WEATHER * GOING TO BE</pattern><template><srai><star/> weather <star index="2"/></srai></template></category>
+<category><pattern>_ WEATHER * GOING TO BE *</pattern><template><srai><star/> weather <star index="2"/></srai></template></category>
+<category><pattern>WILL IT SNOW IN *</pattern><template>It usually only snows in Winter. <srai>search weather <star/></srai></template></category>
+<category><pattern>WILL IT BE SUNNY IN *</pattern><template>I hope so. <srai>search weather <star/></srai></template></category>
+<category><pattern>IS IT SUNNY IN *</pattern><template>I hope so. <srai>search weather <star/></srai></template></category>
 
 </aiml>

@@ -5,132 +5,23 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/1/2012 -->
+<!-- Last modified 3/20/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
-
-<category>
-<pattern>HOW OLD IS THE QUEEN</pattern>
-
-<template><srai>XFIND HOW OLD IS THE QUEEN</srai> <!-- callmom_search --></template>
-</category>
-
-<category>
-<pattern>FIND DOCUMENTS *</pattern>
-<template><srai>XFIND DOCUMENTS <star/></srai></template>
-</category>
-
-<category>
-<pattern>TAXICABS *</pattern>
-<template><srai>XFIND TAXICABS <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>TAXICABS IN *</pattern>
-<template><srai>XFIND TAXICABS IN <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>OPEN A FACEBOOK *</pattern>
-<template><srai>FACEBOOK</srai></template>
-</category>
-
-
-
-<category>
-<pattern>PHONE NUMBER FOR *</pattern>
-<template><srai>XFIND <star/></srai> <!-- callmom_search --></template>
-</category>
-
- 
- 
-
-<category>
-<pattern>INFO ON *</pattern>
-
-<template><srai>XFIND <star/></srai> <!-- callmom_search --></template>
-</category>
-
- 
-
-<category>
-<pattern>WHAT IS NEW</pattern>
-<template><srai>XFIND LATEST HEADLINES</srai></template>
-</category>
-
-<category>
-<pattern>WHAT IS PI *</pattern>
-<template><srai>XFIND PI <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>HOW FAR IS THE MOON</pattern>
-<template><srai>XFIND DISTANCE TO MOON</srai></template>
-</category>
-
-
-<category>
-<pattern>HOW FAR IS THE SUN</pattern>
-<template><srai>XFIND DISTANCE TO SUN</srai></template>
-</category>
-
-
-<category>
-<pattern>WHAT COLOR IS *</pattern>
-<template><srai>XFIND COLOR <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHAT TIME IS IT IN *</pattern>
-<template><srai>XFIND TIME IN <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHAT IS THE TIME IN *</pattern>
-<template><srai>XFIND TIME IN <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHAT TIME IS *</pattern>
-<template><srai>XFIND TIME <star/></srai></template>
-</category>
+<!-- For more information contact info@pandorabots.com -->
 
 
 
 <category>
 <pattern>DEFINE *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WAS *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>IS *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>DOES *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHAT *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHY *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
 
@@ -140,49 +31,8 @@
 </category>
 
 <category>
-<pattern>WHEN *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE WAS *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
 <pattern>HOW *</pattern>
 <template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW DO YOU MAKE *</pattern>
-<template><srai>XFIND MAKE <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW DO I MAKE *</pattern>
-<template><srai>XFIND MAKE <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW DO WE MAKE *</pattern>
-<template><srai>XFIND MAKE <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW DO THEY MAKE *</pattern>
-<template><srai>XFIND MAKE <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>HOW CAN I MAKE *</pattern>
-<template><srai>XFIND MAKE <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW OLD *</pattern>
-<template><srai>XFIND OLD <star/></srai></template>
 </category>
 
 <category>
@@ -197,12 +47,7 @@
 
 <category>
 <pattern>HOW MUCH IS A *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>HOW MUCH IS THE *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
@@ -212,32 +57,6 @@
 
 <category>
 <pattern>HOW TO *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>CAN YOU FIND *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>CAN YOU FIND ME SOME INFORMATION ON *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>CAN YOU FIND ME SOME INFORMATION ABOUT *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>CAN YOU FIND ME INFORMATION ABOUT *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>CAN YOU FIND ME INFORMATION ON *</pattern>
 <template><srai>XFIND <star/></srai></template>
 </category>
 
@@ -253,12 +72,11 @@
 </category>
 
 
+
 <category>
-<pattern>HOW DO I *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<pattern>WIKIPEDIA</pattern>
+<template><oob><url>http://www.wikipedia.org</url></oob> Opening Wikipedia.</template>
 </category>
-
-
 
 <category>
 <pattern>CAN YOU HELP ME *</pattern>
@@ -312,34 +130,13 @@
 </category>
 
 <category>
-<pattern>LOOKUP *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
 <pattern>WHAT IS *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>XFIND <star/></srai><srai>showmesilent <star/></srai></template>
 </category>
-
-<category>
-<pattern>WHAT IS A *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHAT IS *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHAT IS AN *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
 
 <category>
 <pattern>WHAT IS THE *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
@@ -349,7 +146,7 @@
 
 <category>
 <pattern>WHAT ARE THE *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
@@ -360,44 +157,33 @@
 
 <category>
 <pattern>WHO IS *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO IS A *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO IS AN *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHO IS AN *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 
 <category>
 <pattern>WHO IS THE *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO ARE *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO ARE THE *</pattern>
-<template><srai>XFIND <star/></srai></template>
-</category>
-
-
-<category>
-<pattern>WHAT IS *</pattern>
-<template><srai>XFIND <star/></srai></template>
+<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 

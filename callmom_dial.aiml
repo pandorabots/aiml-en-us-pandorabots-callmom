@@ -5,24 +5,19 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified: 4/28/2012 -->
+<!-- Last modified: 2/13/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
+<!-- For more information contact info@pandorabots.com -->
 
 
 
 <category>
-<pattern>PHONE</pattern>
-<template><oob><dial></dial></oob></template>
-</category>
-
-<category>
-<pattern>CALL</pattern>
-<template><oob><dial></dial></oob></template>
+<pattern>PHONE *</pattern>
+<template><srai>call <star/></srai></template>
 </category>
 
 
@@ -46,6 +41,7 @@
 <template>
 <think>
 <set name="whoamicalling"><person/></set>
+<set name="contactname"><star/></set>
 <set name="phonenumber">UNKNOWN</set>
 <set name="defaultnumber"><srai>XPHONE <star/> NUMBER</srai></set>
 <set name="mobilenumber"><srai>XPHONE <star/> MOBILE NUMBER</srai></set>
@@ -76,6 +72,12 @@
 </condition>
 </li>
 </condition>
+<think>
+<srai>TESTNUMBER <star/></srai>
+<condition name="isanumber">
+<li value="YES"><set name="phonenumber"><star/></set></li>
+</condition>
+</think>
 
 <condition name="phonenumber">
 <li value="NEW"><think><set name="function">call <star/></set></think><srai>addnewcontact <star/></srai></li>
@@ -156,7 +158,7 @@ That wasn't one of the choices. Let me remind you:<br/><srai>CALLMULTIPLE</srai>
 <condition name="phonenumber">
 <li value="UNKNOWN">Error: No phone number chosen to dial.</li>
 <li>
-Now dialing <get name="whoamicalling"/> on <get name="phonenumber"/>...
+Now dialling <get name="whoamicalling"/>...
 <oob><dial><get name="phonenumber"/></dial></oob>
 </li>
 </condition>

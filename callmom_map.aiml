@@ -5,18 +5,18 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/26/2012 -->
+<!-- Last modified 2/19/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
-
+<!-- For more information contact info@pandorabots.com -->
 
 <category>
-<pattern>NAVIGATE TO *</pattern>
-<template><srai>DIRECTIONS TO <star/></srai></template>
+<pattern>STARBUCKS</pattern>
+<template><srai>GOOGLEMAP STARBUCKS</srai>
+</template>
 </category>
 
 <category>
@@ -28,12 +28,6 @@
 <category>
 <pattern>I HAVE LOST MY WALLET</pattern>
 <template>Let me find a police station for you. <srai>GOOGLEMAP police station</srai>
-</template>
-</category>
-
-<category>
-<pattern>STARBUCKS</pattern>
-<template><srai>GOOGLEMAP STARBUCKS</srai>
 </template>
 </category>
 
@@ -52,21 +46,6 @@
 <template><srai>GOOGLEMAP <star/></srai></template>
 </category>
 
-<category>
-<pattern>WHERE IS A *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE IS *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
-<category>
-<pattern>WHERE IS AN *</pattern>
-<template><srai>GOOGLEMAP <star/></srai></template>
-</category>
-
 
 <category>
 <pattern>WHERE IS THE *</pattern>
@@ -75,6 +54,12 @@
 
 <category>
 <pattern>I AM LOOKING FOR * </pattern>
+<template><srai>GOOGLEMAP <star/></srai>
+</template>
+</category>
+
+<category>
+<pattern>WHERE IS THE CLOSEST *</pattern>
 <template><srai>GOOGLEMAP <star/></srai>
 </template>
 </category>
@@ -123,7 +108,7 @@
 
 <category>
 <pattern>FIND ME *</pattern>
-<template><srai>Where is <star/></srai>
+<template><srai>Googlemap <star/></srai>
 </template>
 </category>
 
@@ -147,37 +132,37 @@
 
 <category>
 <pattern>I AM HUNGRY</pattern>
-<template>I'm looking for a restaurant near you.<srai>GOOGLEMAP Restaurant</srai>
+<template><srai>GOOGLEMAP Restaurant</srai>
 </template>
 </category>
 
 <category>
 <pattern>I AM THIRSTY</pattern>
-<template>I'm looking for a bar near you.  <srai>GOOGLEMAP bar</srai>
+<template><srai>GOOGLEMAP bar</srai>
 </template>
 </category>
 
 <category>
 <pattern>I AM SICK</pattern>
-<template>I'm looking for a hospital you.  <srai>GOOGLEMAP hospital</srai>
+<template><srai>GOOGLEMAP hospital</srai>
 </template>
 </category>
 
 <category>
 <pattern>MY * HAS BROKEN DOWN</pattern>
-<template>I'm looking for a garage near you. <srai>GOOGLEMAP garage</srai>
+<template><srai>GOOGLEMAP garage</srai>
 </template>
 </category>
 
 <category>
 <pattern>I FANCY * FOOD</pattern>
-<template>I'm looking for a <star/> restaurant near you.  <srai>GOOGLEMAP <star/> restaurant</srai>
+<template><srai>GOOGLEMAP <star/> restaurant</srai>
 </template>
 </category>
 
 <category>
 <pattern>I WANT * FOOD</pattern>
-<template>I'm looking for a <star/> restaurant near you. <srai>GOOGLEMAP <star/> restaurant</srai>
+<template><srai>GOOGLEMAP <star/> restaurant</srai>
 </template>
 </category>
 
@@ -214,6 +199,22 @@
 <category><pattern>GOOGLEMAP * THAT *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP * WHICH *</pattern><template><srai>GOOGLEMAP <star/></srai></template></category>
 <category><pattern>GOOGLEMAP MONEY</pattern><template><srai>GOOGLEMAP ATM</srai></template></category>
+<category><pattern>GOOGLEMAP CASH</pattern><template><srai>GOOGLEMAP ATM</srai></template></category>
+<category><pattern>GOOGLEMAP CASH MACHINE</pattern><template><srai>GOOGLEMAP ATM</srai></template></category>
+<category><pattern>GOOGLEMAP CUP OF *</pattern><template><srai>GOOGLEMAP coffee shop</srai></template></category>
+<category><pattern>GOOGLEMAP GIRLFRIEND</pattern><template><srai>GOOGLEMAP singles bar</srai></template></category>
+<category><pattern>GOOGLEMAP BOYFRIEND</pattern><template><srai>GOOGLEMAP singles bar</srai></template></category>
+<category><pattern>GOOGLEMAP THE MOVIES</pattern><template><srai>GOOGLEMAP cinema</srai></template></category>
+<category><pattern>GOOGLEMAP LUNCH</pattern><template><srai>GOOGLEMAP cinema</srai></template></category>
+<category><pattern>GOOGLEMAP DINNER</pattern><template><srai>GOOGLEMAP cinema</srai></template></category>
+<category><pattern>GOOGLEMAP ME</pattern><template>You are the one who is talking to me on your phone. Are you lost?</template></category>
+<category><pattern>GOOGLEMAP * ALRIGHT</pattern><template><srai>googlemap <star/></srai></template></category>
+<category><pattern>GOOGLEMAP NEARBY *</pattern><template><srai>googlemap <star/></srai></template></category>
+<category><pattern>GOOGLEMAP THE LOCAL *</pattern><template><srai>googlemap <star/></srai></template></category>
+<category><pattern>GOOGLEMAP MY LOCAL *</pattern><template><srai>googlemap <star/></srai></template></category>
+<category><pattern>GOOGLEMAP MY NEAREST *</pattern><template><srai>googlemap <star/></srai></template></category>
+
+
 
 
 

@@ -5,15 +5,13 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 4/25/2012 -->
+<!-- Last modified 2/14/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
 <!-- Richard Wallace rich@pandorabots.com -->
 <!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
-
-
+<!-- For more information contact info@pandorabots.com -->
 
 <category>
 <pattern>_ _ S * NUMBER IS</pattern>
@@ -53,37 +51,9 @@
 <template><srai>CONTACTS</srai></template>
 </category>
 
-<category>
-<pattern>LEARN CONTACTS</pattern>
-
-<template><srai>CONTACTS</srai></template>
-</category>
-
-
-<category>
-<pattern>LEARNING CONTACT</pattern>
-<template><srai>CONTACT</srai></template>
-</category>
-
- 
-
-<category>
-<pattern>LEARNING A CONTACT</pattern>
-<template><srai>CONTACT</srai> <!-- callmom_contact --></template>
-</category>
-
- 
 
 <category>
 <pattern>LEARN CONTACT</pattern>
-<template><srai>CONTACT</srai></template>
-</category>
-<category>
-<pattern>LEARN CONTACTS</pattern>
-<template><srai>CONTACT</srai></template>
-</category>
-<category>
-<pattern>LEARNING A CONTACT</pattern>
 <template><srai>CONTACT</srai></template>
 </category>
 <category>
@@ -193,6 +163,7 @@ I will remember <person><star/></person>'s number <star index="3"/>.
 <set name="phonenumber"><star index="3"/></set>
 <srai>xlearnnumber <star/> <star index="2"/> XSPLIT <star index="3"/></srai>
 <set name="checkname"><srai>XPHONE <star/> NUMBER</srai></set>
+
 </think>
 <condition name="checkname">
 <li value="UNKNOWN">
@@ -234,6 +205,7 @@ Ok, I won't replace them.
  <pattern>XLEARNNUMBER * XSPLIT *</pattern>
  <template>
 <think><set name="contacts"><person/>|<star index="2"/>|<get name="contacts"/></set></think>
+<think><set name="contacts"><get name="newcontact"/>|<star index="2"/>|<get name="contacts"/></set></think>
 
 
 <learnf>
@@ -291,7 +263,7 @@ UNKNOWN
 <set name="newcontact"><star index="1"/></set>
 <set name="typeofcontact"></set>
 </think>
-I don't have anyone in your contact list with that name. Would you like to add <set name="newcontactpers"><person/></set> as a contact?
+You haven't told me about anyone with that name. Would you like to add <set name="newcontactpers"><person/></set> as a contact?
 </template>
 </category>
 
@@ -300,6 +272,22 @@ I don't have anyone in your contact list with that name. Would you like to add <
 <that>WOULD YOU LIKE TO ADD * AS A CONTACT</that>
 <template>
 Sure, shall I add <get name="newcontactpers"/> from your phone book or is it a brand new contact?
+</template>
+</category>
+
+<category>
+<pattern>_ PHONE *</pattern>
+<that>WOULD YOU LIKE TO ADD * AS A CONTACT</that>
+<template>
+<srai>contact</srai>
+</template>
+</category>
+
+<category>
+<pattern>_ NEW *</pattern>
+<that>WOULD YOU LIKE TO ADD * AS A CONTACT</that>
+<template>
+No problem, what is the phone number of <get name="newcontactpers"/>?
 </template>
 </category>
 
@@ -337,6 +325,15 @@ No problem, what is the phone number of <get name="newcontactpers"/>?
 
 <category>
 <pattern>_ NEW</pattern>
+<that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
+<template>
+No problem, what is the phone number of <get name="newcontactpers"/>?
+</template>
+</category>
+
+
+<category>
+<pattern>NEW</pattern>
 <that>SURE SHALL I ADD * FROM YOUR PHONE BOOK *</that>
 <template>
 No problem, what is the phone number of <get name="newcontactpers"/>?
@@ -404,6 +401,7 @@ Thanks, I have added <get name="newcontactpers"/> to your contacts. Their number
 </template>
 </category>
 
+
 <category>
 <pattern>LIST CONTACTS</pattern>
 <template>
@@ -411,5 +409,6 @@ I will display a list of the contacts you have told me about.
 <oob><url>http://www.square-bear.co.uk/mitsuku/contacts.php?contacts=<get name="name"/>|<get name="contacts"/></url></oob>
 </template>
 </category>
+
 
 </aiml>
