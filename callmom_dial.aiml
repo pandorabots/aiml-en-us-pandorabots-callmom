@@ -21,7 +21,7 @@
 </category>
 
 <category>
-<pattern>PHONE/pattern>
+<pattern>PHONE</pattern>
 <template><oob><dial></dial></oob>
 </template>
 </category>
