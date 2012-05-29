@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/13/2012 -->
+<!-- Last modified 5/29/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -21,6 +21,12 @@
 <category>
 <pattern>FIND DOCUMENTS *</pattern>
 <template><srai>XFIND DOCUMENTS <star/></srai></template>
+</category>
+
+
+<category>
+<pattern>SHOW ME ALL *</pattern>
+<template><srai>XFIND ALL <star/></srai></template>
 </category>
 
 <category>

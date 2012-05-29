@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/3/2012 -->
+<!-- Last modified 5/29/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Richard Wallace rich@pandorabots.com -->
@@ -32,6 +32,65 @@
 <category><pattern>OOB TEST SCHEDULE</pattern>
 
 <template><oob><schedule><title>CallMom Event</title><description>Test Event</description><location>Skype</location><year>2012</year><month>5</month><day>4</day><hour>16</hour><minute>15</minute><duration>60</duration></schedule></oob> Testing calendar.</template>
+</category>
+
+
+<category>
+<pattern>OOB TEST EXPLODE</pattern>
+<template>Explode ABCDE = <explode>ABCDE</explode></template>
+</category>
+
+<category>
+<pattern>OOB TEST EXPLODE *</pattern>
+
+<template>Explode <star/> = <explode><star/></explode></template>
+</category>
+
+
+<category>
+<pattern>TEST TABLE</pattern>
+
+<template>
+Displaying Table Results.
+<oob>
+<table>
+<tr><td><b>Date</b></td><td><b>Task or Event</b></td><td><b>Deadline</b></td><td><b>Person</b></td></tr>
+<tr><td>1/1/2011</td><td>ProjectDevelopment</td><td>start-date</td><td>Steve Berube</td></tr>
+<tr><td>1/1/2011</td><td>DevelopRFP</td><td>start-date</td><td>Matt Brand</td></tr>
+<tr><td>1/1/2011</td><td>AnnounceRFP</td><td>has-date</td><td>Matt Brand</td></tr>
+</table>
+</oob>
+</template>
+</category>
+
+
+
+
+<category>
+<pattern>OOB TEST ICON</pattern>
+
+<template><img src="http://pandorabots.com/pandora/pics/callmom/icon.png"/> CallMom Icon.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OOB TEST IMG</pattern>
+
+<template><img src="http://www.pandorabots.com/pandora/pics/callmom/CallMomApp_512.png"/> CallMom Logo.</template>
+</category>
+
+
+
+<category>
+<pattern>OOB TEST HTML</pattern>
+
+<template><img src="http://2.bp.blogspot.com/-_4AR2rROGho/T4NDYTz1f4I/AAAAAAAAAOI/o5HZWrsWP6k/s400/conference+group+photo.jpg"/>
+
+<h3>Chatbots 3.2 Conference</h3>
+<em>Philadelphia, PA</em><br/>
+Here is a <a href="http://www.pandorabots.com/pandora/pics/callmom/index.html">link to the CallMom About Page</a>.
+</template>
 </category>
 
 </aiml>
