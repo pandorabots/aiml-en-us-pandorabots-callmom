@@ -312,7 +312,7 @@
 
 <category>
 <pattern>WHAT IS *</pattern>
-<template><srai>XFIND <star/></srai> <srai>showmesilent <star/></srai>
+<template><srai>SHOWANDTELL <star/></srai>
 </template>
 </category>
 
@@ -379,7 +379,7 @@
 
 <category><pattern>SHOWANDTELL *</pattern>
 <template>
-<srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<srai>showmesilent <star/></srai> <srai>XFIND <star/></srai></template>
 </category>
 
 <category>
