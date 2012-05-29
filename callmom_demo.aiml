@@ -27,6 +27,42 @@
 “Play some Coltrane.”
 “I’m locked out.” 
 -->
+
+<category>
+<pattern>SPELL MY NAME</pattern>
+
+<template>M Y N A M E!
+<condition name="name">
+<li value="*"><br/>Just kidding, your name is <get name="name"/> which is spelled <uppercase><explode><get name="name"/></explode></uppercase>.</li>
+</condition>
+</template>
+</category>
+
+
+
+<category>
+<pattern>SPELL *</pattern>
+<template><star/>:  <srai>SPELLIFY <explode><star/></explode></srai></template>
+</category>
+
+<category>
+<pattern>SPELLIFY *</pattern>
+<template><star/>.</template>
+</category>
+
+<category>
+<pattern>SPELLIFY * *</pattern>
+<template><star/>.  <srai>SPELLIFY <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>THE WORD IS *</pattern>
+
+<template><srai>SPELL <star/></srai></template>
+</category>
+
+
+
 <category>
 <pattern>ARE YOU BETTER THAN SIRI</pattern>
 <template>
@@ -36,6 +72,21 @@ Unlike other Android and Apple virtual assistants, CallMom can learn and adapt t
 
 <category>
 <pattern>WE HAVE A FLAT TIRE</pattern>
+<template><srai>FLAT TIRE</srai></template>
+</category>
+
+<category>
+<pattern>I HAVE A FLAT TIRE</pattern>
+<template><srai>FLAT TIRE</srai></template>
+</category>
+
+<category>
+<pattern>I HAVE A FLAT</pattern>
+<template><srai>FLAT TIRE</srai></template>
+</category>
+
+<category>
+<pattern>WE HAVE A FLAT</pattern>
 <template><srai>FLAT TIRE</srai></template>
 </category>
 
@@ -69,26 +120,6 @@ I'm calling Triple A.
 <category>
 <pattern>CALL * WHEN I *</pattern>
 <template>CallMom can only place a call right now.</template>
-</category>
-
-<category>
-<pattern>REMIND ME TO *</pattern>
-<template>CallMom alarm/calendar access not yet implemented.</template>
-</category>
-
-<category>
-<pattern>WAKE ME UP *</pattern>
-<template>CallMom alarm/calendar access not yet implemented.</template>
-</category>
-
-<category>
-<pattern>MOVE MY MEETING *</pattern>
-<template>CallMom alarm/calendar access not yet implemented.</template>
-</category>
-
-<category>
-<pattern>PLAY SOME *</pattern>
-<template>CallMom music player access not yet implemented.</template>
 </category>
 
 <category>

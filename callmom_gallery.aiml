@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 1/24/2012 -->
+<!-- Last modified 5/29/2012 -->
 <!-- -->
 <!-- Authors: Steve Worswick squarebear@square-bear.co.uk -->
 <!-- -->
@@ -53,14 +53,14 @@ What do you want to see? Say, "Show me a picture of" and then whatever it is you
 <template>
 <think><set name="it"><star/></set></think>
 <srai>pictureblab</srai>
-<oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
+<oob><url>http://callmom.pandorabots.com/static/image.html#<star/></url></oob>
 </template>
 </category>
 
 <category>
 <pattern>SHOWMESILENT *</pattern>
 <template>
-<oob><url>http://www.square-bear.co.uk/mitsuku/jpgto.php?picture=<star/></url></oob>
+<oob><url>http://callmom.pandorabots.com/static/image.html#<star/></url></oob>
 </template>
 </category>
 
