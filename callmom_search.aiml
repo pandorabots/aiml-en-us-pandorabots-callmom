@@ -97,7 +97,7 @@
 
 <category>
 <pattern>DEFINE *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
@@ -193,12 +193,12 @@
 
 <category>
 <pattern>HOW MUCH IS A *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
 <pattern>HOW MUCH IS THE *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
@@ -312,22 +312,26 @@
 
 <category>
 <pattern>WHAT IS *</pattern>
-<template><srai>XFIND <star/></srai><srai>showmesilent <star/></srai></template>
+<template><srai>XFIND <star/></srai> <srai>showmesilent <star/></srai>
+</template>
 </category>
 
 <category>
 <pattern>WHAT IS A *</pattern>
-<template><srai>XFIND <star/></srai><srai>showmesilent <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai>
+</template>
 </category>
 
 <category>
 <pattern>WHAT IS AN *</pattern>
-<template><srai>XFIND <star/></srai><srai>showmesilent <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai>
+</template>
 </category>
 
 <category>
 <pattern>WHAT IS THE *</pattern>
-<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL THE <star/></srai>
+</template>
 </category>
 
 <category>
@@ -337,7 +341,8 @@
 
 <category>
 <pattern>WHAT ARE THE *</pattern>
-<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL THE <star/></srai>
+</template>
 </category>
 
 <category>
@@ -348,33 +353,39 @@
 
 <category>
 <pattern>WHO IS *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO IS A *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO IS AN *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 
 <category>
 <pattern>WHO IS THE *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO ARE *</pattern>
-<template><srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL <star/></srai></template>
+</category>
+
+<category><pattern>SHOWANDTELL *</pattern>
+<template>
+<srai>showmesilent <star/></srai><srai>XFIND <star/></srai></template>
 </category>
 
 <category>
 <pattern>WHO ARE THE *</pattern>
-<template><srai>showmesilent the <star/></srai><srai>XFIND <star/></srai></template>
+<template><srai>SHOWANDTELL THE <star/></srai>
+</template>
 </category>
 
 
