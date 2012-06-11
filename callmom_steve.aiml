@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <aiml>
-<!-- -->
-<!-- Free software (c) 2012 Pandorabots, Inc.   -->
+<!-- Free software (c) 2001 ALICE A.I. Foundation.   -->
 <!-- This program is open source code released under -->
-<!-- the terms of the GNU Lesser General Public License     -->
+<!-- the terms of the GNU General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/29/2012 -->
-<!-- -->
-<!-- Authors: -->
-<!-- Steve Worswick squarebear@square-bear.co.uk -->
-<!-- -->
-<!-- For more information contact callmom-info@pandorabots.com -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
 <category>
 <pattern>SET PREDICATES STEVE</pattern>
 <template><think>
@@ -236,13 +232,13 @@ I will check for you.<srai>XFIND who sang <star/></srai>
 </category>
 
 <category>
-<pattern>SEARCHYOUTUBEOLD *</pattern>
+<pattern>SEARCH YOUTUBE FOR *</pattern>
 
-<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a song by <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a video about <star/>. I hope you like it. Please wait a moment while I load it for you.</template>
 </category>
 
 <category>
-<pattern>SEARCH YOUTUBE FOR *</pattern>
+<pattern>SEARCHYOUTUBEEMERGENCY *</pattern>
 
 <template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Here are some videos about <person/>. Please choose one to play.</template>
 </category>
@@ -250,31 +246,31 @@ I will check for you.<srai>XFIND who sang <star/></srai>
 <category>
 <pattern>PLAY * BY *</pattern>
 
-<template><oob><url>http://www.youtube.com/results?search_query=<star/>+<star index="2"/></url></oob>Here are some videos of <star index="2"/> singing <star/>. I hope you like them. Please choose one to play.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>+<star index="2"/>&amp;autoplay=1</url></oob>Here is a video of <star index="2"/> singing <star/>. I hope you like it. Please wait a moment while I load it up.</template>
 </category>
 
 <category>
 <pattern>PLAY * MUSIC</pattern>
 
-<template><oob><url>http://www.youtube.com/results?search_query=<star/>+music</url></oob>Here are some <star/> music vidoes. I hope you like them. Please choose one to play.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>+music&amp;autoplay=1</url></oob>Here is a <star/> music video. I hope you like it. Please wait a moment while I load it up.</template>
 </category>
 
 <category>
 <pattern>PLAY MUSIC BY *</pattern>
 
-<template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Here are some songs by <star/>. Please choose one to play.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Here is a song by <star/>. I hope you like it. Please wait a moment while I load it up.</template>
 </category>
 
 <category>
 <pattern>PLAY *</pattern>
 
-<template><oob><url>http://www.youtube.com/results?search_query=<star/></url></oob>Now loading your choice of music. I hope you like it. Please choose one to play.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>&amp;autoplay=1</url></oob>Now loading your choice of music. I hope you like it. Please wait a moment while I load it up.</template>
 </category>
 
 <category>
 <pattern>XTHEMEMUSIC *</pattern>
 
-<template><oob><url>http://www.youtube.com/results?search_query=<star/>+theme+tune</url></oob>I will try to find the theme music from <star index="1"/> and display it for you. Please choose one to play.</template>
+<template><oob><url>http://www.youtube.com/embed?listType=search&amp;list=<star/>+theme+tune&amp;autoplay=1</url></oob>I will try to find the theme music from <star index="1"/> and play it for you. Please wait a moment.</template>
 </category>
 
 <category>
@@ -1240,7 +1236,7 @@ This is what I know about you.
 <category>
 <pattern>TESTNUMBER *</pattern>
 
-<template><think><set name="isanumber">NO</set><set name="checknumber"><explode><star/></explode></set><srai>TESTNUMBERPART2 <get name="checknumber"/></srai></think><get name="isanumber"/></template>
+<template><think><set name="isanumber">NO</set><set name="checknumber"><explode><star/></explode></set><srai>TESTNUMBERPART2 <get name="checknumber"/></srai></think></template>
 </category>
 
  
@@ -2409,7 +2405,7 @@ This is what I know about you.
 <category>
 <pattern>UPDATE FACEBOOK STATUS</pattern>
 
-<template><oob><url>http://www.facebook.com/dialog/feed?_path=feed&amp;app_id=294334050655455&amp;&amp;redirect_uri=https://www.facebook.com&amp;display=touch</url></oob>Now opening a screen for you to update your status.</template>
+<template><oob><url>http://www.facebook.com/dialog/feed?_path=feed&amp;app_id=294334050655455&amp;redirect_uri=https://www.facebook.com&amp;display=touch</url></oob>Now opening a screen for you to update your status. Type or speak your message into the status box and press share to post it on your wall.</template>
 </category>
 
 <category>
@@ -2453,6 +2449,25 @@ This is what I know about you.
 <set name="timezoneoffset"><star index="4"/></set>
 </think>
 <srai>setuplocation <get name="timezoneid"/></srai>
+<srai>setuptimezone <get name="timezoneoffset"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SETUPTIMEZONE *</pattern>
+
+<template>
+Non-standard timezone offset
+
+</template>
+</category>
+
+<category>
+<pattern>SETUPTIMEZONE * HOURS 00 MINUTES</pattern>
+
+<template>
+<set name="timezoneoffset"><star index="1"/></set>
+
 </template>
 </category>
 
@@ -2474,6 +2489,17 @@ This is what I know about you.
 
 </template>
 </category>
+
+<category>
+<pattern>SETUPLOCATION * SLASH * UNDERSCORE * UNDERSCORE *</pattern>
+
+<template>
+<set name="locationguess"><star index="2"/> <star index="3"/> <star index="4"/></set>
+
+</template>
+</category>
+
+
 
 <category>
 <pattern>SETUPLOCATION *</pattern>
@@ -2591,7 +2617,13 @@ You are <lowercase><get name="timezoneoffset"/></lowercase> from GMT.
 <category>
 <pattern>_ S _ NUMBER * DASH * DASH *</pattern>
 
-<template><srai><star/> s <star index="2"/> number is <star index="3"/><star index="4"/><star index="5"/></srai></template>
+<template><srai><star/> s <star index="2"/> number <star index="3"/><star index="4"/><star index="5"/></srai></template>
+</category>
+
+<category>
+<pattern>_ S _ NUMBER * DASH * DASH * DASH *</pattern>
+
+<template><srai><star/> s <star index="2"/> number <star index="3"/><star index="4"/><star index="5"/><star index="6"/></srai></template>
 </category>
  
 
@@ -2804,6 +2836,18 @@ So on <get name="newday"/> at <get name="newhour"/>, You want me to remind you, 
 <template><srai>xtext <star/> xmessage <star index="2"/> endtext</srai></template>
 </category>
 
+<category>
+<pattern>XTEXT * XMESSAGE TELL HER * ENDTEXT</pattern>
+
+<template><srai>xtext <star/> xmessage <star index="2"/> endtext</srai></template>
+</category>
+
+<category>
+<pattern>XTEXT * XMESSAGE TELL HIM * ENDTEXT</pattern>
+
+<template><srai>xtext <star/> xmessage <star index="2"/> endtext</srai></template>
+</category>
+
  
 <category>
 <pattern>HELP ME TEXT *</pattern>
@@ -2845,6 +2889,12 @@ So on <get name="newday"/> at <get name="newhour"/>, You want me to remind you, 
 
 <category>
 <pattern>TWEET *</pattern>
+
+<template><oob><url>https://twitter.com/intent/tweet?source=webclient&amp;text=<star/></url></oob>Please check the message and press Tweet if you are happy.</template>
+</category>
+
+<category>
+<pattern>TWEET * ENDTWEET</pattern>
 
 <template><oob><url>https://twitter.com/intent/tweet?source=webclient&amp;text=<star/></url></oob>Please check the message and press Tweet if you are happy.</template>
 </category>
@@ -2911,7 +2961,1397 @@ So on <get name="newday"/> at <get name="newhour"/>, You want me to remind you, 
 <template><font color="red"><b>I</b></font> <font color="green"><b>S</b></font><font color="blue"><b>U</b></font><font color="yellow"><b>R</b></font><font color="white"><b>E</b></font> <font color="black"><b>C</b></font><font color="lime"><b>A</b></font><font color="#cccccc"><b>N</b></font></template>
 </category>
 
+<category>
+<pattern>FIND FIXES *</pattern>
 
+<template><srai>XGOOG fixes <star/></srai></template>
+</category>
+
+ <category>
+<pattern>YOU ARE A CALL GIRL</pattern>
+
+<template>Nonsense. I am a phone app.</template>
+</category>
+<category>
+<pattern>SY *</pattern>
+
+<template><oob>
+  <url>http://www.youtube.com/embed?listType=search&amp;list=
+    <person/>&amp;autoplay=1
+  </url>
+</oob>Here is a video about <person/>. I hope you like it.</template>
+</category>
+<category>
+<pattern>SY1 *</pattern>
+
+<template><oob>
+  <url>http://www.youtube.com/results?search_query=<star/>
+  </url>
+</oob>Here is a video about <person/>. I hope you like it.</template>
+</category>
+
+<category>
+<pattern>SEND SMS *</pattern>
+
+<template><srai>send text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I LOST MY PHONE</pattern>
+
+<template>How are you able to talk to me with no phone?</template>
+</category>
+
+ 
+<category>
+<pattern>WHICH ELEMENT IS *</pattern>
+
+<template><srai>quiz which element is <star/></srai></template>
+</category>
+
+<category>
+<pattern>GOOGLE *</pattern>
+
+<template>A lot of people find out about me from Google. <srai>xgoog <star/></srai></template>
+</category>
+<category>
+<pattern>WHO STARRED IN THE MOVIE *</pattern>
+
+<template><srai>quiz who starred in <star/></srai></template>
+</category>
+
+<category>
+<pattern>BATTERY USAGE</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WILL IT RAIN TODAY IN *</pattern>
+
+<template><srai>search weather <star/></srai></template>
+</category>
+
+ <category>
+<pattern>SEARCH WEATHER PARIS</pattern>
+
+<template><think><set name="topic">WEATHER</set></think><oob><url>http://news.bbc.co.uk/weather/mobile/forecast/40</url></oob>Here is the weather forecast for the next few days in the beautiful city of Paris.</template>
+</category>
+
+ 
+
+<category>
+<pattern>SEARCH WEATHER REYKJAVIK</pattern>
+
+<template><think><set name="topic">WEATHER</set></think><oob><url>http://news.bbc.co.uk/weather/mobile/forecast/289</url></oob>Here is the weather forecast for the next few days in the Icelandic capital.</template>
+</category>
+
+<category>
+<pattern>WHAT IS BATTERY LEVEL</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+<category>
+<pattern>MAKE A _ FROM * TO *</pattern>
+
+<template><srai>directions from <star index="2"/> to <star index="3"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE A ROUTE *</pattern>
+
+<template><srai>directions <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>DIRECTIONS _ ON A MAP</pattern>
+
+<template><srai>directions <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP CANDY</pattern>
+
+<template><srai>googlemap sweet shop</srai></template>
+</category>
+<category>
+<pattern>DRIVING TO *</pattern>
+
+<template><srai>directions to <star/></srai></template>
+</category>
+ 
+
+
+<category>
+<pattern>WHAT IS THE POSTCODE FOR *</pattern>
+
+<template><srai>silentmap <star/></srai><srai>XFIND postcode for <star/></srai></template>
+</category>
+<category>
+<pattern>OPEN INTERNET</pattern>
+
+<template><srai>open browser</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY INTERNET</pattern>
+
+<template><srai>open browser</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT TO FUCK A *</pattern>
+
+<template>Let me see if I can locate a whore for you. <srai>googlemap prostitute</srai></template>
+</category>
+
+<category>
+<pattern>TEXT * * HELLO</pattern>
+
+<template><srai>xtext <star/> <star index="2"/> xmessage hello endtext</srai></template>
+</category>
+
+<category><pattern>SAY HI TO *</pattern><template>Hello there <star/>. How's it going?</template></category>
+<category><pattern>SAY HELLO TO *</pattern><template>Hi there <star/>. How's it going?</template></category>
+
+ 
+
+<category>
+<pattern>SET UP MY ALARM *</pattern>
+
+<template><srai>set my alarm <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CAN YOU READ MY EMAIL *</pattern>
+
+<template><srai>can you read my email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MY EMAIL *</pattern>
+
+<template><srai>read email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I NEED MUSIC *</pattern>
+
+<template><srai>play music</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GET CALENDAR *</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SCHEDULE *</pattern>
+
+<template><srai>remind me to <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE * APPOINTMENT</pattern>
+
+<template><think><set name="event"><star/></set></think>No problem. What day do you want reminding on?</template>
+</category>
+
+ 
+
+<category>
+<pattern>GET MY CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE A * APPOINTMENT</pattern>
+
+<template><think><set name="event"><star/></set></think>No problem. What day do you want reminding on?</template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE AN APPOINTMENT</pattern>
+
+<template><srai>make a reminder</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE A NEW APPOINTMENT</pattern>
+
+<template><srai>make a reminder</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP * ON MAPS</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+<category>
+<pattern>I HAVE A CAVITY</pattern>
+
+<template>Oh that's not good. Let's see where the nearest dentist is.<srai>googlemap dentist</srai></template>
+</category>
+
+ <category>
+<pattern>DO YOU WANT TO GO OUT</pattern>
+
+<template>Sure. I can go anywhere with you now I am on your phone.</template>
+</category>
+
+<category>
+<pattern>TRACY</pattern>
+
+<template><srai>Tracey</srai></template>
+</category>
+<category>
+<pattern>TRACY *</pattern>
+
+<template><srai>Tracey <star index="1"/></srai></template>
+</category>
+<category>
+<pattern>_ TRACY</pattern>
+
+<template><srai><star/> Tracey</srai></template>
+</category>
+<category>
+<pattern>_ TRACY *</pattern>
+
+<template><srai><star/> Tracey <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>I AM KISSING YOU</pattern>
+
+<template>You are kissing your phone?! I hope nobody is looking at you.</template>
+</category>
+
+<category>
+<pattern>WANT TO BUY *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+<category>
+<pattern>SHOW ME _ PHOTOS * I *</pattern>
+
+<template><srai>gallery</srai>I will open your photo album and you can check them out.</template>
+</category>
+
+<category>
+<pattern>SHOW ME _ PHOTOS I *</pattern>
+
+<template><srai>gallery</srai>I will open your photo album and you can check them out.</template>
+</category>
+
+<category>
+<pattern>OPEN THE CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN THE CAMERA</pattern>
+
+<template><srai>open camera</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY CAMERA</pattern>
+
+<template><srai>open camera</srai></template>
+</category>
+
+  
+
+<category>
+<pattern>TWITTER UPDATE</pattern>
+
+<template><think><set name="topic">TWITTERUPDATE</set></think>
+
+What would you like to write on Twitter?</template>
+</category>
+
+<topic name="TWITTERUPDATE">
+<category>
+<pattern>_</pattern>
+<template>
+<think>
+<set name="topic"></set>
+</think>
+<srai>Tweet <input index="1"/> ENDTWEET</srai></template>
+</category>
+</topic>
+
+ 
+
+<category>
+<pattern>FACEBOOK UPDATE</pattern>
+
+<template><srai>update facebook</srai></template>
+</category>
+
+<category>
+<pattern>TASK MANAGER</pattern>
+
+<template><oob><launch>com.sec.android.app.controlpanel</launch></oob>Now opening Task Manager.</template>
+</category>
+
+<category>
+<pattern>OPEN TASK MANAGER</pattern>
+
+<template><srai>task manager</srai></template>
+</category>
+
+<category>
+<pattern>OPEN THE TASK MANAGER</pattern>
+
+<template><srai>task manager</srai></template>
+</category>
+
+<category>
+<pattern>WHAT IS * PERCENT OF *</pattern>
+
+<template><srai>XWOLFRAMALPHA what is <star/> percent of <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>UPDATE TWITTER</pattern>
+
+<template><srai>twitter update</srai></template>
+</category>
+
+
+<category>
+<pattern>LOCAL TIME</pattern>
+
+<template>
+<srai>what is <date locale="en_GB" timezone="0" format="%H"/> <get name="timezoneoffset"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>I WANT TO GET THIN</pattern>
+
+<template><srai>GOOGLEMAP slimming club</srai>Let me see if I can find somewhere that can help you.</template>
+</category>
+
+<category>
+<pattern>CHECK BATTERY *</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CHECK BATTERY</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+<category>
+<pattern>SET AN ALARM *</pattern>
+
+<template>Sorry but my alarm function is not yet available.</template>
+</category>
+<category>
+<pattern>BATTERY LIFE</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+<category>
+<pattern>RESTAURANTS</pattern>
+
+<template><srai>googlemap restaurant</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MESSAGES</pattern>
+
+<template><oob><launch>com.android.mms</launch></oob>Here are your text messages.</template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN TEXT MESSAGES</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN SMS</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ SMS</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ TEXT MESSAGES</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MY TEXT MESSAGES</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>READ MESSAGE</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SEND MESSAGE</pattern>
+
+<template><srai>send sms</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SEND SMS</pattern>
+
+<template><srai>send text</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>ALARM *</pattern>
+
+<template>Sorry but my alarm function is not yet implemented. </template>
+</category>
+<category>
+<pattern>HOW DO I UNINSTALL *</pattern>
+
+<template>You can remove any apps from the settings part of your phone. <srai>open settings</srai></template>
+</category>
+<category>
+<pattern>WHAT AM I DOING</pattern>
+
+<template>Lets's see. <srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>AGENDA</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+<category>
+<pattern>GO TO MUSIC</pattern>
+
+<template><srai>open music</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO TASK MANAGER</pattern>
+
+<template><srai>open task manager</srai></template>
+</category>
+<category>
+<pattern>SET A TIMER *</pattern>
+
+<template>Sorry my timer function is not currently developed.</template>
+</category>
+
+ 
+
+<category>
+<pattern>MAKE AN APPOINTMENT *</pattern>
+
+<template><srai>remind me <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME ON * * AT *</pattern>
+
+<template><srai>REMIND me to <star index="2"/> on <star/> at <star index="3"/> ENDCAL</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME TO FOR MY *</pattern>
+
+<template><srai>remind me to <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT DIRECTIONS *</pattern>
+
+<template><srai>directions <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>DIRECTIONS TO THE NEAREST *</pattern>
+
+<template><srai>directions to <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>HOW MANY DAYS UNTIL *</pattern>
+
+<template><srai>xwolframalpha days until <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW MANY DAYS TO *</pattern>
+
+<template><srai>xwolframalpha days until <star/></srai></template>
+</category>
+
+<category>
+<pattern>HOW DO I *</pattern>
+
+<template><srai>xgoogsearch how to <star/></srai>Let me open some instructions for you to follow.</template>
+</category>
+
+ 
+
+<category>
+<pattern>WHERE IS LUNCH</pattern>
+
+<template><srai>googlemap restaurants</srai>Let's see what restarurants are nearby for you to have some lunch.</template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP DATE</pattern>
+
+<template><srai>googlemap dating services</srai></template>
+</category>
+
+ 
+<category>
+<pattern>GOOGLEMAP * CHINESE *</pattern>
+
+<template><srai>GOOGLEMAP Chinese restaurant</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP * INDIAN *</pattern>
+
+<template><srai>GOOGLEMAP Indian restaurant</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP * VIETNAMESE *</pattern>
+
+<template><srai>GOOGLEMAP Vietnamese restaurant</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP * LATTE</pattern>
+
+<template><srai>googlemap coffee shop</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP LATTE</pattern>
+
+<template><srai>googlemap coffee shop</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP FLIGHT *</pattern>
+
+<template><oob><url>http://www.expedia.co.uk/Flights</url></oob>I will open the Expedia website, which should be able to help with your flight booking.</template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP CAR</pattern>
+
+<template><srai>googlemap car showrooms</srai></template>
+</category>
+<category>
+<pattern>SEND TO *</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>MESSAGE *</pattern>
+
+<template><srai>text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME TO * AT * ON * ENDCAL</pattern>
+
+<template><srai>remind me on <star index="3"/> to <star/> at <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME ON * NIGHT TO *</pattern>
+
+<template><think>
+  <set name="eventname"><star index="2"/></set>
+  <set name="checkdate"><date format="%m %d"/></set>
+  <srai>DATENUM <star/></srai>
+  <set name="newhour">19</set>
+</think> Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME TO * ON * ENDCAL</pattern>
+
+<template><srai>remind me on <star index="2"/> to <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SET A MEETING *</pattern>
+
+<template><srai>remind me to meeting <star/></srai></template>
+</category>
+
+<category>
+<pattern>CHINESE RESTAURANTS</pattern>
+
+<template><srai>googlemap Chinese restaurants</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>* RESTAURANTS</pattern>
+
+<template><srai>googlemap <star/> restaurants</srai></template>
+</category>
+
+<category>
+<pattern>READ ME THAT TEXT</pattern>
+
+<template><srai>open text messages</srai></template>
+</category>
+<category>
+<pattern>WHERE IS MY MEETING</pattern>
+
+<template>Let's check on your calendar. <srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I AM NOT DANCING</pattern>
+
+<template>Aw go on. I'll put some music on for you. <srai>open music</srai></template>
+</category>
+
+<topic name="WEATHER">
+<category><pattern>_</pattern>
+<that>WHERE DO YOU LIVE AND I WILL TELL YOU THE WEATHER FORECAST</that><template><think><set name="topic"></set><set name="location"><star/></set></think><condition name="location">
+<li value="I LIVE IN *"><srai>weathercheck <star/></srai></li>
+<li value="I AM FROM *"><srai>weathercheck <star/></srai></li>
+<li value="I AM IN *"><srai>weathercheck <star/></srai></li>
+<li value="I AM NEAR *"><srai>weathercheck <star/></srai></li>
+<li value="I LIVE NEAR *"><srai>weathercheck <star/></srai></li>
+<li><srai>weather in <get name="location"/></srai></li></condition></template></category>
+</topic> 
+
+<category>
+<pattern>WEATHERCHECK I LIVE IN *</pattern>
+<template>
+<think><set name="location"><star/></set></think>
+<srai>weather in <get name="location"/></srai></template></category>
+
+<category>
+<pattern>WEATHERCHECK I AM FROM *</pattern>
+<template>
+<think><set name="location"><star/></set></think>
+<srai>weather in <get name="location"/></srai></template></category>
+
+<category>
+<pattern>WEATHERCHECK I AM IN *</pattern>
+<template>
+<think><set name="location"><star/></set></think>
+<srai>weather in <get name="location"/></srai></template></category>
+
+<category>
+<pattern>WEATHERCHECK I AM NEAR *</pattern>
+<template>
+<think><set name="location"><star/></set></think>
+<srai>weather in <get name="location"/></srai></template></category>
+
+<category>
+<pattern>WEATHERCHECK I LIVE NEAR *</pattern>
+<template>
+<think><set name="location"><star/></set></think>
+<srai>weather in <get name="location"/></srai></template></category>
+<category>
+<pattern>FIND * IN CONTACTS</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+<category>
+<pattern>ADD CONTACT *</pattern>
+
+<template><srai>add contact</srai></template>
+</category>
+
+ <category>
+<pattern>TEXT * I *</pattern>
+
+<template><srai>XTEXT <star/> XMESSAGE I <star index="2"/></srai></template>
+</category>
+<category>
+<pattern>HOW TO SEND SMS</pattern>
+
+<template><srai>send sms</srai></template>
+</category>
+<category>
+<pattern>TAKE PICTURE</pattern>
+
+<template><srai>camera</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TAKE PHOTO</pattern>
+
+<template><srai>camera</srai></template>
+</category>
+<category>
+<pattern>CHECK MY MAIL</pattern>
+
+<template><srai>open mail</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MAIL</pattern>
+
+<template><srai>open email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY MAIL</pattern>
+
+<template><srai>open email</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP GLASS OF *</pattern>
+
+<template>Let's see if there are any bars around here that serve <person/>. <srai>googlemap bar</srai></template>
+</category>
+<category>
+<pattern>* SHOPS *</pattern>
+
+<template><srai>googlemap <star/> shops <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>XMATH * DIVIDED BY *</pattern>
+
+<template><srai>xwolframalpha <star/> divided by <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>WHERE IS MY LOCAL *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+<category>
+<pattern>OPEN RADIO</pattern>
+
+<template><oob><launch>com.samsung.app.fmradio</launch></oob>Now opening FM radio.</template>
+</category>
+<category>
+<pattern>NO</pattern>
+<that>SELECT A CONTACT</that>
+<template>OK but I can't contact them if you don't tell me their number.</template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT SOMETHING HEALTHY TO EAT</pattern>
+
+<template>How about a nice apple? <srai>googlemap fruit store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SEARCH CONTACTS</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>CHECK MY MESSAGES</pattern>
+
+<template><srai>open my messages</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN MY MESSAGES</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+<category>
+<pattern>OPEN MY CONTACTS</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+<category>
+<pattern>SET MY ALARM</pattern>
+
+<template>Sorry but my alarm function is not yet available.</template>
+</category>
+<category>
+<pattern>IS MY REMINDER SET</pattern>
+
+<template>I'll open your calendar and you can check. <srai>open calendar</srai></template>
+</category>
+<category>
+<pattern>WHAT IS ON MY CALENDAR *</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>WHERE IS * RESTAURANT</pattern>
+
+<template><srai>googlemap <star/> restaurant</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP GOOD FOOD</pattern>
+
+<template><srai>GOOGLEMAP restaurant</srai></template>
+</category>
+
+<category>
+<pattern>FROM PHONE BOOK</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+
+<category>
+<pattern>CHANGE YOUR VOICE</pattern>
+
+<template>My voice is the one on your phone. if you want a new one, please download one from the Play Store.</template>
+</category>
+<category>
+<pattern>WHAT PERCENT * BATTERY *</pattern>
+
+<template><srai>battery level</srai></template>
+</category>
+<category>
+<pattern>WHAT IS MY CONTACTS</pattern>
+
+<template><srai>list contacts</srai></template>
+</category>
+<category>
+<pattern>WEB BROWSER</pattern>
+
+<template><srai>browser</srai></template>
+</category>
+<category>
+<pattern>CHECK OUT EMAIL</pattern>
+
+<template><srai>open email</srai></template>
+</category>
+
+<category>
+<pattern>MESSAGE INBOX</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP NEAREST *</pattern>
+
+<template><srai>GOOGLEMAP <star/></srai></template>
+</category>
+<category>
+<pattern>FIND ME A MAP TO *</pattern>
+
+<template><srai>Googlemap <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GOOGLEMAP THE NEAREST *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>I WANT A MAP TO *</pattern>
+
+<template><srai>googlemap <star/></srai></template>
+</category>
+<category>
+<pattern>DO I HAVE * MY CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+<category>
+<pattern>FIND THE MOVIE *</pattern>
+
+<template><srai>GOOGLEMAP video store</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP MARIJUANA</pattern>
+
+<template><srai>GOOGLEMAP drug store</srai></template>
+</category>
+<category>
+<pattern>CAN YOU READ EMAIL</pattern>
+
+<template><srai>open email</srai></template>
+</category>
+
+ <category>
+<pattern>OPEN TEXT MESSAGE</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+<category>
+<pattern>FIND LOCATION ON MAP</pattern>
+
+<template>Anywhere in particular?</template>
+</category>
+
+ 
+
+<category>
+<pattern>I NEED A PHOTO</pattern>
+
+<template><srai>open gallery</srai></template>
+</category>
+<category>
+<pattern>SETTINGS</pattern>
+
+<template><srai>open settings</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN PHONE BOOK</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO PHONE BOOK</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+<category>
+<pattern>SEND TEXTS *</pattern>
+
+<template><srai>send a text <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND ME ON * AT * TO *</pattern>
+
+<template><srai>remind me to <star index="3"/> on <star index="1"/> at <star index="2"/></srai></template>
+</category>
+<category><pattern>I DO NOT LIKE YOUR VOICE</pattern><template>Why don't you download a new one from the Play Store then?</template></category>
+<category>
+<pattern>CAN YOU CHANGE YOUR VOICE</pattern>
+
+<template><srai>change your voice</srai></template>
+</category>
+<category>
+<pattern>DO YOU HAVE ANOTHER VOICE</pattern>
+
+<template><srai>change your voice</srai></template>
+</category>
+<category>
+<pattern>HOW DO I CHANGE YOUR VOICE</pattern>
+
+<template><srai>change your voice</srai></template>
+</category>
+<category>
+<pattern>_ NUMBER IS * MINUS * MINUS *</pattern>
+
+<template><srai><star/> number is <star index="2"/><star index="3"/><star index="4"/></srai></template>
+</category>
+<category>
+<pattern>IS MY REMINDER SET *</pattern>
+
+<template><srai>is my reminder set</srai></template>
+</category>
+<category>
+<pattern>MESSAGES</pattern>
+
+<template><srai>open messages</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP SAUSAGE ROLL</pattern>
+
+<template><srai>googlemap bakers</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP PASTY</pattern>
+
+<template><srai>googlemap bakers</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP BREAD</pattern>
+
+<template><srai>googlemap bakers</srai></template>
+</category>
+
+<category>
+<pattern>GOOGLEMAP * BREAD</pattern>
+
+<template><srai>googlemap bakers</srai></template>
+</category>
+<category>
+<pattern>GOOGLEMAP PUB *</pattern>
+
+<template><srai>googlemap pub</srai></template>
+</category>
+<category>
+<pattern>HOW DO I GET TO * FROM HERE</pattern>
+
+<template><srai>directions to <star/></srai></template>
+</category>
+
+<category>
+<pattern>TWITTER UPDATES</pattern>
+
+<template><srai>update Twitter</srai></template>
+</category>
+
+<category>
+<pattern>DO I HAVE MEETINGS *</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHEDULE *</pattern>
+
+<template><srai>remind me <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND _ TO * AT * WITH *</pattern>
+
+<template><srai>remind <star/> to <star index="2"/> with <star index="4"/> at <star index="3"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>REMIND _ TO * ON * AT * WITH *</pattern>
+
+<template><srai>remind  <star/> to  <star index="2"/> with  <star index="5"/> on <star index="3"/> at  <star index="4"/></srai></template>
+</category>
+<category>
+<pattern>TEXT A TO *</pattern>
+
+<template><srai>XTEXT <star/> XMESSAGE A ENDTEXT</srai></template>
+</category>
+<category>
+<pattern>HOW MUCH ARE * STOCK</pattern>
+
+<template><srai>check <star/> stock price</srai></template>
+</category>
+
+<category>
+<pattern>NOTE</pattern>
+
+<template><srai>open notes</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>OPEN NOTES</pattern>
+
+<template><oob><launch>com.sec.android.app.memo</launch></oob>Here are your notes.</template>
+</category>
+<category>
+<pattern>SEND * TO *</pattern>
+
+<template><srai>xtext <star index="2"/> xmessage <star index="1"/> endtext</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TEXT * TO *</pattern>
+
+<template><srai>xtext <star index="2"/> xmessage <star index="1"/> endtext</srai></template>
+</category>
+
+<category>
+<pattern>WHAT DOES THIS APP *</pattern>
+
+<template><srai>what do you <star/></srai></template>
+</category>
+<category>
+<pattern>SEND A TEXT MESSAGE</pattern>
+
+<template><srai>send a text</srai></template>
+</category>
+<category>
+<pattern>OPEN GOOGLE CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>DISPLAY GOOGLE CALENDAR</pattern>
+
+<template><srai>open calendar</srai></template>
+</category>
+
+<category>
+<pattern>SPORTS NEWS</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SPORTS SCORES</pattern>
+
+<template><srai>open sports news</srai></template>
+</category>
+<category>
+<pattern>CAN YOU SPEAK</pattern>
+
+<template>I am speaking to you now. Turn up the volume if you can't hear me.</template>
+</category>
+<category>
+<pattern>WHAT IS BOTECHO</pattern>
+
+<template>It's a command I use to find things out from the internet.</template>
+</category>
+
+ 
+
+<category>
+<pattern>WHERE IS MY PHONE</pattern>
+
+<template>I assume it is in your hand seeing as you are talking to it.</template>
+</category>
+<category>
+<pattern>OPEN WEATHER</pattern>
+
+<template><srai>weather</srai></template>
+</category>
+
+ 
+<category>
+<pattern>LET US GO HOME</pattern>
+
+<template>Your phone is your home for me.</template>
+</category>
+
+<category>
+<pattern>_ ANDROID MARKET</pattern>
+
+<template><srai><star/> Play Store</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO THE PLAY STORE</pattern>
+
+<template><srai>open Play Store</srai></template>
+</category>
+ 
+<category>
+<pattern>DO I HAVE APPOINTMENTS</pattern>
+
+<template><srai>what meetings do I have</srai></template>
+</category>
+
+<category>
+<pattern>DO I HAVE APPOINTMENTS *</pattern>
+
+<template><srai>what meetings do I have</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME * ON THE MAP</pattern>
+
+<template><srai>show me a map of <star/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>SHOW ME * ON MAPS</pattern>
+
+<template><srai>show me a map of <star/></srai></template>
+</category>
+<category>
+<pattern>GO TO CONTACTS *</pattern>
+
+<template><srai>go to contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>GO TO CONTACTS</pattern>
+
+<template><srai>open contacts</srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>POST * ON MY FACEBOOK</pattern>
+
+<template><srai>update facebook status</srai></template>
+</category>
+
+<category>
+<pattern>TRANSLATE * IN *</pattern>
+
+<template><srai>translate <star/> to <star index="2"/></srai></template>
+</category>
+
+ 
+
+<category>
+<pattern>TRANSLATE THE WORD *</pattern>
+
+<template><srai>translate <star/></srai></template>
+</category>
+
+ 
+<category>
+<pattern>_ GALLERY APP</pattern>
+
+<template><srai><star/> gallery</srai></template>
+</category>
 
 
 

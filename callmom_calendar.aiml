@@ -122,30 +122,10 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 </category>
 
  
-<category>
-<pattern>REMIND ME TOMORROW TO *</pattern>
-
-<template>
-<srai>remind me to <star/> tomorrow</srai></template>
-</category>
 
 
 
-<category>
-<pattern>REMIND ME TO * TOMORROW ENDCAL</pattern>
 
-<template>
-<think><set name="eventname"><star/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai><set name="newhour">9</set></think>
-Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
-</category>
-
-<category>
-<pattern>REMIND ME TOMORROW AT * TO * ENDCAL</pattern>
-
-<template>
-<think><set name="newhour"><star index="1"/></set><set name="eventname"><star index="2"/></set><set name="checkdate"><date format="%m %d"/></set><srai>XTOMORROW</srai></think>
-Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></template>
-</category>
 
 <category>
 <pattern>REMIND ME TODAY TO *</pattern>
@@ -159,6 +139,99 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 
 <template>
 <srai>remind me to <star/> endcal</srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ TOMORROW *</pattern>
+
+<template>
+<think><srai>xdaytomorrow</srai>
+</think>
+<srai>remind <star/> on <get name="tomorrow"/> <star index="2"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * IN THE EVENING</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM</srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * IN THE EVENING *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * AT NIGHT</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM</srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * AT NIGHT *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * TONIGHT</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM</srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * TONIGHT *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * O CLOCK TONIGHT *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * O CLOCK IN THE EVENING *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * O CLOCK AT NIGHT *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * ON * NIGHT *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM ON <star index="3"/> <star index="4"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * ON * NIGHT</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM ON <star index="3"/></srai></template>
+</category>
+
+<category>
+<pattern>REMIND _ AT * O CLOCK PM *</pattern>
+
+<template>
+<srai>remind <star/> at <star index="2"/> PM <star index="3"/></srai></template>
 </category>
 
 
@@ -177,6 +250,20 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai></
 </think>
 Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
 </template>
+</category>
+
+<category>
+<pattern>REMIND ME TO * AT * ON *</pattern>
+
+<template>
+<srai>remind me on <star index="3"/> to <star/> at <star index="2"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>REMIND ME * AT * ON *</pattern>
+
+<template><srai>remind me to <star/> at <star index="2"/> on <star index="3"/></srai></template>
 </category>
 
 <category>
@@ -218,8 +305,140 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
 <pattern>BREAKUPTIME *</pattern>
 <template>
 <think>
+<set name="pm">NO</set>
 <set name="breaktime"><explode><star/></explode></set>
 <srai>breakuptime1 <get name="breaktime"/></srai>
+<condition name="pm">
+<li value="YES"><set name="hour"><get name="newhour"/></set><srai>XHOURPM</srai><set name="newhour"><get name="hour"/></set></li>
+</condition>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * PM</pattern>
+<template>
+<think>
+<set name="pm">YES</set>
+<set name="breaktime"><explode><star/></explode></set>
+<srai>breakuptime1 <get name="breaktime"/></srai>
+<set name="hour"><get name="newhour"/></set><srai>XHOURPM</srai><set name="newhour"><get name="hour"/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * ENDCAL</pattern>
+<template>
+<think>
+<srai>breakuptime <star/></srai>
+</think>
+</template>
+</category>
+
+
+<category>
+<pattern>BREAKUPTIME * O CLOCK</pattern>
+<template>
+<think>
+<srai>breakuptime <star/>00</srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME HALF PAST *</pattern>
+<template>
+<think>
+<srai>breakuptime <star/>30</srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME A QUARTER *</pattern>
+<template>
+<think>
+<srai>breakuptime quarter <star/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME QUARTER PAST *</pattern>
+<template>
+<think>
+<srai>breakuptime <star/>15</srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME QUARTER TO *</pattern>
+<template>
+<think>
+<set name="hour"><star/></set>
+<srai>XPREVIOUSHOUR</srai>
+<srai>breakuptime <get name="hour"/>45</srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * PAST *</pattern>
+<template>
+<think>
+<srai>breakuptime <star index="2"/><star/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * MINUTES PAST *</pattern>
+<template>
+<think>
+<srai>breakuptime <star index="2"/><star/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * MINUTES TO *</pattern>
+<template>
+<think>
+<srai>breakuptime <star/> to <star index="2"/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME * TO *</pattern>
+<template>
+<think>
+<set name="hour"><star index="2"/></set>
+<srai>XPREVIOUSHOUR</srai>
+<set name="minute"><star/></set>
+<srai>XPREVIOUSminute</srai>
+<srai>breakuptime <get name="hour"/><get name="minute"/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 _ A M</pattern>
+<template>
+<think>
+<srai>breakuptime1 <star/></srai>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>BREAKUPTIME1 _ P M</pattern>
+<template>
+<think>
+<set name="pm">YES"</set>
+<srai>breakuptime1 <star/></srai>
 </think>
 </template>
 </category>
@@ -260,6 +479,126 @@ Sure thing. I'll add it to your calendar now. <srai>ADDNEWCALENDAREVENT</srai>
 <think>
 <set name="newhour"><star/><star index="2"/></set>
 <set name="newminute"><star index="3"/><star index="4"/></set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>XPREVIOUSHOUR</pattern>
+<template>
+<condition name="hour">
+<li value="0"><set name="hour">23</set></li>
+<li value="1"><set name="hour">00</set></li>
+<li value="2"><set name="hour">01</set></li>
+<li value="3"><set name="hour">02</set></li>
+<li value="4"><set name="hour">03</set></li>
+<li value="5"><set name="hour">04</set></li>
+<li value="6"><set name="hour">05</set></li>
+<li value="7"><set name="hour">06</set></li>
+<li value="8"><set name="hour">07</set></li>
+<li value="9"><set name="hour">08</set></li>
+<li value="10"><set name="hour">09</set></li>
+<li value="11"><set name="hour">10</set></li>
+<li value="12"><set name="hour">11</set></li>
+<li value="13"><set name="hour">12</set></li>
+<li value="14"><set name="hour">13</set></li>
+<li value="15"><set name="hour">14</set></li>
+<li value="16"><set name="hour">15</set></li>
+<li value="17"><set name="hour">16</set></li>
+<li value="18"><set name="hour">17</set></li>
+<li value="19"><set name="hour">18</set></li>
+<li value="20"><set name="hour">19</set></li>
+<li value="21"><set name="hour">20</set></li>
+<li value="22"><set name="hour">21</set></li>
+<li value="23"><set name="hour">22</set></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>XHOURPM</pattern>
+<template>
+<condition name="hour">
+<li value="0"><set name="hour">12</set></li>
+<li value="1"><set name="hour">13</set></li>
+<li value="2"><set name="hour">14</set></li>
+<li value="3"><set name="hour">15</set></li>
+<li value="4"><set name="hour">16</set></li>
+<li value="5"><set name="hour">17</set></li>
+<li value="6"><set name="hour">18</set></li>
+<li value="7"><set name="hour">19</set></li>
+<li value="8"><set name="hour">20</set></li>
+<li value="9"><set name="hour">21</set></li>
+<li value="10"><set name="hour">22</set></li>
+<li value="11"><set name="hour">23</set></li>
+<li value="12"><set name="hour">00</set></li>
+<li value="13"><set name="hour">13</set></li>
+<li value="14"><set name="hour">14</set></li>
+<li value="15"><set name="hour">15</set></li>
+<li value="16"><set name="hour">16</set></li>
+<li value="17"><set name="hour">17</set></li>
+<li value="18"><set name="hour">18</set></li>
+<li value="19"><set name="hour">19</set></li>
+<li value="20"><set name="hour">20</set></li>
+<li value="21"><set name="hour">21</set></li>
+<li value="22"><set name="hour">22</set></li>
+<li value="23"><set name="hour">23</set></li>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>XPREVIOUSMINUTE</pattern>
+<template>
+<condition name="minute">
+<li value="1"><set name="minute">59</set></li>
+<li value="2"><set name="minute">58</set></li>
+<li value="3"><set name="minute">57</set></li>
+<li value="4"><set name="minute">56</set></li>
+<li value="5"><set name="minute">55</set></li>
+<li value="6"><set name="minute">54</set></li>
+<li value="7"><set name="minute">53</set></li>
+<li value="8"><set name="minute">52</set></li>
+<li value="9"><set name="minute">51</set></li>
+<li value="10"><set name="minute">50</set></li>
+<li value="11"><set name="minute">49</set></li>
+<li value="12"><set name="minute">48</set></li>
+<li value="13"><set name="minute">47</set></li>
+<li value="14"><set name="minute">46</set></li>
+<li value="15"><set name="minute">45</set></li>
+<li value="16"><set name="minute">44</set></li>
+<li value="17"><set name="minute">43</set></li>
+<li value="18"><set name="minute">42</set></li>
+<li value="19"><set name="minute">41</set></li>
+<li value="20"><set name="minute">40</set></li>
+<li value="21"><set name="minute">39</set></li>
+<li value="22"><set name="minute">38</set></li>
+<li value="23"><set name="minute">37</set></li>
+<li value="24"><set name="minute">36</set></li>
+<li value="25"><set name="minute">35</set></li>
+<li value="26"><set name="minute">34</set></li>
+<li value="27"><set name="minute">33</set></li>
+<li value="28"><set name="minute">32</set></li>
+<li value="29"><set name="minute">31</set></li>
+
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>XDAYTOMORROW</pattern>
+<template>
+<think>
+<set name="today"><date format="%A"/></set>
+<condition name="today">
+<li value="MONDAY"><set name="tomorrow">Tuesday</set></li>
+<li value="TUESDAY"><set name="tomorrow">Wednesday</set></li>
+<li value="WEDNESDAY"><set name="tomorrow">Thursday</set></li>
+<li value="THURSDAY"><set name="tomorrow">Friday</set></li>
+<li value="FRIDAY"><set name="tomorrow">Saturday</set></li>
+<li value="SATURDAY"><set name="tomorrow">Sunday</set></li>
+<li value="SUNDAY"><set name="tomorrow">Monday</set></li>
+</condition>
 </think>
 </template>
 </category>
