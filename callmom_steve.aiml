@@ -6,6 +6,12 @@
 <!-- as published by the Free Software Foundation.   -->
 <!-- Complies with AIML 1.0 Tag Set Specification -->
 <!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last modified: 6/11/2012 -->
+<!-- -->
+<!-- Author: -->
+<!-- Steve Worswick squarebear@square-bear.co.uk -->
+<!-- -->
+<!-- For more information contact callmom-info@pandorabots.com -->
 
 <category>
 <pattern>SET PREDICATES STEVE</pattern>
