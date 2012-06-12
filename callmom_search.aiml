@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified 5/29/2012 -->
+<!-- Last modified 6/12/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -482,7 +482,7 @@
 <pattern>XSEARCH *</pattern>
 <template>
 <srai>RANDOM SEARCH PHRASE</srai>
-<oob><url>http://www.google.com/search?hl=en&amp;q=<person/></url></oob>
+<oob><url>http://www.google.com/search?hl=en&amp;q=<star/></url></oob>
 <!-- 
 <oob><search><star/></search></oob>
 -->
