@@ -482,7 +482,10 @@
 <pattern>XSEARCH *</pattern>
 <template>
 <srai>RANDOM SEARCH PHRASE</srai>
+<oob><url>http://www.google.com/search?hl=en&amp;q=<person/></url></oob>
+<!-- 
 <oob><search><star/></search></oob>
+-->
 </template>
 </category>
 

@@ -5,7 +5,7 @@
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU Lesser General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
-<!-- Last modified: 6/11/2012 -->
+<!-- Last modified: 6/12/2012 -->
 <!-- -->
 <!-- Authors: -->
 <!-- Steve Worswick squarebear@square-bear.co.uk -->
@@ -187,7 +187,7 @@ That wasn't one of the choices. Let me remind you:<br/><srai>CALLMULTIPLE</srai>
 <condition name="phonenumber">
 <li value="UNKNOWN">Error: No phone number chosen to dial.</li>
 <li>
-Now dialling <get name="whoamicalling"/>...
+Now dialing <get name="whoamicalling"/>...
 <oob><dial><get name="phonenumber"/></dial></oob>
 </li>
 </condition>
